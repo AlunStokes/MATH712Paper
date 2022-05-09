@@ -1,0 +1,83 @@
+%%%%%%%%%%%%%%%%%%%%% chapter.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% sample chapter
+%
+% Use this file as a template for your own input.
+%
+%%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
+%\motto{Use the template \emph{chapter.tex} to style the various elements of your chapter content.}
+\chapter{A Bit Before we Begin}
+\label{bit-before} % Always give a unique label
+% use \chaptermark{}
+% to alter or adjust the chapter heading in the running head
+%\chaptermark{Some Introductions}
+
+\abstract*{We begin with just a few words in preparation for what is to come; some definitions, expectations of the experience (or lack thereof) on the part of the reader, and a general outline are given. The overly excited reader may feel free to skip right onto Chapter \ref{setting}, but this section serves as just a bit of an \textit{amuse-bouche} for those not so ready to jump right in.}
+
+\abstract{We begin with just a few words in preparation for what is to come; some definitions, expectations of the experience (or lack thereof) on the part of the reader, and a general outline are given. The overly excited reader may feel free to skip right onto Chapter \ref{setting}, but this section serves as just a bit of an \textit{amuse-bouche} for those not so ready to jump right in.}
+
+\section{Before the Lectures Proper}
+We feel somewhat compelled to address an aspect of this topic that we felt was slightly neglected in the curriculum. Had one seen the list of attendees to these lectures, the reason for skipping over such `trivialities' as we are about to point out briefly is clear — with several attendees being former students of Pila or Wilkie themselves. Still, for the \emph{not-even-amateur} logician, the following certainly bears some explicit mention.
+
+In the absence of the results we come to find, \omy may appear a relatively unmotivated idea to study. Of course, as the pure mathematicians we are (or hope one day to be), why \emph{shouldn't} the mere concept of further understanding be enough to compel our interest? Still, the progression from introductory mathematical logic and the importance and usefulness of quantifier elimination to \omy is one that was unapparent to this author until being elsewhere noted. We don't claim this to be a failure of the course so much as a failure in personal preparation, but should the reader find themselves similarly underprepared, then they will find themselves thankful for this little pretext.
+
+To keep things brief, we will say just this: in a predicate logical system, we are interested in quantifier elimination. The result of the elimination of quantifiers is essentially the answer to the question a quantified statement asks. Perhaps the most famous example of this is the existence of real roots of quadratic equations. We ask the quantified `question':
+\begin{align}
+  \exists x \in \R . (a \cdot x^2 + b \cdot x + c = 0 \wedge a \neq 0)
+\end{align}
+ — that is, does there exist such an $x$? The quantifier eliminated equivalent form is
+ \begin{align}
+  b^2 - 4 \cdot a \cdot c \geq 0 \wedge a \neq 0,
+ \end{align}
+ the first half of which should be recognized as the quadratic discriminant (and the second just to ensure non-degeneracy). Here, quantifier elimination gives the exact and deterministic characterization of the answer to the quantified statement -- and it is this property that motivates its study. We trust at this point that the motivation has been sufficiently belaboured.
+
+ It is known that first-order theories with quantifier elimination (that is, decidability for the theory can be reduced to the question of satisfaction of quantifier-free sentence in the theory) are model complete. In the interest of not straying too far, we leave it to the reader to believe or convince themselves that this is a desirable property. While this is not the focus of how we define \omy in this course, it is true that a structure is \om exactly if every formula given by no more than one free variable and some subset of $M$-parameters is equivalent to a quantifier-free formula defined only by these parameters, and the ordering on the structure \cite{marker_model_2002}. Thus, for anyone finding themselves perhaps unconvinced upfront of the merit of some of the ideas explored here (outside the Pila-Wilkie Theorem), then we hope this motivates the sequence we are about to take on. And for everyone else, we hope that this section did not bore too thoroughly.
+
+
+\section{Preliminary Definitions}
+\label{sec:prelim-defns}
+Throughout, we will be working with models $ \M = \Mlt$ of the theory of dense linear orders (DLO) \emph{without endpoints}. For now, $M$ will be fixed, but we will look at some specific instances later on. Perhaps then, one of the most important definitions, to begin with, is that of \emph{definability}.
+
+%\begin{definition}[Definability of sets (without parameters) \cite{marker_basic_2002}]
+\begin{definition}[Definability of sets (without parameters)]
+For $n \in \Zgeq{1}$, we say a set $A \subseteq M^n$ is \emph{definable without parameters} if there exists some formula in our model, $ \phi$, satisfied exactly by the elements of $A$.
+\end{definition}
+
+%\begin{definition}[Definability of sets \cite{marker_basic_2002}]
+\begin{definition}[Definability of sets]
+For $X \subseteq M$ and $n \in \Zgeq{1}$, then we say a set $A \subseteq M^n$ is \emph{definable with parameters from $X$} if there exists some formula in our model, $ \phi$, and elements $b_1, \hdots, b_m$, such that $ \phi$ is satisfied exactly by the elements of $A$ along with the parameters in $X$.
+\end{definition}
+
+Notice then that definability without a parameter is simply the case of definability with parameters coming from the empty set. These definitions immediately and naturally induce the idea of definable functions and definable points. In particular, a function is definable in parameters if its graph is definable by those same parameters in $\M = \Mlt$. Similarly, an element $a$ is definable in $\M$ (with parameters) if the singleton $\{a\}$ is definable in $ \M$ by those same parameters. This isn't something we will need to consider too extensively.
+
+As ever, when introduced to a novel space, we are interested in what its open intervals look like. We have the following characterization:
+
+\begin{definition}[Open Interval]
+  A set, $A \subset M$ is an open interval in $\Mlt$ if $A$ is of one of the following forms:
+  \begin{itemize}
+    \item $(a, b)$ with $a < b \in M$
+    \item $(- \infty, a)$ with $a \in M$
+    \item $(a, \infty)$ with $a \in M$
+  \end{itemize}
+\end{definition}
+
+We say further that intervals of the first type — that is, those having finite bounds — are \emph{bounded}. Easy to miss but important to note is that the endpoints must sit inside our domain. So, for example, in $(\Q, <)$, the set $(-5, \sqrt{7})$ is \emph{not} an open interval.
+
+We imbue $M$ with the order topology and $M^n$ with the product topology. We then define what it means to be an \om expansion.
+
+\begin{definition}[\Om expansion]
+  Taking $\mathcal{M} = \Mltp$ an expansion of $\Mlt$, we say $\mathcal{M}$ is \om if every definable (with parameters) subset of $M$ is given by a finite union of open intervals and points.
+\end{definition}
+
+\begin{svgraybox}
+  If we weaken the above and ask only for \emph{convex} sets (which are a superset of our open intervals) in place of open intervals, then the above would define \emph{weak \omy} — but that won't be a topic of discussion here.
+\end{svgraybox}
+
+For the etymologically inclined, it is noted that the `o' in \om comes from the shortening of `order-minimality'. For more information on the history and development of the idea of \omy, one may reference
+\textbf{Tame Topology \& \Om Structures} \cite{dries_tame_1998} or \textbf{Definable Sets in Ordered Structures I} \cite{pillay_definable_1986} and \textbf{II} \cite{knight_definable_1986}.
+
+
+Some (arguably) simple examples of \om structures are given by expansions of the real field. Consider, for example, $\overline{\R} = (\R, <, +, -, \cdot, 0, 1)$ and the further extension $\R_{\textrm{exp}} = (\overline{\R}, \exp)$, both of which are \om. Don't mistake my use of `simplicity' as an indication that these were trivial or did not require particular and considerable consideration — rather, just that they have a relatively simple-seeming form. For now and going forward, we fix $\M$ an \om structure and move on to our first theorem.
+
+
+\input{chapter_11_refs}

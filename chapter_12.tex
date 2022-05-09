@@ -1,0 +1,191 @@
+%%%%%%%%%%%%%%%%%%%%% chapter.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% sample chapter
+%
+% Use this file as a template for your own input.
+%
+%%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
+%\motto{Use the template \emph{chapter.tex} to style the various elements of your chapter content.}
+\chapter{Setting it all up}
+\label{setting} % Always give a unique label
+% use \chaptermark{}
+% to alter or adjust the chapter heading in the running head
+%\chaptermark{Some Introductions}
+
+\abstract*{We now begin properly with a from-the-basics definition of the objects at play: field expansions, monotonicity, cells and decompositions into them, semi-algebraicity and similarly fundamental ideas are each defined and contextualized. Note that we will not be discussing topological definitions in general. That is to say, the reader is assumed to be familiar with basic point-set topology, and the ordinary sorts of topologies we see cropping up (e.g. order, product) -- not that topological ideas won't be discussed. As well, basic knowledge of mathematical logic is assumed; first-order languages (FOL), $ \Lstrs$, relations, and satisfiability are all presumed familiarities. With definability now a part of our tool-set, we start by proving a few theorems fundamental to results to come later in this course.}
+
+\abstract{We now begin properly with a from-the-basics definition of the objects at play: field expansions, monotonicity, cells and decompositions into them, semi-algebraicity and similarly fundamental ideas are each defined and contextualized. Note that we will not be discussing topological definitions in general. That is to say, the reader is assumed to be familiar with basic point-set topology, and the ordinary sorts of topologies we see cropping up (e.g. order, product) -- not that topological ideas won't be discussed. As well, basic knowledge of mathematical logic is assumed; first-order languages (FOL), $ \Lstrs$, relations, and satisfiability are all presumed familiarities. With definability now a part of our tool-set, we start by proving a few theorems fundamental to results to come later in this course.}
+
+
+\section{On monotonicity}
+What constitutes a `nice' property of a function is generally non-contentious; injectivity and surjectivity are often useful -- together even more so -- and it would be the odd mathematician to turn their nose up at a function being bounded, supposing they weren't chasing a nasty counterexample or engaging in some other such endeavour. At present, we will focus on the property of \emph{monotonicity}, and when we can determine a definable function to be monotonic in the context of open intervals. The following was proved in \cite{pillay_definable_1986} by Pillay and Steinhorn:
+
+\begin{theorem}[The Monotonicity Theorem]
+	\label{thm:monotonicity}
+  Suppose $f \colon I \to M$ is a definable function for $I \subset M$ an open interval. Then there exist $a_1, \hdots, a_k \in I$ such that on each adjacent interval, $(a_j, a_{j+1})$ (where $I = (a_0, a_{k+1})$) $f$ is either constant, or strictly monotonic and continuous. Further, if $f$ is definable over some $A \subseteq M$, then so too are $a_1, \hdots, a_{k}$ definable over $A$.
+\end{theorem}
+
+Hence, we will refer to this simply as the Monotonicity Theorem, abbreviated by MT. It is perhaps not immediately apparent why this should be true, or even that we should be interested that it is. The answer to the second point is that this piece-wise continuity and monotonicity of definable functions is a relatively rigid condition, and this (not just here but for structures in general) allows us to say a good bit about them. Observe as well that if we have some $X \subseteq M$ definable and infinite, then X must contain some open interval. This should be relatively intuitive, even if a proof doesn't come to you immediately, given what we've covered thus far. As for why the Monotonicity Theorem holds, we show this by piecing together three lemmata that should make the picture a bit more clear. Throughout, take $J \subset I$ as an open interval. To not get bogged down in the minutiae of their proofs as we go through — not that they are particularly challenging — but in any case, we will state all three and then prove them sequentially.
+
+\begin{lemma}
+\label{lemma:monotonic-1}
+  There is an open interval, $\Jp \subseteq J$, on which $f$ is constant or injective.
+\end{lemma}
+
+\begin{lemma}
+\label{lemma:monotonic-2}
+  If $f$ is injective on $J$, then there is an open interval, $\Jp \subseteq J$ on which $f$ is strictly monotonic.
+\end{lemma}
+
+and finally,
+
+\begin{lemma}
+\label{lemma:monotonic-3}
+  If $f$ is a strictly monotonic function on $J$, then there exists some open interval $ \Jp \subseteq J$ on which $J$ is continuous.
+\end{lemma}
+
+Taking these lemmata for granted, it is not terribly difficult to see how the Monotonicity Theorem falls out. The fun then is in proving these three facts — which is nice, as they are not terribly complicated.
+
+We start where any sensible person would.
+
+\begin{proof}[Lemma \ref{lemma:monotonic-1}]
+  Suppose there is some $y \in M$ such that its preimage under $f$ intersected with $J$ is infinite. This necessarily implies the existence of $ \Jp \subseteq J$ an open interval on which $f$ takes constant value, and so we can assume for any $y \in M$ that we have $f^{-1}(y) \cap J$ is finite. Then, we must have f(J) infinite, and so contains interior with subset $ (a, b) $, for $a < b$. Taking
+  \begin{align*}
+    q \colon (a, b) &\to J \\
+    q \colon y &\mapsto \min{\Set{x \in J}{f(x) = y}},
+  \end{align*}
+  we get q injective — and so this is an open interval $ \Jp \subseteq q((a, b))$ on which $f$ is injective.
+\end{proof}
+
+
+\begin{proof}[Lemma \ref{lemma:monotonic-2}]
+  This we can get quite quickly. Suppose such a strictly monotone function exists on $J$. Clearly, $f$ cannot be constant (else monotonicity would be non-strict), and so by \omy of $f$, we get that the image of $J$ under $f$ contains some open interval, $ \Jp \subseteq \image{f}$, on which we have preimage a sub-interval of $J$. We get monotonicity on this interval by Lemma \ref{lemma:monotonic-1} and non-constancy (and thus monotonicity) of $f$; this must be a bijection (either order-preserving or reversing, but bijective either way), and so we are finished.
+\end{proof}
+
+\fix{
+\begin{proof}[Lemma \ref{lemma:monotonic-3}]
+  Write me.
+\end{proof}
+}
+
+
+\begin{proof}[Theorem \ref{thm:monotonicity}]
+  We now combine these three lemmata to get our result. Take $A$ the set of all $x \in I$ (coming from our original theorem statement) such that $f$ is both continuous and strictly monotone at $x$. We know that taking the restriction of $f$ to some open sub-interval on which $f$ is defined maintains both continuity and monotonicity by Lemmata 2 and 3 — and so taking the set difference of A from I, the original open interval, we cannot have \emph{any} open intervals. There are then thus only finitely many points, and the theorem follows.
+\end{proof}
+
+\begin{svgraybox}
+	Take note that the proof provided here is \emph{not} precisely the one that was given in the lecture, but rather a bit more condensed, less roundabout method of achieving the result. The strategy is the same, however, differing only in presentation.
+\end{svgraybox}
+
+\fix{
+Two Exercises Lec1 pg 4
+}
+
+The following result is a special case in 2 dimensions of what is referred to as the \emph{Finiteness Theorem}, abbreviated FT. We first prove this special case, and then take a brief detour to talk about cell decompositions before we can address the more general theorem.
+
+\subsection{The (Planar) Finiteness Theorem}
+
+\begin{theorem}[Finiteness Theorem in $M^2$]
+	\label{thm:2finiteness}
+	Suppose $A \subseteq M^2$ and that for each $x \in M$, the fibre $A_x$ above $x$ — that is, the set of $y$ with $(x, y) \in A$ — is finite. Then, there exists some $N \in \Zgeq{1}$ such that $\card{A_x} \leq N$ for all $x \in M$
+\end{theorem}
+
+\begin{proof}[Theorem \ref{thm:2finiteness}]
+	We define a point $(a, b) \in M^2$ to be \emph{normal} if it sits in an open box, $I \times J$ satisfying
+	\begin{itemize}
+		\item $(I \times J) \cap A = \emptyset$
+		\item $(a, b) \in A$
+		\item There exists a continuous $f \colon I \to M$ such that $(I \times J) \cap A = \graph{f}$.
+	\end{itemize}
+	
+	Similarly, for points with only one finite endpoint, we say some $(a, \infty)$ (resp. $(a, - \infty)$) is \emph{normal} if there exists open interval $I$ such that $a \in I$ and some $b \in M$ such that 
+	\begin{align*}
+		(I \times (b, \infty)) \cap A = \emptyset
+	\end{align*}
+	and again, respectively taking $(b, - \infty)$ for the other case.
+	
+	Supposing we take the set $\Set{(a, b) \in M^2}{(a, b) \ \textrm{is normal}}$, it easily follows that this set is definable, and similarly so for the $\{\pm \infty\}$ cases. We now define functions $f_1, f_2, \hdots, f_n$ by the property that 
+	\begin{align*}
+		\dom{f_k} = \Set{x \in M}{\card{A_x} \geq k}.
+	\end{align*}
+	That is, we have the property that $f_k(x)$ is the $k$-th element of $A_x$ — and so we get the definability of each $f_k$ by the finiteness of each fibre.
+	
+	Fixing some $a \in M$ and taking $n \geq 0$ maximal such that all of $f_1, \hdots, f_n$ are defined and \emph{continuous} on an open interval around $a$. We then say that $a$ is 
+	\begin{itemize}
+		\item \textbf{good} if  $a \notin \cl{\dom{f_{n + 1}}}$ and otherwise
+		\item \textbf{bad} if $a$ \emph{is} in this closure.
+	\end{itemize}
+	We partition into $G = \Set{a \in M}{a \ \textrm{is good}}$ and $B = \Set{a \in M}{a \ \textrm{is bad}}$. What we will now show is that $G$ is definable — which we do by showing that for any $a \in B$, there is a minimal $b \in M \cup \{\pm \infty \}$ such that $(a, b)$ is \emph{not} normal.
+	
+	Let $a \in B$. We use the following notation for convenience:
+	\begin{description}
+		\item  
+			\begin{align*}
+						\lambda(a, -) = \begin{cases} 
+									      \displaystyle\lim_{x \to a^{-}} f_{n + 1}(a) & \colon \ \textrm{$f_{n+1}$ defined on $(t, a)$ for some $t < a$.} \\
+									      \infty & \colon \ \textrm{else}
+									   \end{cases}
+			\end{align*}
+			
+		\item  
+			\begin{align*}
+						\lambda(a, 0) = \begin{cases} 
+									      f_{n + 1}(a) & x \in \dom{f_{n+1}} \\
+									      \infty & \colon \ \textrm{else}
+									   \end{cases}
+			\end{align*}
+		
+		\item  
+			\begin{align*}
+						\lambda(a, +) = \begin{cases} 
+									      \displaystyle\lim_{x \to a^{+}} f_{n + 1}(a) & \colon \ \textrm{$f_{n+1}$ defined on $(a, t)$ for some $a < t$.} \\
+									      \infty & \colon \ \textrm{else}
+									   \end{cases}
+			\end{align*}
+	\end{description}
+	
+	Take $\beta(a) = \min{\{ \lambda(a, -),\ \lambda(a, 0),\ \lambda(a, +) \}}$. It is not difficult to see then that $\beta(a)$ is simply the least $b \in \Minf$ such that $(a, b)$ is not normal. Were we instead to take some $a \in G$, then $(a, b)$ must \emph{always} be normal for any $b \in \Minf$. So, $B$ can be given as 
+	\begin{align*}
+		B = \Set{a \in M}{\exists b \in \Minf \ \textrm{s.t.} \ (a, b) \ \textrm{is not normal}},
+	\end{align*}
+	and as such, is definable.
+	
+	If we take some $a \in G$, then $\card{A_x}$ is constant on an open interval about $a$ by definition of $G$. By showing that $B$ is finite, we get our desired result. Supposing $B$ to be \emph{infinite}, we can partition $B$ into
+	\begin{align*}
+		B_+ &= \Set{a \in B}{\exists y \ \textrm{s.t.} \ y > \beta(a), \ (a, y) \in A} \\
+		B_- &= \Set{a \in B}{\exists y \ \textrm{s.t.} \ y < \beta(a), \ (a, y) \in A},
+	\end{align*}
+	both evidently definable sets. By the infinitude of $B$, so too must at least one of $B_-, B_+$ be infinite — and further, so must one of 
+	\begin{itemize}
+		\item $B_+ \cap B_-$ 
+		\item $B_+ \setminus B_-$
+		\item $B_- \setminus B_+$
+		\item $B \setminus (B_+ \cup B_-)$.
+	\end{itemize}
+	We can then apply MT (Theorem \ref{thm:monotonicity}) to each case to reach a contradiction by showing that assuming non-finiteness, we \emph{should} be able to find a normal point with first coordinate $a$ -- contradicting the `badness' of any point in $B$. Thus, $B$ is \emph{finite}, and so there must be some finite upper bound on the cardinality of all fibres, $A_x$, and our proof is complete.
+\end{proof}
+
+
+
+\section{Cell Decompositions}
+
+We start with a few definitions, that should hopefully feel motivated in anticipation of the higher-dimensional analogues of what we have seen already.
+
+\begin{definition}[$\incells$ in $M^n$]
+  For a sequence $(i_1, \hdots, i_n)$ for each $i_j \in \{0, 1\}$, we define $(i_1, \hdots, i_n)$\emph{-cells} of $M^n$ inductively as follows:
+  \begin{enumerate}
+    \item A $0$-cell is a point in $M$, and a $1$-cell an open interval (both in $M^1$).
+    \item Supposing $\incells$ are defined for $M^n$, we define an $\izerocell$ to be a definable set given by $\graph{f}$ for $f$ a continuous, definable function on an $\incell$. Perhaps predictably, an $\ionecell$ is then a definable set of the form $(f, g)_C = \Set{(x, y) \in C \times M}{f(x) < y < g(x)}$ for $f, g$ continuous, definable functions on an $\incell$, $C \subset M^n$. Note that we may also allow $f \equiv - \infty$ or $g \equiv \infty$.
+  \end{enumerate}
+
+  As usual, we denote a projection map by $\pi$, and for any $\incell$ we can define the projection
+  \begin{align*}
+    \pi \colon M^n \to M^k
+  \end{align*}
+  for $k$ the sum of $\ionein$, such that the restriction of $\pi$ to our $\incell$ is a homeomorphism.
+
+
+\end{definition}
+
+
+\input{chapter_12_refs}
