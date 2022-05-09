@@ -97,67 +97,67 @@ The following result is a special case in 2 dimensions of what is referred to as
 		\item $(a, b) \in A$
 		\item There exists a continuous $f \colon I \to M$ such that $(I \times J) \cap A = \graph{f}$.
 	\end{itemize}
-	
-	Similarly, for points with only one finite endpoint, we say some $(a, \infty)$ (resp. $(a, - \infty)$) is \emph{normal} if there exists open interval $I$ such that $a \in I$ and some $b \in M$ such that 
+
+	Similarly, for points with only one finite endpoint, we say some $(a, \infty)$ (resp. $(a, - \infty)$) is \emph{normal} if there exists open interval $I$ such that $a \in I$ and some $b \in M$ such that
 	\begin{align*}
 		(I \times (b, \infty)) \cap A = \emptyset
 	\end{align*}
 	and again, respectively taking $(b, - \infty)$ for the other case.
-	
-	Supposing we take the set $\Set{(a, b) \in M^2}{(a, b) \ \textrm{is normal}}$, it easily follows that this set is definable, and similarly so for the $\{\pm \infty\}$ cases. We now define functions $f_1, f_2, \hdots, f_n$ by the property that 
+
+	Supposing we take the set $\Set{(a, b) \in M^2}{(a, b) \ \textrm{is normal}}$, it easily follows that this set is definable, and similarly so for the $\{\pm \infty\}$ cases. We now define functions $f_1, f_2, \hdots, f_n$ by the property that
 	\begin{align*}
 		\dom{f_k} = \Set{x \in M}{\card{A_x} \geq k}.
 	\end{align*}
 	That is, we have the property that $f_k(x)$ is the $k$-th element of $A_x$ — and so we get the definability of each $f_k$ by the finiteness of each fibre.
-	
-	Fixing some $a \in M$ and taking $n \geq 0$ maximal such that all of $f_1, \hdots, f_n$ are defined and \emph{continuous} on an open interval around $a$. We then say that $a$ is 
+
+	Fixing some $a \in M$ and taking $n \geq 0$ maximal such that all of $f_1, \hdots, f_n$ are defined and \emph{continuous} on an open interval around $a$. We then say that $a$ is
 	\begin{itemize}
 		\item \textbf{good} if  $a \notin \cl{\dom{f_{n + 1}}}$ and otherwise
 		\item \textbf{bad} if $a$ \emph{is} in this closure.
 	\end{itemize}
 	We partition into $G = \Set{a \in M}{a \ \textrm{is good}}$ and $B = \Set{a \in M}{a \ \textrm{is bad}}$. What we will now show is that $G$ is definable — which we do by showing that for any $a \in B$, there is a minimal $b \in M \cup \{\pm \infty \}$ such that $(a, b)$ is \emph{not} normal.
-	
+
 	Let $a \in B$. We use the following notation for convenience:
 	\begin{description}
-		\item  
+		\item
 			\begin{align*}
-						\lambda(a, -) = \begin{cases} 
+						\lambda(a, -) = \begin{cases}
 									      \displaystyle\lim_{x \to a^{-}} f_{n + 1}(a) & \colon \ \textrm{$f_{n+1}$ defined on $(t, a)$ for some $t < a$.} \\
 									      \infty & \colon \ \textrm{else}
 									   \end{cases}
 			\end{align*}
-			
-		\item  
+
+		\item
 			\begin{align*}
-						\lambda(a, 0) = \begin{cases} 
+						\lambda(a, 0) = \begin{cases}
 									      f_{n + 1}(a) & x \in \dom{f_{n+1}} \\
 									      \infty & \colon \ \textrm{else}
 									   \end{cases}
 			\end{align*}
-		
-		\item  
+
+		\item
 			\begin{align*}
-						\lambda(a, +) = \begin{cases} 
+						\lambda(a, +) = \begin{cases}
 									      \displaystyle\lim_{x \to a^{+}} f_{n + 1}(a) & \colon \ \textrm{$f_{n+1}$ defined on $(a, t)$ for some $a < t$.} \\
 									      \infty & \colon \ \textrm{else}
 									   \end{cases}
 			\end{align*}
 	\end{description}
-	
-	Take $\beta(a) = \min{\{ \lambda(a, -),\ \lambda(a, 0),\ \lambda(a, +) \}}$. It is not difficult to see then that $\beta(a)$ is simply the least $b \in \Minf$ such that $(a, b)$ is not normal. Were we instead to take some $a \in G$, then $(a, b)$ must \emph{always} be normal for any $b \in \Minf$. So, $B$ can be given as 
+
+	Take $\beta(a) = \min{\{ \lambda(a, -),\ \lambda(a, 0),\ \lambda(a, +) \}}$. It is not difficult to see then that $\beta(a)$ is simply the least $b \in \Minf$ such that $(a, b)$ is not normal. Were we instead to take some $a \in G$, then $(a, b)$ must \emph{always} be normal for any $b \in \Minf$. So, $B$ can be given as
 	\begin{align*}
 		B = \Set{a \in M}{\exists b \in \Minf \ \textrm{s.t.} \ (a, b) \ \textrm{is not normal}},
 	\end{align*}
 	and as such, is definable.
-	
+
 	If we take some $a \in G$, then $\card{A_x}$ is constant on an open interval about $a$ by definition of $G$. By showing that $B$ is finite, we get our desired result. Supposing $B$ to be \emph{infinite}, we can partition $B$ into
 	\begin{align*}
 		B_+ &= \Set{a \in B}{\exists y \ \textrm{s.t.} \ y > \beta(a), \ (a, y) \in A} \\
 		B_- &= \Set{a \in B}{\exists y \ \textrm{s.t.} \ y < \beta(a), \ (a, y) \in A},
 	\end{align*}
-	both evidently definable sets. By the infinitude of $B$, so too must at least one of $B_-, B_+$ be infinite — and further, so must one of 
+	both evidently definable sets. By the infinitude of $B$, so too must at least one of $B_-, B_+$ be infinite — and further, so must one of
 	\begin{itemize}
-		\item $B_+ \cap B_-$ 
+		\item $B_+ \cap B_-$
 		\item $B_+ \setminus B_-$
 		\item $B_- \setminus B_+$
 		\item $B \setminus (B_+ \cup B_-)$.
@@ -171,7 +171,7 @@ The following result is a special case in 2 dimensions of what is referred to as
 
 We start with a few definitions, that should hopefully feel motivated in anticipation of the higher-dimensional analogues of what we have seen already.
 
-\begin{definition}[$\incells$ in $M^n$]
+\begin{definition}[Cells in $M^n$]
   For a sequence $(i_1, \hdots, i_n)$ for each $i_j \in \{0, 1\}$, we define $(i_1, \hdots, i_n)$\emph{-cells} of $M^n$ inductively as follows:
   \begin{enumerate}
     \item A $0$-cell is a point in $M$, and a $1$-cell an open interval (both in $M^1$).
