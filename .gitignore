@@ -17,6 +17,9 @@
 *.idx
 *.ilg
 
+##Texpad
+.texpad*/
+
 ## Intermediate documents:
 *.dvi
 *.xdv
