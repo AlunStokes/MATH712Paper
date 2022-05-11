@@ -17,7 +17,7 @@
 \abstract{We now begin properly with a from-the-basics definition of the objects at play: field expansions, monotonicity, cells and decompositions into them, semi-algebraicity and similarly fundamental ideas are each defined and contextualized. Note that we will not be discussing topological definitions in general. That is to say, the reader is assumed to be familiar with basic point-set topology, and the ordinary sorts of topologies we see cropping up (e.g. order, product) -- not that topological ideas won't be discussed. As well, basic knowledge of mathematical logic is assumed; first-order languages (FOL), $ \Lstrs$, relations, and satisfiability are all presumed familiarities. With definability now a part of our tool-set, we start by proving a few theorems fundamental to results to come later in this course.}
 
 
-\section{On monotonicity}
+\section{On Monotonicity}
 What constitutes a `nice' property of a function is generally non-contentious; injectivity and surjectivity are often useful -- together even more so -- and it would be the odd mathematician to turn their nose up at a function being bounded, supposing they weren't chasing a nasty counterexample or engaging in some other such endeavour. At present, we will focus on the property of \emph{monotonicity}, and when we can determine a definable function to be monotonic in the context of open intervals. The following was proved in \cite{pillay_definable_1986} by Pillay and Steinhorn:
 
 \begin{theorem}[The Monotonicity Theorem]
@@ -175,17 +175,86 @@ We start with a few definitions, that should hopefully feel motivated in anticip
   For a sequence $(i_1, \hdots, i_n)$ for each $i_j \in \{0, 1\}$, we define $(i_1, \hdots, i_n)$\emph{-cells} of $M^n$ inductively as follows:
   \begin{enumerate}
     \item A $0$-cell is a point in $M$, and a $1$-cell an open interval (both in $M^1$).
-    \item Supposing $\incells$ are defined for $M^n$, we define an $\izerocell$ to be a definable set given by $\graph{f}$ for $f$ a continuous, definable function on an $\incell$. Perhaps predictably, an $\ionecell$ is then a definable set of the form $(f, g)_C = \Set{(x, y) \in C \times M}{f(x) < y < g(x)}$ for $f, g$ continuous, definable functions on an $\incell$, $C \subset M^n$. Note that we may also allow $f \equiv - \infty$ or $g \equiv \infty$.
+    \item Supposing $\incells$ are defined for $M^n$,
+	\begin{enumerate}
+	  \item we define an $\izerocell$ to be a definable set given by $\graph{f}$ for $f$ a continuous, definable function on an $\incell$.
+	  \item Perhaps predictably then, we define an $\ionecell$ to be a definable set of the form $(f, g)_C = \Set{(x, y) \in C \times M}{f(x) < y < g(x)}$ for $f, g$ continuous, definable functions on an $\incell$, with $C \subset M^n$. Note that we may also allow $f \equiv - \infty$ or $g \equiv \infty$.
+	\end{enumerate}
+
   \end{enumerate}
 
   As usual, we denote a projection map by $\pi$, and for any $\incell$ we can define the projection
   \begin{align*}
     \pi \colon M^n \to M^k
   \end{align*}
-  for $k$ the sum of $\ionein$, such that the restriction of $\pi$ to our $\incell$ is a homeomorphism.
+  for $k$ the sum of $\ionein$, such that the restriction of $\pi$ to our $\incell$ is a homeomorphism onto its image.
+\end{definition}
 
+It is not hard to see that what we are doing here is just projecting away from the coordinate 0 parts of the cell. This can be thought of as a canonical coordinate projection that any cell comes naturally equipped with -- which is quite a fine thing to have.
 
+In what should hopefully be predictable at this point, we wish now to define what it means to \emph{decompose} our space into cells. At some point, we will cease prefacing these definitions with `as usual, we do so by induction' -- but that point is yet to come. So, we proceed, as usual, by defining \cds by induction.
+
+\begin{definition}[Cell Decomposition \emph{of $M$}]
+  A \emph{\cd} of $M$ is a finite set defined by some finite subsequence $\aoneak$ (strictly increasing) that form the set
+  \begin{align*}
+    \{(- \infty, a_1), (a_1, a_2), \hdots, (a_k, \infty), \{a_1\}, \{a_2\}, \hdots \{a_k\} \}.
+  \end{align*}
+  That is, all the sequential open intervals (including those with infinite endpoints) plus the singleton sets. Just for the sake of belabouring the point, this is a definitionally \emph{definable} set.
+\end{definition}
+
+As we have time and time before, we now up the dimension by induction to define general \cds:
+
+\begin{definition}[Cell Decomposition \emph{of $M^{n+1}$}]
+  A \cd of $M^{n+1}$ is a finite partition, $\fancyD$, of $M^{n+1}$ into cells, such that
+  \begin{align*}
+    \Set{\pi (C)}{C \in \fancyD}
+  \end{align*}
+  is itself a decomposition of $M^n$, with each $\pi$ the respective projection as discussed above.
 \end{definition}
 
 
-\input{chapter_12_refs}
+We trust the conjunction of these two definitions into an understanding of \cds in arbitrary dimensions is clear by induction.
+An idea that may seem a bit apropos until a bit later on is that of \emph{compatibility} -- but rest assured, dear reader, that this will all come together shortly.
+
+\begin{definition}[Compatibility]
+  We call a \cd $\fancyD$ of $M^n$ \emph{compatible} with a subset, $X \subseteq M^n$ if for each cell, $C \in \fancyD$. either $C \cap \fancyD$ is empty, or $C$ is a subset of $X$.
+\end{definition}
+
+
+\section{The \CD Theorem}
+
+The importance of this last point will be made clear in the theorem we have building up to: the \CD Theorem -- which essentially says that these compatible decompositions actually exist, and are compatible with any finite collection of definable sets, and most importantly, that definable functions are continuous on each cell in such a decomposition (defined in the domain of the function, of course). Properly, and as proved by Knight, Pillay, and Steinhorn \cite{knight_definable_1986}:
+
+\begin{theorem}[\CD]
+  \label{thm:cell-decomposition}
+  Take $n \in \Zgeq{1}$.
+  \begin{svgraybox}
+    Note the use (about to be made) of subscripts on statements $(I)_n$ and $(II)_n$ to denote the dimension of $M^n$ to which each statement refers. This is going to be notationally useful in the proof, but may seem a bit queer at present, and without introduction.
+  \end{svgraybox}
+ Then
+  \begin{enumerate}[label={}]
+    \item[$(I)_n$ ] Suppose $\vonevm{X}{k} \subseteq M^n$ are definable sets. Then there is a \cd of $M^n$ \cmble with each $X_j$.
+    \item[$(II)_n$ ] If $\funcdom{f}{X}{M}$ is definable, then there is a \cd, $\fancyD$ of $M^n$ \cmble with $X$ s.t. the restriction $\funcrestr{f}{C}$ is \cont for each $C \in \fancyD$.
+  \end{enumerate}
+
+  Further, and in analogy to the monotonicity theorem, if our $\vonevm{X}{k}$ or $f$ (depending on case $(I)$ or $(II)$) are definable over $A \subset M$, then we can take the cells in  $\fancyD$ to be similarly definable over $A$; that is, with the \emph{same} parameters.
+
+  \begin{svgraybox}
+    This last point is perhaps a bit unfair to mention, as we will not be providing a proof for it -- though for the sake of interest, it would feel incomplete to not at least analogize with Theorem \ref{thm:monotonicity}. In truth, what follows is not a full proof of \CD, but a special case where we take $M$ to be $\R$, and use the yet unproven (or even stated) result of \emph{uniform finiteness}. We take this result entirely for granted in the lectures, due to the oddity that a complete (unassuming) proof somewhat `bootstraps' uniform finiteness into the induction we do on $(I)_j$ and $(II)_j$, proving it as we go along. For our purposes, we take it as assumedly true -- in part due to the length of this proof even \emph{with} that assumption -- and trust that our dear intelligent reader sees plainly how we could fix this in absence of assumption.
+  \end{svgraybox}
+
+\end{theorem}
+
+Uniform finiteness is a generalization of the finiteness theorem we proved earlier (Theorem \ref{thm:2finiteness}), but with potentially many parameters and in higher dimension. As with the argument for the \CD Theorem, we will similarly restrict our attention to the case where $M = \R$. This special-case is as follows:
+
+\begin{proposition}[Uniform Finiteness (for $\R$)]
+  \label{prop:unif-finiteness}
+  Suppose $X \subset \R^{n+1}$ is \defn with each fibre $X_x$ finite for $x \in \R^n$. Then there is some $N \in \Zgeq{1}$ such that $\card{X_x} \leq N$ for all $x \in \R^n$.
+\end{proposition}
+
+
+The following proof is due to Van Den Dries \cite{dries_tame_1998}
+
+
+
+%\input{chapter_12_refs}

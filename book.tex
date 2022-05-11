@@ -8,7 +8,7 @@
 
 
 % RECOMMENDED %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[graybox,envcountchap,sectrefs]{svmono}
+\documentclass[graybox,envcountchap]{svmono}
 
 % choose options for [] as required from the list
 % in the Reference Guide
@@ -46,6 +46,13 @@
 \newcommand{\Om}{O-minimal\xspace}
 \newcommand{\omy}{o-minimality\xspace}
 \newcommand{\Omy}{O-minimality\xspace}
+\newcommand{\cd}{cell-decomposition\xspace}
+\newcommand{\cds}{cell-decompositions\xspace}
+\newcommand{\CD}{Cell-Decomposition\xspace}
+\newcommand{\CDs}{Cell-Decompositions\xspace}
+\newcommand{\cmble}{compatible\xspace}
+\newcommand{\cont}{continuous\xspace}
+\newcommand{\defn}{definable\xspace}
 \newcommand{\Mlt}{(M, <)}
 \newcommand{\Mltp}{(M, <, \hdots)}
 \newcommand{\M}{\mathcal{M}}
@@ -56,11 +63,14 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
+\newcommand{\fancyD}{\mathfrak{D}}
 \newcommand{\Zgeq}[1]{\mathbb{Z}_{\geq #1}}
 \newcommand{\Zleq}[1]{\mathbb{Z}_{\leq #1}}
 \newcommand{\Jp}{J^{\prime}}
 \newcommand{\Minf}{M \cup \{ \pm \infty \}}
 \newcommand{\ionein}{i_1, \hdots, i_n}
+\newcommand{\aoneak}{a_1, \hdots, a_k}
+\newcommand{\vonevm}[2]{#1_1, \hdots, #1_{#2}}
 \newcommand{\izerocell}{(\ionein, 0)\textrm{-cell}}
 \newcommand{\ionecell}{(\ionein, 1)\textrm{-cell}}
 \newcommand{\incell}{(\ionein)\textrm{-cell}}
@@ -71,6 +81,9 @@
 \newcommand{\dom}[1]{\operatorname{dom}\left(#1\right)}
 \newcommand{\codom}[1]{\operatorname{codom}\left(#1\right)}
 \newcommand{\cl}[1]{\operatorname{cl}\left(#1\right)}
+\newcommand{\funcdom}[3]{#1 \colon #2 \to #3}
+\newcommand{\funcdef}[3]{#1 \colon #2 \mapsto #3}
+\newcommand{\funcrestr}[2]{#1 \vert_{#2}}
 
 %Sets
 \DeclarePairedDelimiterX{\Set}[2]\{\}{%
@@ -111,6 +124,10 @@
 \include{chapter_11}
 \include{chapter_12}
 %\include{appendix}
+
+
+
+\bibliography{biblio}
 
 \backmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
