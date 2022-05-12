@@ -195,7 +195,7 @@ It is not hard to see that what we are doing here is just projecting away from t
 In what should hopefully be predictable at this point, we wish now to define what it means to \emph{decompose} our space into cells. At some point, we will cease prefacing these definitions with `as usual, we do so by induction' -- but that point is yet to come. So, we proceed, as usual, by defining \cds by induction.
 
 \begin{definition}[Cell Decomposition \emph{of $M$}]
-  A \emph{\cd} of $M$ is a finite set defined by some finite subsequence $\aoneak$ (strictly increasing) that form the set
+  A \emph{\cd} of $M$ is a finite set defined by some strictly increasing finite sequence $\aoneak$ that form the set
   \begin{align*}
     \{(- \infty, a_1), (a_1, a_2), \hdots, (a_k, \infty), \{a_1\}, \{a_2\}, \hdots \{a_k\} \}.
   \end{align*}
@@ -217,7 +217,7 @@ We trust the conjunction of these two definitions into an understanding of \cds 
 An idea that may seem a bit apropos until a bit later on is that of \emph{compatibility} -- but rest assured, dear reader, that this will all come together shortly.
 
 \begin{definition}[Compatibility]
-  We call a \cd $\fancyD$ of $M^n$ \emph{compatible} with a subset, $X \subseteq M^n$ if for each cell, $C \in \fancyD$. either $C \cap \fancyD$ is empty, or $C$ is a subset of $X$.
+  We call a \cd $\fancyD$ of $M^n$ \emph{compatible} with a subset, $X \subseteq M^n$ if for each cell, $C \in \fancyD$, either $C \cap X$ is empty, or $C$ is a subset of $X$.
 \end{definition}
 
 
@@ -233,14 +233,14 @@ The importance of this last point will be made clear in the theorem we have buil
   \end{svgraybox}
  Then
   \begin{enumerate}[label={}]
-    \item[$(I)_n$ ] Suppose $\vonevm{X}{k} \subseteq M^n$ are definable sets. Then there is a \cd of $M^n$ \cmble with each $X_j$.
-    \item[$(II)_n$ ] If $\funcdom{f}{X}{M}$ is definable, then there is a \cd, $\fancyD$ of $M^n$ \cmble with $X$ s.t. the restriction $\funcrestr{f}{C}$ is \cont for each $C \in \fancyD$.
+    \item[$\In$ ] Suppose $\vonevm{X}{k} \subseteq M^n$ are \defnb sets. Then there is a \cd of $M^n$ \cmptble with each $X_j$.
+    \item[$\IIn$ ] If $\funcdom{f}{X}{M}$ is \defnb, then there is a \cd, $\fancyD$ of $M^n$ \cmptble with $X$ s.t. the restriction $\funcrestr{f}{C}$ is \cont for each $C \in \fancyD$.
   \end{enumerate}
 
-  Further, and in analogy to the monotonicity theorem, if our $\vonevm{X}{k}$ or $f$ (depending on case $(I)$ or $(II)$) are definable over $A \subset M$, then we can take the cells in  $\fancyD$ to be similarly definable over $A$; that is, with the \emph{same} parameters.
+  Further, and in analogy to the Monotonicity Theorem, if our $\vonevm{X}{k}$ or $f$ (depending on case $\In[]$ or $\IIn[]$) are \defnb over $A \subset M$, then we can take the cells in  $\fancyD$ to be similarly \defnb over $A$; that is, with the \emph{same} parameters.
 
   \begin{svgraybox}
-    This last point is perhaps a bit unfair to mention, as we will not be providing a proof for it -- though for the sake of interest, it would feel incomplete to not at least analogize with Theorem \ref{thm:monotonicity}. In truth, what follows is not a full proof of \CD, but a special case where we take $M$ to be $\R$, and use the yet unproven (or even stated) result of \emph{uniform finiteness}. We take this result entirely for granted in the lectures, due to the oddity that a complete (unassuming) proof somewhat `bootstraps' uniform finiteness into the induction we do on $(I)_j$ and $(II)_j$, proving it as we go along. For our purposes, we take it as assumedly true -- in part due to the length of this proof even \emph{with} that assumption -- and trust that our dear intelligent reader sees plainly how we could fix this in absence of assumption.
+    This last point is perhaps a bit unfair to mention, as we will not be providing a proof for it -- though for the sake of interest, it would feel incomplete to not at least analogize with Theorem \ref{thm:monotonicity}. In truth, what follows is not a full proof of \CD, but a special case where we take $M$ to be $\R$, and use the yet unproven (or even stated) result of \emph{uniform finiteness}. We take this result entirely for granted in the lectures, due to the oddity that a complete (unassuming) proof somewhat `bootstraps' uniform finiteness into the induction we do on $\In[j]$ and $\IIn[j]$, proving it as we go along. This is because uniform finiteness is actually itself an immediate consequence of the \CD Theorem (which makes the proof a fun little oddity). For our purposes, we take it as assumedly true -- in part due to the length of this proof even \emph{with} that assumption -- and trust that our dear intelligent reader sees plainly how we could fix this in absence of the assumption.
   \end{svgraybox}
 
 \end{theorem}
@@ -249,14 +249,37 @@ Uniform finiteness is a generalization of the finiteness theorem we proved earli
 
 \begin{proposition}[Uniform Finiteness (for $\R$)]
   \label{prop:unif-finiteness}
-  Suppose $X \subset \R^{n+1}$ is \defn with each fibre $X_x$ finite for $x \in \R^n$. Then there is some $N \in \Zgeq{1}$ such that $\card{X_x} \leq N$ for all $x \in \R^n$.
+  Suppose $X \subset \R^{n+1}$ is \defnb with each fibre $X_x$ finite for $x \in \R^n$. Then there is some $N \in \Zgeq{1}$ such that $\card{X_x} \leq N$ for all $x \in \R^n$.
 \end{proposition}
 
 
 The following proof is due to van den Dries \cite{dries_remarks_1984} which, for no reason other than interest's sake, we mention went on to inspire the later work of Pillay and Steinhorn in \cite{pillay_definable_1986}.
 
 \begin{proof}[\CD (Theorem \ref{thm:cell-decomposition})]
-  dsa
+  We proceed by induction on parameter $n$. The base cases are both already done for us; $\In[1]$ is immediate from the definition of \omy, and $\IIn[1]$ is given by the Monotonicity Theorem. What we go on to show is two inductive facts that `bounce off' one another in a sense, to allow us to prove both $\In$ and $\IIn$ for all $n$. These are
+  \begin{enumerate}[label=(\alph*)]
+    \item \label{pf:cd:a} Given $\In[1], \hdots, \In$ and $\IIn[1], \hdots, \IIn[n-1]$, we can conclude $\IIn$; and
+    \item \label{pf:cd:b} Given $\In[1], \hdots, \In$ and $\IIn[1], \hdots, \IIn[n]$, we can conclude $\In[n+1]$.
+  \end{enumerate}
+  That these two facts together give us the desired result should be clear.
+  Getting there requires a bit more effort, and so we simply begin with \ref{pf:cd:a}.
+  Thus we wish to prove $\IIn[n]$: that for a \defnb $\funcdom{f}{X}{M}$, there is a \cd $\fancyD$ of $M^n$ \cmptble with $X$ and having \contty of $\funcrestr{f}{C}$ for each cell, $C \in \fancyD$.
+
+  Suppose $\funcdom{f}{X}{M}$ is such a definable function. We are assuming (because we have already) $\In[1]$. By this, we may assume $X$ is a cell. If $X$ is not already an open cell, then recall that we can simply take its image under the canonical projection away from zero coordinates. Since we make no reference here to the dimension of $X$, we simply assume that it is open, or has been made so as described, and then use our inductive hypothesis to reach the conclusion. So, we suppose $X \in \fancyD$ is an open cell on which $f$ is \cont. Take
+  \begin{align*}
+	\Xprime = \Set{x \in X}{f \ \textrm{is \cont and \defnb at} \ x}.
+  \end{align*}
+  Clearly, $\Xprime$ is \defnb, and we are supposing that we know $\Xprime$ to be open in $X$. Using inductive assumption $\In[n]$, we get a \cd, $\fancyD$ with $\R^n$ \cmptble with $X \setminus \Xprime$ and with $\Xprime$. If some $C \in \fancyD$ is an open cell contained in $X$, we get \contty of $f$ on $C$  by density; that is, $C \cap \Xprime \neq \emptyset$, and so $C \subseteq \Xprime$ and it follows that $\funcrestr{f}{C}$ is \cont. Supposing however that $C$ was \emph{not} an open cell, we apply the aforementioned projection construction, and the argument just presented holds (up to a change in dimension).
+
+  This would be all well and good to end off \ref{pf:cd:a} with, were it not predicated on the yet unjustified density of $\Xprime$ in $X$ -- and so we now prove this. Suppose $B \subseteq X$ is an open box. We will show that there must exist a point in $B$ at which $f$ is \cont. In analogy to our proof of monotonicity, we know that if $\Xprime[B]$ is an open box contained inside of $B$, then $f$ takes on infinitely-many values on $\Xprime[B]$ (following from $\In$).
+
+  We may then construct a sequence of open boxes, $(B_j)_{1 \leq j \leq n}$ in $B$, and sequence $(I_j)_{1 \leq j \leq n}$, of open intervals, each $I_j$ having length less than $\frac{1}{j}$.
+
+
+  %Supposing otherwise, we can cell decompose that box to get an open cell on which $f$ is constant, and so clearly \cont.
+
+
+  %That is, we have a set of definable $\vonevm{X}{k} \subseteq M^n$, and we wish to show that there is some \cd of $M^n$ compatible with each $X_j$.
 \end{proof}
 
 

@@ -19,6 +19,6 @@ pdflatex -synctex=1 -interaction=nonstopmode book.tex
 pdflatex -synctex=1 -interaction=nonstopmode book.tex
 ```
 
-You will get errors running this code (See issues for multiply-defined 
+~~You will get errors running this code (See issues for multiply-defined 
 citations) and the references will be off at the end of each chapter, but this 
-will be addressed in the short future. A final .pdf file will be produced, however, and broadlly resembles what it should.
+will be addressed in the short future.~~ This is no longer true! We use book-end citations, and the wicked witch of chapter ennd citations has been doused with a water-pail full of not caring. This should be error free (by the end -- LaTeX builds will always have intermediate errors when using BibTeX, etc). A final .pdf file will be produced~~, however, and broadlly resembles what it should.~~ and it is now correct as is should be! Rejoyce!
