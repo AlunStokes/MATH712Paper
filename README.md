@@ -23,4 +23,4 @@ pdflatex -synctex=1 -interaction=nonstopmode book.tex
 citations) and the references will be off at the end of each chapter, but this 
 will be addressed in the short future.~~ This is no longer true! We use book-end citations, and the wicked witch of chapter-end citations has been doused with a water-pail full of not caring. 
 
-This should be error free (by the end; LaTeX builds will always have intermediate errors when using BibTeX, etc), and a final book.pdf file will be produced  ~~~however, and broadlly resembles what it should.~~ that is now correct as is should be! Rejoice!
+This should be error free (by the end; LaTeX builds will always have intermediate errors when using BibTeX, etc), and a final book.pdf file will be produced  ~~however, and broadlly resembles what it should.~~ that is now correct as is should be! Rejoice!
