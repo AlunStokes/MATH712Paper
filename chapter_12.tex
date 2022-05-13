@@ -18,6 +18,7 @@
 
 
 \section{On Monotonicity}
+\chaptermark{Monotonicity}
 What constitutes a `nice' property of a function is generally non-contentious; injectivity and surjectivity are often useful -- together even more so -- and it would be the odd mathematician to turn their nose up at a function being bounded, supposing they weren't chasing a nasty counterexample or engaging in some other such endeavour. At present, we will focus on the property of \emph{monotonicity}, and when we can determine a definable function to be monotonic in the context of open intervals. The following was proved in \cite{pillay_definable_1986} by Pillay and Steinhorn:
 
 \begin{theorem}[The Monotonicity Theorem]
@@ -84,6 +85,7 @@ Two Exercises Lec1 pg 4
 The following result is a special case in 2 dimensions of what is referred to as the \emph{Finiteness Theorem}, abbreviated FT. We first prove this special case, and then take a brief detour to talk about cell decompositions before we can address the more general theorem.
 
 \subsection{The (Planar) Finiteness Theorem}
+\chaptermark{Special Finiteness}
 
 \begin{theorem}[Finiteness Theorem in $M^2$]
 	\label{thm:2finiteness}
@@ -168,6 +170,7 @@ The following result is a special case in 2 dimensions of what is referred to as
 
 
 \section{Cell Decompositions}
+\chaptermark{Cells and Decompositions Into Them}
 
 We start with a few definitions, that should hopefully feel motivated in anticipation of the higher-dimensional analogues of what we have seen already.
 
@@ -222,6 +225,7 @@ An idea that may seem a bit apropos until a bit later on is that of \emph{compat
 
 
 \section{The \CD Theorem}
+\chaptermark{The \CD Theorem}
 
 The importance of this last point will be made clear in the theorem we have building up to: the \CD Theorem -- which essentially says that these compatible decompositions actually exist, and are compatible with any finite collection of definable sets, and most importantly, that definable functions are continuous on each cell in such a decomposition (defined in the domain of the function, of course). Properly, and as proved by Knight, Pillay, and Steinhorn \cite{knight_definable_1986}:
 
@@ -311,7 +315,7 @@ The following proof is due to van den Dries \cite{dries_remarks_1984} which, for
 
 
   \begin{subproof}[Cell Refinement (Proposition \ref{prop:cell-refinement})]
-    For the purpose of transparency, we not that this proof was left out of the lecture, and as an exercise to the interested (or obligated) viewer. The following takes inspiration from van den Dries \cite{dries_tame_1998}. We note that this could be made a bit cuter if we had the machinery of \emph{dimension} that we will soon define, but in either case, this proof is relatively trivial. We have our $\fancyD_1$ and $\fancyD_2$ two decompositions of the trivially definable subset of, $\R^{n+1}$: $\R^{n+1}$ itself. We can then simply take a decomposition of the ambient space (which here is the \emph{whole} space) containing our definable subset, and we have seen previously that we can take this decomposition to partition each cell of $\fancyD_1 \cup \fancyD_2$ -- and the `restriction' of this decomposition to our definable set (again, just to ensure this is sufficiently belaboured, this is not actually a restriction since our definable set is $\R^{n+1}$), we are left with our everywhere (on cells in $\fancyD_1 \cup \fancyD_2$) compatible decomposition.
+    For the purpose of transparency, we note that this proof was left out of the lecture, and as an exercise to the interested (or obligated) viewer. The following takes inspiration from van den Dries \cite{dries_tame_1998}. We note that this could be made a bit cuter if we had the machinery of \emph{dimension} that we will soon define, but in either case, this proof is relatively trivial. We have our $\fancyD_1$ and $\fancyD_2$ two decompositions of the trivially definable subset of, $\R^{n+1}$: $\R^{n+1}$ itself. We can then simply take a decomposition of the ambient space (which here is the \emph{whole} space) containing our definable subset, and we have seen previously that we can take this decomposition to partition each cell of $\fancyD_1 \cup \fancyD_2$ -- and the `restriction' of this decomposition to our definable set (again, just to ensure this is sufficiently belaboured, this is not actually a restriction since our definable set is $\R^{n+1}$), we are left with our everywhere (on cells in $\fancyD_1 \cup \fancyD_2$) compatible decomposition.
   \end{subproof}
 
   \begin{svgraybox}
@@ -320,28 +324,51 @@ The following proof is due to van den Dries \cite{dries_remarks_1984} which, for
 
   Now, if some $A \subseteq \R$ is \defnb, we define its type, $\tau(A)$ as follows:
   \begin{description}
-    \item Let $\vonevm{a}{L}$ strictly increasing be the points in the boundary of $A$. We let $\tau(A)$ then act as an indicator function on sequential intervals, $(a_j, a_{j+1})$, defined as the positive unit (1) when that interval sits inside $A$, and otherwise the negative unit ($-1$). We set $a_0 = - \infty$ and $a_{L+1} = \infty$ (which is starting to become sort of an out-of-bounds norm), and define
+    \item Let $\vonevm{a}{L}$ strictly increasing be the points in the boundary of $A$. We let $\tau(A)$ then act as an indicator function on sequential intervals, $(a_j, a_{j+1})$, defined as the positive unit (1) when that interval sits inside $A$, and otherwise the negative unit ($-1$). We set $a_0 = - \infty$ and $a_{L+1} = \infty$ (which is starting to become sort of an out-of-bounds normalcy), and define
     \begin{align*}
-      \tau(A)(2j + 1) = 1
+      \tau_{2j + 1} = 1
     \end{align*}
     if $(a_j, a_{j+1}) \subseteq A$ (and of course $-1$ otherwise). Note, of course, that this would then mean that the given interval is contained in the complement of $A$. For even numbers, we have
     \begin{align*}
-      \tau(A)(2j) = 1
+      \tau_{2j} = 1
     \end{align*}
-    if $a_j \in A$ and naturally, $-1$ if $a_j \not\in A$.
-
+    if $a_j \in A$ and naturally, $-1$ if $a_j \not\in A$. Then, we have $\tau(A) = (\vonevm{\tau}{2 \cdot L + 1}) \in \{0, 1\}^{2 \cdot L + 1}$ a sequence of length $2 \cdot L + 1$ consisting of $\pm 1$s.
 
   \end{description}
 
+    To ground ourselves for a moment, consider $$\tau((1, 2] \cup \{ 3 \} )) = (-1,\ -1,\ +1,\ +1,\ -1,\ +1,\ -1),$$
+    which can immediately convince ourselves is non-unique, as this is the same sequence induced by $\tau((9, 10] \cup \{5,\ 7\} )$.
 
+    At this point, you may be a bit confused (if the recollection is even still there) as to why we made such a fuss early on about \emph{uniform finiteness} -- when we've yet to see it used. Well, for the anxious amongst you, satisfaction will come soon, as we now make use of that perhaps unjustified assumption.
 
-  %Supposing otherwise, we can cell decompose that box to get an open cell on which $f$ is constant, and so clearly \cont.
+    By UF, we get the following (and again, \underline{\textbf{please}} ignore the spurious QED-type symbol that appears at the end on this proposition),
 
+    \begin{proposition}
+      \label{prop:definable-fibre-types}
+      If we have a \defnb $X \subseteq \R^{n+1}$, then the set of the types of fibres -- that is
+      \begin{align*}
+        \Set{\tau(X_x)}{x \in \R^n}
+      \end{align*}
+      -- is finite. Further, for each given choice of type, the set of fibres giving rise to that type is \defnb.
+    \end{proposition}
+    Perhaps starting this sentence with `of course' would be unfair, but it shouldn't be hard to see, intuit, or at least \emph{guess} that the set of $x \in \R^n$ giving rise to any \emph{particular} type is usually empty. As before, this proof was left as exercise to the responsible party, and so please forgive any clear indications of amateurism -- were they absent, there may be something a little suspect going on.
 
-  %That is, we have a set of definable $\vonevm{X}{k} \subseteq M^n$, and we wish to show that there is some \cd of $M^n$ compatible with each $X_j$.
+    \begin{proof}(Proof of Proposition \ref{prop:definable-fibre-types})
+      This we will not belabour even slightly. We have assumed UF, and so simply appeal to UF in the case of $M^{n}$, by which we get that each fibre is finite -- and so must have finite types belonging to its elements. In the case of each type, it is given by some point or open interval in a fibre, and so is defined by points and open intervals. Supposing there were infinitely-many \emph{different} such types, we would have to be working in non-finite dimension Thus, \defnbty falls out, almost as if by accident.
+    \end{proof}
+
+    Now, with these two propositions, we are just about ready to put together our proof of \ref{pf:cd:b}. That is, we now prove $\In[n+1]$.
+
+    By Proposition \ref{prop:cell-refinement} (on cell-refinement), we can assume $k = 1$ -- which you'll recall is the number of sets we have from our original statement of the theorem. Then, by Proposition \ref{prop:definable-fibre-types} and $\In$, we get a \cd, $\fancyD$ of $\R^n$ such that for each $C \in \fancyD$ there is an $L$ and a $\tau \in \{\pm 1\}^{2 \cdot L + 1} $ such that
+    $$
+      \tau(X_x) = \tau
+    $$
+    for all $x \in C$. Fixing such $C$, $\tau$, and $L$, we get \defnb functions $\vonevm{f}{L}$ with each $f_1 < \hdots < f_L$ and such that either
+    \begin{enumerate}
+      \item $(f_i, f_{i+1})_C \subseteq X$; or
+      \item $(f_i, f_{i+1})_C \cap X = \emptyset$,
+    \end{enumerate}
+    with the normal condition of $f_0 = - \infty$, $f_{L+1} = \infty$. Notice also that the same holds for the graphs of $f_j$ -- that they are either contained in or disjoint from $X$, excluding of course the cases at infinities (which we allowed above). Now, with our small army of \defnb functions, all defined of this cell $C \in \R^n$, we can use $\IIn$ (which we proved in our induction in part \ref{pf:cd:a}) to conclude that we may partition $C$ into finitely-many cells, such that $f$ is \cont on each cell. With the end very nearly in sight, we apply $\In$ to get a \cd of $R^n$ (and in fact of all cells from the above) \cmptble with all the resulting cells. Finally, taking graphs over those cells will give us the desired \cd of $\R^{n+1}$. And with that, we have `bounced back' such that we may repeat this induction \textit{ad infinitum}, and the \CD Theorem is proved (in our special case) for all $n$. Please note the now properly-placed well-deserved QED-symbol. Revel a little, if you must.
 \end{proof}
 
-
-
-
-%\input{chapter_12_refs}
+It is now at \emph{this} point that there reader not only \emph{may}, but is in fact encouraged to give themselves their well-deserved, no-bars-held pat on the back for the fortitude it took to get through that. Perhaps also giving the above a quick re-read wouldn't be such a bad idea, as there are some bits and subtleties that this author needed a few passes to feel entirely comfortable with. For a proof that doesn't make the assumptions we did here, the reader is directed to \cite{knight_definable_1986}, but by no means necessarily encouraged towards it. Just made aware of its existence. Now with that done, we are through one of the more laborious parts of this first part of the course. For the masochists in the audience, we note that there is more length and labour to come of this variety, but for the normal amongst us, it is with a relaxation that we should move on to discuss dimensionality, and the problem that mathematicians have for coming up with distinct words. But first -- which is a phrase we perhaps begin sentences with all too often -- we have a bit of miscellany to address.
