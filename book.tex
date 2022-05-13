@@ -87,6 +87,8 @@
 \newcommand{\dom}[1]{\operatorname{dom}\left(#1\right)}
 \newcommand{\codom}[1]{\operatorname{codom}\left(#1\right)}
 \newcommand{\cl}[1]{\operatorname{cl}\left(#1\right)}
+\newcommand{\dcl}[1]{\operatorname{dcl}\left(#1\right)}
+\newcommand{\acl}[1]{\operatorname{acl}\left(#1\right)}
 \newcommand{\funcdom}[3]{#1 \colon #2 \to #3}
 \newcommand{\funcdef}[3]{#1 \colon #2 \mapsto #3}
 \newcommand{\funcrestr}[2]{#1 \vert_{#2}}
@@ -97,6 +99,13 @@
 }
 %cardinality
 \DeclarePairedDelimiter\card{\vert}{\vert}
+
+\newenvironment{subproof}[1][\proofname]{%
+  \renewcommand{\qedsymbol}{$\blacksquare$}%
+  \begin{proof}[#1]%
+}{%
+  \end{proof}%
+}
 
 % See the list of further useful packages
 % in the Reference Guide
