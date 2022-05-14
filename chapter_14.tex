@@ -6,18 +6,67 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
 %\motto{Use the template \emph{chapter.tex} to style the various elements of your chapter content.}
-\chapter{Connectedness, and All it Entails}
+\chapter{Connectedness, and What it Entails}
 \label{connectedness} % Always give a unique label
 % use \chaptermark{}
 % to alter or adjust the chapter heading in the running head
 %\chaptermark{Some Introductions}
 
-\abstract*{It is likely that one unacquainted too thoroughly with this topic of study has been imagining in their minds open intervals as they might imagine them in $\R$. Unfortunately for such a reader, we are about to disabuse you of that rather idyllic notion, and speak to when we legitamitely \emph{may} presume that things are (what we will come to call) \emph{\defnbly-\cnctd}}
+\abstract*{It is likely that one unacquainted too thoroughly with this topic of study has been imagining in their minds open intervals as they might imagine them in $\R$. Unfortunately for such a reader, we are about to disabuse you of that rather idyllic notion, and speak to when we legitimately \emph{may} presume that things are (what we will come to call) \emph{\defnbly-\cnctd}. At this point, we should have an acronym to express that the importance of this will not be immediately apparent, but will soon come to be, and be worked into our standard model of understanding these objects we find ourselves working with.}
 
-\abstract{As so often one finds in mathematics, dimension is one of those ideas that it almost seems each individual mathematician has a notion of how it should be defined -- and more truthfully, has hugely varying meanings across the vast spectra of mathematical disciplines. And perhaps even more unfortunately, it so often seems the case that the average mathematician was raised on a dictionary of no more than 30 or so words -- which they go on to use and reuse and smash together into all-new words, for the most part equally inequivalently to how their office-mate might be doing the same thing in their preferred area of abstractness. To say the same in so many fewer words: we often find that the same words mean different things to different mathematicians -- and here, we are going to study two interpretations of one such word -- that being \emph{dimension}. We look at both the algebraist's and logician's definition (at least in the context of \omy) of the dimension of a structure, and then happily go on to find out that they actually intersect. This goes on to be fundamental, and this fact is part of what allows us to connect the seemingly non-number-theoretic ideas examined hence, to those that allow us to go on to prove a theorem about points of bounded height on curves; a very number-theoretic idea indeed.}
+\abstract{It is likely that one unacquainted too thoroughly with this topic of study has been imagining in their minds open intervals as they might imagine them in $\R$. Unfortunately for such a reader, we are about to disabuse you of that rather idyllic notion, and speak to when we legitimately \emph{may} presume that things are (what we will come to call) \emph{\defnbly-\cnctd}. At this point, we should have an acronym to express that the importance of this will not be immediately apparent, but will soon come to be, and be worked into our standard model of understanding these objects we find ourselves working with.}
 
 
-\section{Connectedness: What's All the Fuss About?}
+\section{Connectedness: But \emph{Why} Aren't Things (Always) Connected?}
 \label{sec:connectedness-defn}
 
-\noindent Tempting though it is to simply answer ``depends on who you ask'' and move on with our day, the question does bear significant thought.
+The easy answer is: sometimes we just don't work over connected domains. Take, for example, $(\Q, <)$ -- where we may write $\Q = (- \infty, \sqrt{2}) \cup (\sqrt{2}, \infty)$.
+
+\begin{svgraybox}
+  Recall of course that neither interval is open in $\Q$ by non-membership of the irrational endpoints in the domain.
+\end{svgraybox}
+
+In particular, we find that a convenient definition of a \defnblycnctd set, $X \in M^n$ is
+
+\begin{definition}[Definable Connectedness]
+  Some $X \in M^n$ is \defnblycnctd if $X$ is \emph{not} the union of two disjoint non-empty \defnb open subsets of X.
+\end{definition}
+
+
+\begin{example}
+  Open intervals, we claim, are \defnblycnctd. So too are cells -- although this one we reason a bit about. By \CD, we know that \defnb sets have finitely-many \defnblycnctd components which are maximal \defnbly \cnctd subsets, and so by uniformity, it seems that we can always take a cell to not be the union of two disjoint non-empty \defnb open subsets of itself.
+
+\end{example}
+
+We formalize this idea with the following proposition.
+
+\begin{proposition}
+  \label{prop:dfnblycnctd}
+  Support some $X \in M^{m + n}$ is \defnb. Then, there exists some $N \in \Zgeq{1}$ such that if $x \in M^m$. then $X_x$ has \emph{at most} $N$ \defnblycnctd components.
+\end{proposition}
+
+\begin{corollary}
+  Given $\mathcal{N}$, a structure elementarily equivalent to $\M$ (satisfies exactly the same first order sentences in our language) for $M$ \om, then $N$ is also \om. In short,
+  \begin{align*}
+    \M \equiv \mathcal{N} \ \wedge \M \ \mathrm{\om} \implies \mathcal{N} \ \mathrm{\om}.
+  \end{align*}
+\end{corollary}
+
+\begin{svgraybox}
+  For the interested and more informed reader than expected necessarily, it is noted that the property of \emph{minimality} (not \om) is \emph{not} preserved under elementary equivalence as \om is. This is one of the motivations for the idea of \emph{strong}-minimality, but for all intents and purposes here, we pretend there is no notion of a \emph{strong}-\om.
+\end{svgraybox}
+
+This corollary will come to be quite important later, so if nothing else from here, keep that fact in the back of the mind as we go forward.
+
+\section{Definable Choice \& Curve Selection}
+\noindent In the interest of time, space, audience, and simply relevance, in most cases we will not be providing examples as we have before (as in the case of expansion by the Vitali relation), and instead just assume we take $\M$ an \om expansion of an \emph{ordered} field, $(M, <, +, \cdot, 0, 1)$. Not addressed here, but as a good exercise to the interested reader, attempt to show that this must be necessarily be a real closed field. We will think in abstractness only, and the reader than even tries to think of an example should be rather a bit ashamed of what they've done.
+
+Without any faff, we get right into the point of this section.
+
+\begin{proposition}[Definable Choice]
+  \begin{enumerate}
+    \item Given a \defnb family, $X \subset M^{n+m}$ with $\pi$ the projection map onto the first $n$ coordinates, then there is a \defnb map, $\funcdom{f}{\pi X}{M^n}$ with $\graph{f} \subseteq X$.
+    \item Given $E$ a \defnb equivalence relation on a \defnb set, $X \subseteq M^n$, then $E$ has a set of representatives.
+  \end{enumerate}
+
+\end{proposition}

@@ -57,7 +57,10 @@
 \newcommand{\cnctd}{connected\xspace}
 \newcommand{\cnctdns}{connectedness\xspace}
 \newcommand{\defnb}{definable\xspace}
+\newcommand{\defnbly}{definably\xspace}
 \newcommand{\defnbty}{definability\xspace}
+\newcommand{\defnblycnctd}{definably-connected\xspace}
+\newcommand{\defnbcnctdns}{definable-connectedness\xspace}
 \newcommand{\Mlt}{(M, <)}
 \newcommand{\Mltp}{(M, <, \hdots)}
 \newcommand{\M}{\mathcal{M}}
@@ -108,6 +111,12 @@
 }{%
   \end{proof}%
 }
+
+%Fix example
+\makeatletter
+\let\example\relax
+\spn@wtheorem{example}{Example}{\itshape}{\rmfamily}
+\makeatletter
 
 % See the list of further useful packages
 % in the Reference Guide
