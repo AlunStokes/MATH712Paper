@@ -61,7 +61,6 @@ latex.out/
 acs-*.bib
 
 # amsthm
-*.thm
 
 # beamer
 *.nav
@@ -154,9 +153,6 @@ acs-*.bib
 *.ltjruby
 
 # makeidx
-*.idx
-*.ilg
-*.ind
 
 # minitoc
 *.maf
@@ -284,3 +280,4 @@ TSWLatexianTemp*
 *.lpz
 
 .DS_Store
+*.chapter_14.tex.kate-swp
