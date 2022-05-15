@@ -17,6 +17,7 @@
 %\usepackage{helvet}
 %\usepackage{courier}
 %
+\usepackage[utf8]{inputenc}
 \usepackage{type1cm}  
 \usepackage{mathtools}  
 
@@ -38,6 +39,9 @@
 
 \bibliographystyle{spmpsci}
 
+
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
 
 \newcommand{\fix}[1]{\textcolor{red}{#1}\xspace}
 \newcommand{\pw}{Pila-Wilkie\xspace}
@@ -78,6 +82,7 @@
 \newcommand{\Xprime}[1][X]{#1^{\prime}}
 \newcommand{\In}[1][n]{(I)_{#1}}
 \newcommand{\IIn}[1][n]{(II)_{#1}}
+\newcommand{\vonethrum}[2]{#1_{1}, \hdots, #1_{#2}}
 \newcommand{\Minf}{M \cup \{ \pm \infty \}}
 \newcommand{\ionein}{i_1, \hdots, i_n}
 \newcommand{\aoneak}{a_1, \hdots, a_k}
@@ -86,14 +91,29 @@
 \newcommand{\ionecell}{(\ionein, 1)\textrm{-cell}}
 \newcommand{\incell}{(\ionein)\textrm{-cell}}
 \newcommand{\incells}{(\ionein)\textrm{-cells}}
+\newcommand{\XsubseteqMn}[1][n]{X \subseteq M^{#1}}
+\newcommand{\inhb}{non-empty}
+% \newcommand{\inhb}{inhabited}
+\newcommand{\inj}{injective}
+\newcommand{\surj}{surjective}
+\newcommand{\bij}{bijective}
+\newcommand{\bijtion}{bijection}
+\newcommand{\bijtions}{bijections}
+
+\newcommand{\XsubsetMn}[1][n]{X \subset M^{#1}}
 
 \newcommand{\image}[1]{\operatorname{image}\left(#1\right)}
 \newcommand{\graph}[1]{\operatorname{graph}\left(#1\right)}
 \newcommand{\dom}[1]{\operatorname{dom}\left(#1\right)}
 \newcommand{\codom}[1]{\operatorname{codom}\left(#1\right)}
+\newcommand{\inter}[1]{\operatorname{int}\left(#1\right)}
 \newcommand{\cl}[1]{\operatorname{cl}\left(#1\right)}
 \newcommand{\dcl}[1]{\operatorname{dcl}\left(#1\right)}
 \newcommand{\acl}[1]{\operatorname{acl}\left(#1\right)}
+\renewcommand{\dim}[1]{\operatorname{dim}\left(#1\right)}
+\newcommand{\defnbdim}[1]{\operatorname{dim_{defn}}\left(#1\right)}
+\newcommand{\algdim}[1]{\operatorname{dim_{alg}}\left(#1\right)}
+\newcommand{\fr}[1]{\operatorname{fr}\left(#1\right)}
 \newcommand{\funcdom}[3]{#1 \colon #2 \to #3}
 \newcommand{\funcdef}[3]{#1 \colon #2 \mapsto #3}
 \newcommand{\funcrestr}[2]{#1 \vert_{#2}}
@@ -102,9 +122,18 @@
 \DeclarePairedDelimiterX{\Set}[2]\{\}{%
   \, #1 \;\delimsize\vert\; #2 \,
 }
+
+
 %cardinality
 \DeclarePairedDelimiter\card{\vert}{\vert}
 
+%abs
+\DeclarePairedDelimiter\abs{\vert}{\vert}
+
+%norm
+\DeclarePairedDelimiter\norm{\vert\vert}{\vert\vert}
+
+%subproof
 \newenvironment{subproof}[1][\proofname]{%
   \renewcommand{\qedsymbol}{$\blacksquare$}%
   \begin{proof}[#1]%

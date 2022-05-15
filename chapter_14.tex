@@ -12,9 +12,9 @@
 % to alter or adjust the chapter heading in the running head
 %\chaptermark{Some Introductions}
 
-\abstract*{It is likely that one unacquainted too thoroughly with this topic of study has been imagining in their minds open intervals as they might imagine them in $\R$. Unfortunately for such a reader, we are about to disabuse you of that rather idyllic notion and speak to when we legitimately \emph{may} presume that things are (what we will come to call) \emph{\defnbly-\cnctd}. At this point, we should have an acronym to express that the importance of this will not be immediately apparent but will soon come to be and be worked into our standard model of understanding these objects we find ourselves working with.}
+\abstract*{It is likely that one unacquainted too thoroughly with this topic of study has been imagining in their minds open intervals as they might imagine them in $\R$. Unfortunately for such a reader, they are about to be disabused of that rather idyllic notion -- and we will speak to when we legitimately \emph{may} presume that things are (what we will come to call) \emph{\defnbly-\cnctd}. At this point, we should have an acronym to express that the importance of this will not be immediately apparent but will soon come to be and be worked into our standard model of understanding these objects we find ourselves working with.}
 
-\abstract{It is likely that one unacquainted too thoroughly with this topic of study has been imagining in their minds open intervals as they might imagine them in $\R$. Unfortunately for such a reader, we are about to disabuse you of that rather idyllic notion and speak to when we legitimately \emph{may} presume that things are (what we will come to call) \emph{\defnbly-\cnctd}. At this point, we should have an acronym to express that the importance of this will not be immediately apparent but will soon come to be and be worked into our standard model of understanding these objects we find ourselves working with.}
+\abstract{It is likely that one unacquainted too thoroughly with this topic of study has been imagining in their minds open intervals as they might imagine them in $\R$. Unfortunately for such a reader, they are about to be disabused of that rather idyllic notion -- and we will speak to when we legitimately \emph{may} presume that things are (what we will come to call) \emph{\defnbly-\cnctd}. At this point, we should have an acronym to express that the importance of this will not be immediately apparent but will soon come to be and be worked into our standard model of understanding these objects we find ourselves working with.}
 
 
 \section{Connectedness: But \emph{Why} Aren't Things (Always) Connected?}
@@ -59,14 +59,63 @@ We formalize this idea with the following proposition.
 This corollary will come to be quite important later, so if nothing else from here, keep that fact in the back of the mind as we go forward.
 
 \section{Definable Choice \& Curve Selection}
-\noindent In the interest of time, space, audience, and simply relevance, in most cases, we will not be providing examples as we have before (as in the case of expansion by the Vitali relation) and instead just assume we take $\M$ an \om expansion of an \emph{ordered} field, $(M, <, +, \cdot, 0, 1)$. Not addressed here, but as a good exercise to the interested reader, attempt to show that this must be necessarily be a real closed field. We will think in abstractness only, and the reader who even tries to think of an example should be rather a bit ashamed of what they've done.
+\noindent In the interest of time, space, audience, and simply relevance, in most cases, we will not be providing examples as we have before (as in the case of expansion by the Vitali relation) and instead just assume we take $\M$ an \om expansion of an \emph{ordered} field, $(M, <, +, \cdot, 0, 1)$. Not addressed here, but as a good exercise to the interested reader, attempt to show that this must necessarily be a real closed field. We will think in abstractness only, and the reader who even tries to think of an example should be rather a bit ashamed of what they've done.
 
 Without any faff, we get right into the point of this section.
-
-\begin{proposition}[Definable Choice]
+ \begin{proposition}[Definable Choice]
+  \label{defnb-choice}
   \begin{enumerate}
-    \item Given a \defnb family, $X \subseteq M^{n+m}$ with $\pi$ the projection map onto the first $n$ coordinates, then there is a \defnb map, $\funcdom{f}{\pi X}{M^n}$ with $\graph{f} \subseteq X$.
-    \item Given $E$ a \defnb equivalence relation on a \defnb set, $X \subseteq M^n$, then $E$ has a set of representatives.
+    \item \label{defnb-choice-1} Given a \defnb family, $X \subseteq M^{n+m}$ with $\pi$ the projection map onto the first $n$ coordinates, then there is a \defnb map, $\funcdom{f}{\pi X}{M^n}$ with $\graph{f} \subseteq X$.
+    \item \label{defnb-choice-2} Given $E$ a \defnb equivalence relation on a \defnb set, $X \subseteq M^n$, then $E$ has a set of representatives.
   \end{enumerate}
 
 \end{proposition}
+\begin{proof}[Proofs of the above (Proposition \ref{defnb-choice}]
+  First, we go on to show that if some $\XsubsetMn[n]$ is \defnb and \inhb, then we may \defnbly pick some element, $e(X) \in X$. As ever, we induct on $n$. 
+  
+  Suppose $n=1$, then either
+  \begin{enumerate}
+    \item $X$ has a least element, and so we let $e(X)$ be that; and otherwise
+    \item $X$ has a left-most interval, (with respect to our order), and splitting by cases, we can take
+      \begin{itemize}
+        \item $e(X) = 0$ if $(a, b) = (- \infty, \infty)$;
+        \item $e(X) = b - 1$ if $a = - \infty$, $b \in M$;
+        \item $e(X) = a + 1$ if $a \in M$, $b = \infty$; and
+        \item $e(X) = \cfrac{a + b}{2}$ if both are finite.
+      \end{itemize}
+  \end{enumerate}
+  Note, of course, that our arithmetic is well-defined here due to the field expansion we are working with. We now induct a bit differently to prove each of cases \ref{defnb-choice-1} and \ref{defnb-choice-2};
+  
+  \begin{itemize}
+    \item In the first case (definable without parameters), we put $f(x) = e(X_n)$ for $x in \pi X$ (since our fibre is \inhb; and then for 
+    \item we take $\Set{e(A)}{A \ \textrm{is an equivalence class of} \ E}$ a \defnb set or representation, as desired.
+  \end{itemize}
+\end{proof}
+
+We may go on to refer to \emph{definable choice} as DC, stated in the acronym section upfront. From this, we can then go on to prove a neat and useful little result called \emph{curve selection}.
+
+\begin{proposition}[Curve Selection]
+  \label{prop:curve-selection}
+  Suppose $\XsubsetMn$ is \defnb and $a \in \fr{X}$ (the frontier of $X$, defined by to the closure of $X$ less $X$). Then, there is a \cont \defnb \inj $\funcdom{\gamma}{(0, \epsilon)}{X}$ for some $\epsilon > 0$ with
+  \begin{align*}
+    \lim_{t \to 0^{+}} \gamma (t) = a.
+  \end{align*}
+\end{proposition}
+
+Predictably, this is going to use the result we just proved on \defnb choice, so we just jump right in.
+
+\begin{proof}[of Proposition \ref{prop:curve-selection}]
+ Let $\abs{x} = \max \{ \abs{x_1}, \abs{x_2}, \hdots, \abs{x_n} \}$ . Since $a \in \fr{X}$, the set 
+   \begin{align*}
+     \Set{\abs{a - x}}{x \in X}
+   \end{align*}
+   is a \defnb set with arbitrarily small positive elements, and contains some interval $(0, \epsilon)$.
+   
+   If $t$ is in this $(0, \epsilon$), then the set 
+   \begin{align*}
+     \Set{x \in X}{\abs{a - x} = t}
+   \end{align*}
+  is \inhb. Thus, by DC, we get a \defnb $\funcdom{\gamma}{(0, \epsilon)}{X}$ such that $\abs{a - \gamma(t)} = t$ for some $t$ in our interval. Clearly then, $t$ is \inj with limit $a$ as $t$ approaches 0 (on the right). As a throwback, we can apply the Monotonicity Theorem and reduce $\epsilon$ to reach the assumption that $\gamma$ is \cont.
+\end{proof}
+
+We've perhaps teased at it now for a bit, and the particularly knowledgable or prescient reader will have seen this coming, but it is at this point we move on to a spot of dimension theory. The discussion here is interesting in that we approach it both from the angle of definability (as expected) and algebraicity and see what comes to pass.

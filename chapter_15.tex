@@ -17,7 +17,33 @@
 \abstract{As so often one finds in mathematics, dimension is one of those ideas that it almost seems each individual mathematician has a notion of how it should be defined -- and more truthfully, has hugely varying meanings across the vast spectra of mathematical disciplines. And perhaps even more, unfortunately, it so often seems the case that the average mathematician was raised on a dictionary of no more than 30 or so words -- which they go on to use and reuse and smash together into all-new words, for the most part equally inequivalently to how their office-mate might be doing the same thing in their preferred area of abstractness. To say the same in so many fewer words: we often find that the same words mean different things to different mathematicians -- and here, we are going to study two interpretations of one such word -- that being \emph{dimension}. We look at both the algebraist's and logician's definition (at least in the context of \omy) of the dimension of a structure and then happily go on to find out that they actually intersect. This goes on to be fundamental, and this fact is part of what allows us to connect the seemingly non-number-theoretic ideas examined hence, to those that allow us to go on to prove a theorem about points of bounded height on curves; a very number-theoretic idea indeed.}
 
 
+\begin{svgraybox}
+  We continue in our assumption from the previous section -- that is, that we take $\M$ an \om expansion of an \emph{ordered} field, $(M, <, +, \cdot, 0, 1)$, and prove things about this construction in generality. Strictly speaking, this is not necessary here, even speaking less strictly than we have about this assumption earlier on. It is simply a matter of convenience and lack of loss of generality.
+\end{svgraybox}
+
+
 \section{Dimension: So How Does One Define That?}
 \label{sec:dim-defn}
 
-\noindent Tempting though it is to answer ``depends on who you ask'' and move on with our day, the question does bear significant thought.
+\noindent Tempting though it is to answer ``depends on who you ask'' and move on with our day, the question does bear significant thought. We start with the following definition.
+
+\begin{definition}
+  Suppose $\XsubsetMn$ is \defnb and \inhb. Then we set 
+  \begin{align*}
+    \dim{X}  = \max{\Set{\sum_{j = \vonethrum{j}{n}} i_{j}}{X \ \textrm{contains an} \ \incell}}
+  \end{align*}
+  to be the dimension of our subset of $M^n$, with the dimension of $\emptyset$ being $- \infty$.
+\end{definition}
+At first blush, this seems to be a reasonable definition of dimension given the manner in which we've been defining the rest of our toolkit -- and with further blushing, we will come to find it even more reasonable than it may even have initially appeared. For those finding this an \emph{unreasonable}, we would encourage a re-reading of some of the earlier definitions, specifically on cells and their decompositions or, barring that, just setting fire to this manuscript and going on about your day. Either way, we say a little something about what subsets with non-empty interior may tell us.
+
+\begin{lemma}
+  \label{lemma:interior-open-cell}
+  If $\XsubsetMn{n}$ has interior, $\inter{X}$ \inhb, there thesis is a \defnb \inj map, $\funcdom{f}{X}{M^n}$ with image of $X under f$ ($f(X)$) containing an open cell.
+\end{lemma}
+This lemma will go one to be quite useful in a moment when we wish to say some useful things about, for example (and in particular), the \emph{dimension invariant of \defnb \bijtions }.
+
+\begin{proof}[of Lemma \ref{lemma:interior-open-cell}]
+  We promise you now, barring life-threatening or otherwise dire circumstances, that this will be the last preface to a proof of this sort -- and trust you, dear reader, to recognize when we are setting up a proof by inductions on $n$. But for now, we proceed by induction on $n$.
+  
+  When $n = 1$, then $\XsubsetMn{}$ is a \inhb subset of $M$, and so is infinite. Since $f$ is injective, $f(X)$ so too is it infinite (relying as well on \refnb to conclude this), and so $f(X)$ contains an open interval -- which we know to be an open-cell. By CD, we will simply assume $X$ is itself already an open-cell
+\end{proof}
