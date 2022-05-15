@@ -30,20 +30,38 @@
 \begin{definition}
   Suppose $\XsubsetMn$ is \defnb and \inhb. Then we set 
   \begin{align*}
-    \dim{X}  = \max{\Set{\sum_{j = \vonethrum{j}{n}} i_{j}}{X \ \textrm{contains an} \ \incell}}
+    %\dim{X}  = \max\Set{\sum_{j = \vonethrum{j}{n}} {i_{j}}{X \ \textrm{contains an} \ \incell }} 
+    \dim{X} = \max{ \Set{ \sum_{j = \vonethrum{j}{n}} }{x < 10} }
   \end{align*}
   to be the dimension of our subset of $M^n$, with the dimension of $\emptyset$ being $- \infty$.
 \end{definition}
+
 At first blush, this seems to be a reasonable definition of dimension given the manner in which we've been defining the rest of our toolkit -- and with further blushing, we will come to find it even more reasonable than it may even have initially appeared. For those finding this an \emph{unreasonable}, we would encourage a re-reading of some of the earlier definitions, specifically on cells and their decompositions or, barring that, just setting fire to this manuscript and going on about your day. Either way, we say a little something about what subsets with non-empty interior may tell us.
 
 \begin{lemma}
   \label{lemma:interior-open-cell}
-  If $\XsubsetMn{n}$ has interior, $\inter{X}$ \inhb, there thesis is a \defnb \inj map, $\funcdom{f}{X}{M^n}$ with image of $X under f$ ($f(X)$) containing an open cell.
+  If $\XsubsetMn{n}$ has interior, $\inter{X}$ \inhb, then there is is a \defnb \inj map, $\funcdom{f}{X}{M^n}$ with image of $X under f$ containing an open cell.
 \end{lemma}
 This lemma will go one to be quite useful in a moment when we wish to say some useful things about, for example (and in particular), the \emph{dimension invariant of \defnb \bijtions }.
 
 \begin{proof}[of Lemma \ref{lemma:interior-open-cell}]
   We promise you now, barring life-threatening or otherwise dire circumstances, that this will be the last preface to a proof of this sort -- and trust you, dear reader, to recognize when we are setting up a proof by inductions on $n$. But for now, we proceed by induction on $n$.
   
-  When $n = 1$, then $\XsubsetMn{}$ is a \inhb subset of $M$, and so is infinite. Since $f$ is injective, $f(X)$ so too is it infinite (relying as well on \refnb to conclude this), and so $f(X)$ contains an open interval -- which we know to be an open-cell. By CD, we will simply assume $X$ is itself already an open-cell
+  When $n = 1$, then $\XsubseteqMn$ is a \inhb subset of $M$, and so is infinite. Since $f$ is injective, $f(X)$ so too is it infinite (relying as well on \defnb to conclude this), and so $f(X)$ contains an open interval -- which we know to be an open-cell. 
+  
+  Suppose now that $n > 1$, and our inductive hypothesis holds for all $k$ between $1$ and $n -1$. By CD, we will simply assume by CD that $X$ is itself already an open cell and that $f$ is continuous. So, by CD we can take some \cd $\fancyD$ of $f(X)$. Should one of the $C \in \fancyD$ be open, we are done -- and so we assume none are (to address all possible cases). Then, since $X$ is the union of the preimages of the cells in $\fancyD$, some $f^{-1}(C_j)$ contains an open cell, $C \subseteq M^n$. Say then that $C$ is contained in the preimage of, without loss of generality, $f^{-1}(C_1)$. Then, restricting $f$ to $C$, we have
+  \begin{align*}
+    \funcrestr{f}{C} \colon C \to C_1
+  \end{align*}
+  \cont, \defnb, and \inj. Recall the homeomorphic nature of the projection away from 0-coordinates. Similarly, in extensions of fiends (this is not about to be proven), open cells are homeomorphic to the ambient space, and so since we expand a field, any $A \in M^n$ are \defnbly homeomorphic to $M^m$. So, putting this together, we have $C$ \homeom to $M^n$ and $C_1$ \homeom to $M^{\ell}$ for some $\ell < n$ -- and so $C$ is \defnb \homeomic to $M^n$, $C_1$ for $M^{\ell}$, and thus we have a \cont \defnb \inj 
+    \begin{align*}
+      g &\colon M^n \to M^{\ell} \\
+      h &\colon M^{\ell} \to M^{\ell}
+    \end{align*}
+    where we define $h$ by
+    $$
+      h \colon y \mapsto g(0, y)
+    $$
+    for $0$ coming from $M^{n - \ell}$ (in case things weren't seeming all above board here). By our inductive hypothesis, we can finally conclude that the image $h(N^{\ell})$ \emph{has} interior. Letting some $b \in \inter{h(M^{\ell})}$ and $a \in M^{\ell}$ with $h(a) = b$, we can say by continuity of $g$ that for $x \in M^{n - \ell} \setminus \zeroset$ sufficiently small, that $g(x, a)$  will sit in the image of $h$, and so be achievable by some argument to $h$. We will call this $a^{\prime} \in M^n$ satisfying $f(a^{\prime}) = g(x, a) = g(0, a^{\prime})$ -- clearly contradicting \injtvty 
+  
 \end{proof}
