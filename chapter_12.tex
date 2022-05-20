@@ -26,7 +26,7 @@ What constitutes a `nice' property of a function is generally non-contentious; i
   Suppose $f \colon I \to M$ is a definable function for $I \subset M$ an open interval. Then there exist $a_1, \hdots, a_k \in I$ such that on each adjacent interval, $(a_j, a_{j+1})$ (where $I = (a_0, a_{k+1})$) $f$ is either constant, or strictly monotonic and continuous. Further, if $f$ is definable over some $A \subseteq M$, then so too are $a_1, \hdots, a_{k}$ definable over $A$.
 \end{theorem}
 
-Hence, we will refer to this simply as the Monotonicity Theorem, abbreviated by MT. It is perhaps not immediately apparent why this should be true, or even that we should be interested that it is. The answer to the second point is that this piece-wise continuity and monotonicity of definable functions is a relatively rigid condition, and this (not just here but for structures in general) allows us to say a good bit about them. Observe that if we have some $X \subseteq M$ definable and infinite, then X must contain some open interval. This should be relatively intuitive, even if a proof doesn't come to you immediately, given what we've covered thus far. As for why the Monotonicity Theorem holds, we show this by piecing together three lemmata that should make the picture a bit more clear. Throughout, take $J \subset I$ as an open interval. To not get bogged down in the minutiae of their proofs as we go through — not that they are particularly challenging — but in any case, we will state all three and then prove them sequentially.
+Hence, we will refer to this simply as the Monotonicity Theorem, abbreviated by MT. It is perhaps not immediately apparent why this should be true, or even that we should be interested that it is. The answer to the second point is that this piece-wise continuity and monotonicity of definable functions is a relatively rigid condition, and this (not just here but for structures in general) allows us to say a good bit about them. Observe that if we have some $X \subseteq M$ definable and infinite, then X must contain some open interval. This should be relatively intuitive, even if a proof doesn't come to you immediately, given what we've covered thus far. As for why the Monotonicity Theorem holds, we show this by piecing together three \lemmas that should make the picture a bit more clear. Throughout, take $J \subset I$ as an open interval. To not get bogged down in the minutiae of their proofs as we go through — not that they are particularly challenging — but in any case, we will state all three and then prove them sequentially.
 
 \begin{lemma}
 \label{lemma:monotonic-1}
@@ -45,7 +45,7 @@ and finally,
   If $f$ is a strictly monotonic function on $J$, then there exists some open interval $ \Jp \subseteq J$ on which $J$ is continuous.
 \end{lemma}
 
-Taking these lemmata for granted, it is not terribly difficult to see how the Monotonicity Theorem falls out. The fun then is in proving these three facts — which is nice, as they are not terribly complicated.
+Taking these \lemmas for granted, it is not terribly difficult to see how the Monotonicity Theorem falls out. The fun then is in proving these three facts — which is nice, as they are not terribly complicated.
 
 We start where any sensible person would.
 
@@ -71,7 +71,7 @@ We start where any sensible person would.
 
 
 \begin{proof}[Theorem \ref{thm:monotonicity}]
-  We now combine these three lemmata to get our result. Take $A$ the set of all $x \in I$ (coming from our original theorem statement) such that $f$ is both continuous and strictly monotone at $x$. We know that taking the restriction of $f$ to some open sub-interval on which $f$ is defined maintains both continuity and monotonicity by Lemmata 2 and 3 — and so taking the set difference of A from I, the original open interval, we cannot have \emph{any} open intervals. There are then thus only finitely many points, and the theorem follows.
+  We now combine these three \lemmas to get our result. Take $A$ the set of all $x \in I$ (coming from our original theorem statement) such that $f$ is both continuous and strictly monotone at $x$. We know that taking the restriction of $f$ to some open sub-interval on which $f$ is defined maintains both continuity and monotonicity by \Lemmas 2 and 3 — and so taking the set difference of A from I, the original open interval, we cannot have \emph{any} open intervals. There are then thus only finitely many points, and the theorem follows.
 \end{proof}
 
 \begin{svgraybox}
