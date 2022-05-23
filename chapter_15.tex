@@ -31,16 +31,16 @@
   Suppose $\XsubsetMn$ is \defnb and \inhb. Then we set 
   \begin{align*}
     %\dim{X}  = \max\Set{\sum_{j = \vonethrum{j}{n}} {i_{j}}{X \ \textrm{contains an} \ \incell }} 
-    \dim{X} = \max{ \Set{ \sum_{j = \vonethrum{j}{n}} }{x < 10} }
+    \dim{X} = \max{ \Set{ \sum_{j = \vonethrum{j}{n}} j }{ X \textrm{ contains a } (j_1, \hdots, j_n)\textrm{-cell} } }
   \end{align*}
-  to be the dimension of our subset of $M^n$, with the dimension of $\emptyset$ being $- \infty$.
+  to be the dimension of our subset of $M^n$, with the dimension of $\emptyset$ being $- \infty$. Intuitively, this hopefully makes sense -- dimension being given by the largest object (of our current interest) sitting inside our space.
 \end{definition}
 
-At first blush, this seems to be a reasonable definition of dimension given the manner in which we've been defining the rest of our toolkit -- and with further blushing, we will come to find it even more reasonable than it may even have initially appeared. For those finding this an \emph{unreasonable}, we would encourage a re-reading of some of the earlier definitions, specifically on cells and their decompositions or, barring that, just setting fire to this manuscript and going on about your day. Either way, we say a little something about what subsets with non-empty interior may tell us.
+At first blush, this seems to be a reasonable definition of dimension given the manner in which we've been defining the rest of our toolkit -- and with further blushing, we will come to find it even more reasonable than it may even have initially appeared. For those finding this \emph{unreasonable}, we would encourage a re-reading of some of the earlier definitions, specifically on cells and their decompositions, or, barring that, just setting fire to this manuscript and going on about your day. Either way, we say a little something about what subsets with non-empty interior may tell us.
 
 \begin{lemma}
   \label{lemma:interior-open-cell}
-  If $\XsubsetMn{n}$ has interior, $\inter{X}$ \inhb, then there is is a \defnb \inj map, $\funcdom{f}{X}{M^n}$ with image of $X under f$ containing an open cell.
+  If $\XsubsetMn{n}$ has interior, $\inter{X}$ \inhb, then there is is a \defnb \inj map, $\funcdom{f}{X}{M^n}$ with image of $X$ under $f$ containing an open cell.
 \end{lemma}
 This lemma will go one to be quite useful in a moment when we wish to say some useful things about, for example (and in particular), the \emph{dimension invariant of \defnb \bijtions }.
 
@@ -62,7 +62,53 @@ This lemma will go one to be quite useful in a moment when we wish to say some u
     $$
       h \colon y \mapsto g(0, y)
     $$
-    for $0$ coming from $M^{n - \ell}$ (in case things weren't seeming all above board here). By our inductive hypothesis, we can finally conclude that the image $h(N^{\ell})$ \emph{has} interior. Letting some $b \in \inter{h(M^{\ell})}$ and $a \in M^{\ell}$ with $h(a) = b$, we can say by continuity of $g$ that for $x \in M^{n - \ell} \setminus \zeroset$ sufficiently small, that $g(x, a)$  will sit in the image of $h$, and so be achievable by some argument to $h$. We will call this $a^{\prime} \in M^n$ satisfying $f(a^{\prime}) = g(x, a) = g(0, a^{\prime})$ -- clearly contradicting \injtvty. We pronounce ourselves,
-  
+    with, to be clear, $0$ coming from $M^{n - \ell}$ (in case things weren't seeming all above-board here). By our inductive hypothesis, we can finally conclude that the image $h(N^{\ell})$ \emph{has} interior. Letting some $b \in \inter{h(M^{\ell})}$ and $a \in M^{\ell}$ with $h(a) = b$, we can say by continuity of $g$ that for $x \in M^{n - \ell} \setminus \zeroset$ sufficiently small, that $g(x, a)$  will sit in the image of $h$, and so be achievable by some argument to $h$. We will call this $a^{\prime} \in M^n$ satisfying $f(a^{\prime}) = g(x, a) = g(0, a^{\prime})$ -- clearly contradicting \injtvty. 
+    
+    As such, we have that $f(X)$ contains an open cell, and we can now pronounce our proposition proved$.$ 
 \end{proof}
-\
+
+Now, we will go on to show something very sensible indeed -- and something that, should it \emph{not} hold, cause great concern. That is, invariance of domain under definable bijection.
+
+\begin{proposition}[A Bit on Definable Bijections]
+  \begin{enumerate}
+    \item \label{prop:defbij_1} If $X \subseteq Y \subseteq M^n$ all \defnb, then the dim
+      \begin{align*}
+        \dim{X} \leq \dim{Y} \leq n.
+      \end{align*}
+    \item \label{prop:defbij_2} If $X \subseteq M^m$, $Y \subseteq M^n$ are both \defnb and $\funcdom{f}{X}{Y}$ is a \defnb bijection between them
+      \begin{align*}
+        \dim{X} = \dim{Y}.
+      \end{align*}
+    \item \label{prop:defbij_3} If $X, Y \subseteq M^n$ are both \defnb, then
+      \begin{align*}
+        \dim{X \cup Y} = \max{\{ \dim{X}, \dim{Y} \}}
+      \end{align*}
+  \end{enumerate}  
+\end{proposition}
+
+Hopefully these statements don't come across too contentious, nor necessarily difficult to prove, but nonetheless, we state our own:
+\begin{proof}
+  \begin{enumerate}
+    \item This is almost as free as it gets; by containment of $X$ in $Y$, we already have that no cell in $X$ can have dimension larger than one in $Y$. Similarly, we have bounding above of the dimension of any cells by the ambient space, which we know to have dimension $n$. That felt like perhaps a lot to say for what is quite clear.
+    \item Assume we have proven \ref{prop:defbij_3}, which we do first. To be clear, 
+      \begin{verbatim}
+        GOTO 3
+        COMPREHEND_3()
+        GOTO 2
+      \end{verbatim}
+    And you're back! So now, let's prove \ref{prop:defbij_2}.
+    \item Let $d = \dim{X \cup Y}$. and let $C$ a cell in the union that witnesses the dimension, $d$ (which to be clear, and going forward, will refer to a $\vmcell{c}{n}$ with $\sum_{j=1}^{n} c_j$ = d). Now, let $\funcdom{\phi}{C}{M^n}$ a \defnb bijection. Then, we have (from before, and not non-obviously)
+        \begin{align*}
+          M^d = \phi(C \cap X) \cup \phi(C \cap Y)
+        \end{align*}
+        open (by $M^d$ open), and so one of the constituent parts of the union must be also. Hence, one of the two contains an open cell, $D$ (without loss of generality, suppose $\phi(C \cap X)$) such that 
+        \begin{align*}
+          \inv{\phi}(D) \subseteq X
+        \end{align*}
+        and so
+        \begin{align*}
+          \dim{\inv{\phi}(D)} = \dim{D} = d.
+        \end{align*}
+        So, then $\dim{X} \geq d \geq \dim{X}$, and the rest follows.
+  \end{enumerate}
+\end{proof}
