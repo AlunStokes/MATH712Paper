@@ -29,7 +29,9 @@
 
 \usepackage{datetime}
 \newdateformat{monthyeardate}{%
-  \monthname[\THEMONTH], \THEYEAR}
+  \monthname[\THEMONTH] \THEYEAR}
+
+\date{\monthyeardate\today}
 
 \usepackage{makeidx}           % allows index generation
 \usepackage{graphicx}          % standard LaTeX graphics tool
@@ -48,7 +50,6 @@
 \usepackage{amsmath}
 \newcommand\qedhere{\square}
 
-\mathtoolsset{centercolon}
 
 \bibliographystyle{spmpsci}
 
@@ -238,7 +239,7 @@
 
 \begin{document}
 
-\author{Notes written by Alun Stokes}
+\author{Notes written by Alun C. Stokes}
 \title{Course Notes on \Omy and the \pwT}
 \subtitle{Presented by Gareth Jones as part of the Fields Institute Graduate Course on \Omy and Applications}
 \maketitle
@@ -261,6 +262,7 @@
   \include{chapter_13}
   \include{chapter_14}
   \include{chapter_15}
+  \include{chapter_16}
 %\include{appendix}
 
 
