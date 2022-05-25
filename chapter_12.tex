@@ -21,12 +21,12 @@
 \chaptermark{Monotonicity}
 What constitutes a `nice' property of a function is generally non-contentious; injectivity and surjectivity are often useful -- together even more so -- and it would be the odd mathematician to turn their nose up at a function being bounded, supposing they weren't chasing a nasty counterexample or engaging in some other such endeavour. At present, we will focus on the property of \emph{monotonicity} and when we can determine a definable function to be monotonic in the context of open intervals. The following was proved in \cite{pillay_definable_1986} by Pillay and Steinhorn:
 
-\begin{theorem}[The Monotonicity Theorem]
+\begin{theorem}[The \MT]
 	\label{thm:monotonicity}
   Suppose $f \colon I \to M$ is a definable function for $I \subset M$ an open interval. Then there exist $a_1, \hdots, a_k \in I$ such that on each adjacent interval, $(a_j, a_{j+1})$ (where $I = (a_0, a_{k+1})$) $f$ is either constant, or strictly monotonic and continuous. Further, if $f$ is definable over some $A \subseteq M$, then so too are $a_1, \hdots, a_{k}$ definable over $A$.
 \end{theorem}
 
-Hence, we will refer to this simply as the Monotonicity Theorem, abbreviated by MT. It is perhaps not immediately apparent why this should be true, or even that we should be interested that it is. The answer to the second point is that this piece-wise continuity and monotonicity of definable functions is a relatively rigid condition, and this (not just here but for structures in general) allows us to say a good bit about them. Observe that if we have some $X \subseteq M$ definable and infinite, then X must contain some open interval. This should be relatively intuitive, even if a proof doesn't come to you immediately, given what we've covered thus far. As for why the Monotonicity Theorem holds, we show this by piecing together three \lemmas that should make the picture a bit more clear. Throughout, take $J \subset I$ as an open interval. To not get bogged down in the minutiae of their proofs as we go through — not that they are particularly challenging — but in any case, we will state all three and then prove them sequentially.
+Hence, we will refer to this simply as the \Mt, abbreviated by MT. It is perhaps not immediately apparent why this should be true, or even that we should be interested that it is. The answer to the second point is that this piece-wise continuity and monotonicity of definable functions is a relatively rigid condition, and this (not just here but for structures in general) allows us to say a good bit about them. Observe that if we have some $X \subseteq M$ definable and infinite, then X must contain some open interval. This should be relatively intuitive, even if a proof doesn't come to you immediately, given what we've covered thus far. As for why the \Mt holds, we show this by piecing together three \lemmas that should make the picture a bit more clear. Throughout, take $J \subset I$ as an open interval. To not get bogged down in the minutiae of their proofs as we go through — not that they are particularly challenging — but in any case, we will state all three and then prove them sequentially.
 
 \begin{lemma}
 \label{lemma:monotonic-1}
@@ -45,7 +45,7 @@ and finally,
   If $f$ is a strictly monotonic function on $J$, then there exists some open interval $ \Jp \subseteq J$ on which $J$ is continuous.
 \end{lemma}
 
-Taking these \lemmas for granted, it is not terribly difficult to see how the Monotonicity Theorem falls out. The fun then is in proving these three facts — which is nice, as they are not terribly complicated.
+Taking these \lemmas for granted, it is not terribly difficult to see how the \Mt falls out. The fun then is in proving these three facts — which is nice, as they are not terribly complicated.
 
 We start where any sensible person would.
 
@@ -58,16 +58,15 @@ We start where any sensible person would.
   we get q injective — and so this is an open interval $ \Jp \subseteq q((a, b))$ on which $f$ is injective.
 \end{proof}
 
-
-\begin{proof}[Lemma \ref{lemma:monotonic-2}]
-  This we can get quite quickly. Suppose such a strictly monotone function exists on $J$. Clearly, $f$ cannot be constant (else monotonicity would be non-strict), and so by \omy of $f$, we get that the image of $J$ under $f$ contains some open interval, $ \Jp \subseteq \image{f}$, on which we have preimage a sub-interval of $J$. We get monotonicity on this interval by Lemma \ref{lemma:monotonic-1} and non-constancy (and thus monotonicity) of $f$; this must be a bijection (either order-preserving or reversing, but bijective either way), and so we are finished.
-\end{proof}
-
 \fix{
-\begin{proof}[Lemma \ref{lemma:monotonic-3}]
-  Write me.
+\begin{proof}[Lemma \ref{lemma:monotonic-2}]
+  Write me
 \end{proof}
 }
+
+\begin{proof}[Lemma \ref{lemma:monotonic-3}]
+  This we can get quite quickly. Suppose such a strictly monotone function exists on $J$. Clearly, $f$ cannot be constant (else monotonicity would be non-strict), and so by \omy of $f$, we get that the image of $J$ under $f$ contains some open interval, $ \Jp \subseteq \image{f}$, on which we have preimage a sub-interval of $J$. We get monotonicity on this interval by Lemma \ref{lemma:monotonic-1} and non-constancy (and thus monotonicity) of $f$; this must be a bijection (either order-preserving or reversing, but bijective either way), and so we are finished.
+\end{proof}
 
 
 \begin{proof}[Theorem \ref{thm:monotonicity}]
@@ -82,17 +81,17 @@ We start where any sensible person would.
 Two Exercises Lec1 pg 4
 }
 
-The following result is a special case in 2 dimensions of what is referred to as the \emph{Finiteness Theorem}, abbreviated FT. We first prove this special case and then take a brief detour to talk about cell decompositions before we can address the more general theorem.
+The following result is a special case in 2 dimensions of what is referred to as the \emph{\Ft}, abbreviated FT. We first prove this special case and then take a brief detour to talk about cell decompositions before we can address the more general theorem.
 
-\section{The (Planar) Finiteness Theorem}
+\section{The \bPFT}
 \chaptermark{Special Finiteness}
 
-\begin{theorem}[Finiteness Theorem in $M^2$]
+\begin{theorem}[\FT in $M^2$]
 	\label{thm:2finiteness}
 	Suppose $A \subseteq M^2$ and that for each $x \in M$, the fibre $A_x$ above $x$ — that is, the set of $y$ with $(x, y) \in A$ — is finite. Then, there exists some $N \in \Zgeq{1}$ such that $\card{A_x} \leq N$ for all $x \in M$
 \end{theorem}
 
-\begin{proof}[Finiteness Theorem in $M^2$ (Theorem \ref{thm:2finiteness})]
+\begin{proof}[of Theorem \ref{thm:2finiteness})]
 	We define a point $(a, b) \in M^2$ to be \emph{normal} if it sits in an open box, $I \times J$ satisfying
 	\begin{itemize}
 		\item $(I \times J) \cap A = \emptyset$
@@ -164,7 +163,7 @@ The following result is a special case in 2 dimensions of what is referred to as
 		\item $B_- \setminus B_+$
 		\item $B \setminus (B_+ \cup B_-)$.
 	\end{itemize}
-	We can then apply MT (Theorem \ref{thm:monotonicity}) to each case to reach a contradiction by showing that assuming non-finiteness, we \emph{should} be able to find a normal point with first coordinate $a$ -- contradicting the `badness' of any point in $B$. Thus, $B$ is \emph{finite}, and so there must be some finite upper bound on the cardinality of all fibres, $A_x$, and our proof is complete.
+	We can then apply the \Mt (Theorem \ref{thm:monotonicity}) to each case to reach a contradiction by showing that assuming non-finiteness, we \emph{should} be able to find a normal point with first coordinate $a$ -- contradicting the `badness' of any point in $B$. Thus, $B$ is \emph{finite}, and so there must be some finite upper bound on the cardinality of all fibres, $A_x$, and our proof is complete.
 \end{proof}
 
 
@@ -197,7 +196,7 @@ It is not hard to see that what we are doing here is just projecting away from t
 
 In what should hopefully be predictable at this point, we wish now to define what it means to \emph{decompose} our space into cells. At some point, we will cease prefacing these definitions with `as usual, we do so by induction' -- but that point is yet to come. So, as usual, we proceed by defining \cds by induction.
 
-\begin{definition}[Cell Decomposition \emph{of $M$}]
+\begin{definition}[\CD \emph{of $M$}]
   A \emph{\cd} of $M$ is a finite set defined by some strictly increasing finite sequence $\aoneak$ that form the set
   \begin{align*}
     \{(- \infty, a_1), (a_1, a_2), \hdots, (a_k, \infty), \{a_1\}, \{a_2\}, \hdots \{a_k\} \}.
@@ -207,7 +206,7 @@ In what should hopefully be predictable at this point, we wish now to define wha
 
 As we have time and time before, we now up the dimension by induction to define general \cds:
 
-\begin{definition}[Cell Decomposition \emph{of $M^{n+1}$}]
+\begin{definition}[\CD \emph{of $M^{n+1}$}]
   A \cd of $M^{n+1}$ is a finite partition, $\fancyD$, of $M^{n+1}$ into cells, such that
   \begin{align*}
     \Set{\pi (C)}{C \in \fancyD}
@@ -241,7 +240,7 @@ The importance of this last point will be made clear in the theorem we have buil
     \item[$\IIn$ ] If $\funcdom{f}{X}{M}$ is \defnb, then there is a \cd, $\fancyD$ of $M^n$ \cmptble with $X$ s.t. the restriction $\funcrestr{f}{C}$ is \cont for each $C \in \fancyD$.
   \end{enumerate}
 
-  Further, and in analogy to the Monotonicity Theorem, if our $\vonevm{X}{k}$ or $f$ (depending on case $\In[]$ or $\IIn[]$) are \defnb over $A \subset M$, then we can take the cells in  $\fancyD$ to be similarly \defnb over $A$; that is, with the \emph{same} parameters.
+  Further, and in analogy to the Monotonicity theorem, if our $\vonevm{X}{k}$ or $f$ (depending on case $\In[]$ or $\IIn[]$) are \defnb over $A \subset M$, then we can take the cells in  $\fancyD$ to be similarly \defnb over $A$; that is, with the \emph{same} parameters.
 
   \begin{svgraybox}
     This last point is perhaps a bit unfair to mention, as we will not be providing a proof for it -- though for the sake of interest, it would feel incomplete to not at least analogize with Theorem \ref{thm:monotonicity}. In truth, what follows is not a full proof of \CD, but a special case where we take $M$ to be $\R$ and use the yet unproven (or even stated) result of \emph{uniform finiteness}. We take this result entirely for granted in the lectures due to the oddity that a complete (unassuming) proof somewhat `bootstraps' uniform finiteness into the induction we do on $\In[j]$ and $\IIn[j]$, proving it as we go along. This is because uniform finiteness is actually itself an immediate consequence of the \CD Theorem (which makes the proof a fun little oddity). For our purposes, we take it as assumedly true -- in part due to the length of this proof even \emph{with} that assumption -- and trust that our dear intelligent reader sees plainly how we could fix this in the absence of the assumption.
@@ -260,7 +259,7 @@ Uniform finiteness is a generalization of the finiteness theorem we proved earli
 The following proof is due to van den Dries \cite{dries_remarks_1984} which, for no reason other than interest's sake, we mention went on to inspire the later work of Pillay and Steinhorn in \cite{pillay_definable_1986}.
 
 \begin{proof}[\CD (Theorem \ref{thm:cell-decomposition})]
-  We proceed by induction on parameter $n$. The base cases are both already done for us; $\In[1]$ is immediate from the definition of \omy, and $\IIn[1]$ is given by the Monotonicity Theorem. What we go on to show is two inductive facts that `bounce off' one another in a sense, to allow us to prove both $\In$ and $\IIn$ for all $n$. These are
+  We proceed by induction on parameter $n$. The base cases are both already done for us; $\In[1]$ is immediate from the definition of \omy, and $\IIn[1]$ is given by the Monotonicity theorem. What we go on to show is two inductive facts that `bounce off' one another in a sense, to allow us to prove both $\In$ and $\IIn$ for all $n$. These are
   \begin{enumerate}[label=(\alph*)]
     \item \label{pf:cd:a} Given $\In[1], \hdots, \In$ and $\IIn[1], \hdots, \IIn[n-1]$, we can conclude $\IIn$; and
     \item \label{pf:cd:b} Given $\In[1], \hdots, \In$ and $\IIn[1], \hdots, \IIn[n]$, we can conclude $\In[n+1]$.
@@ -305,22 +304,23 @@ The following proof is due to van den Dries \cite{dries_remarks_1984} which, for
   Try not to have too much fun with that, now. We move on to proving \ref{pf:cd:b}; recall our assumptions that $\vonevm{(I)}{n}$ and $\vonevm{(II)}{n}$ hold. We want now to prove $\In[n+1]$. First, we start with a small proposition.
 
   \begin{proposition}
-    \label{prop:cell-refinement}
     Suppose $\fancyD_1$, $\fancyD_2$ are \cds of $\R^{n+1}$ with a common refinement -- that is, another \cd, $\fancyD$ of $R^{n+1}$ compatible with all cells in each of $\fancyD_1$ and $\fancyD_2$. Terminology-wise, we say that $\fancyD$ \emph{refines} $\fancyD_1$ and $\fancyD_2$, or that is is an \emph{refinement} of $\fancyD_1$ and $\fancyD_2$.
+    \label{prop:cell-refinement}
   \end{proposition}
 
-  \begin{svgraybox}
-    A frustrated author's aside: please take no notice of the $\square$ that sits just above this box and proceeds Proposition \ref{prop:cell-refinement}. Its presence is a mystery, and the method to remove it proves elusive, even after what would be not ungenerously called a \emph{cursory} amount of investigation. We will simply pretend it does not exist and trust that the honest, caring reader does so as well.
-  \end{svgraybox}
+  %\begin{svgraybox}
+   % A frustrated author's aside: please take no notice of the $\square$ that sits just above this box and proceeds Proposition \ref{prop:cell-refinement}. Its presence is a mystery, and the method to remove it proves elusive, even after what would be not ungenerously called a \emph{cursory} amount of investigation. We will simply pretend it does not exist and trust that the honest, caring reader does so as well.
+ % \end{svgraybox}
 
 
   \begin{subproof}[Cell Refinement (Proposition \ref{prop:cell-refinement})]
     For the purpose of transparency, we note that this proof was left out of the lecture and as an exercise for the interested (or obligated) viewer. The following takes inspiration from van den Dries \cite{dries_tame_1998}. We note that this could be made a bit cuter if we had the machinery of \emph{dimension} that we will soon define, but in either case, this proof is relatively trivial. We have our $\fancyD_1$ and $\fancyD_2$ two decompositions of the trivially definable subset of, $\R^{n+1}$: $\R^{n+1}$ itself. We can then simply take a decomposition of the ambient space (which here is the \emph{whole} space) containing our definable subset. We have seen previously that we can take this decomposition to partition each cell of $\fancyD_1 \cup \fancyD_2$ -- and the `restriction' of this decomposition to our definable set (again, just to ensure this is sufficiently belaboured, this is not actually a restriction since our definable set is $\R^{n+1}$), we are left with our everywhere (on cells in $\fancyD_1 \cup \fancyD_2$) compatible decomposition.
+    \smartqed
   \end{subproof}
 
-  \begin{svgraybox}
-    A much less frustrated author's aside: let us all take a moment and appreciate the appropriately placed $\square$ above. We can move forth pretending all is well again, and we hope this has not caused the reader \emph{too} much undue stress -- beyond, of course, the normal, cursory amount.
-  \end{svgraybox}
+ % \begin{svgraybox}
+  %  A much less frustrated author's aside: let us all take a moment and appreciate the appropriately placed $\square$ above. We can move forth pretending all is well again, and we hope this has not caused the reader \emph{too} much undue stress -- beyond, of course, the normal, cursory amount.
+ % \end{svgraybox}
 
   Now, if some $A \subseteq \R$ is \defnb, we define its type, $\tau(A)$ as follows:
   \begin{description}
@@ -341,20 +341,21 @@ The following proof is due to van den Dries \cite{dries_remarks_1984} which, for
 
     At this point, you may be a bit confused (if the recollection is even still there) as to why we made such a fuss early on about \emph{uniform finiteness} -- when we've yet to see it used. Well, for the anxious amongst you, satisfaction will come soon, as we now make use of that perhaps unjustified assumption.
 
-    By UF, we get the following (and again, \underline{\textbf{please}} ignore the spurious QED-type symbol that appears at the end on this proposition),
-
+    %By UF, we get the following (and again, \underline{\textbf{please}} ignore the spurious QED-type symbol that appears at the end on this proposition),
+    By UF, we get the following:
     \begin{proposition}
-      \label{prop:definable-fibre-types}
       If we have a \defnb $X \subseteq \R^{n+1}$, then the set of the types of fibres -- that is
       \begin{align*}
         \Set{\tau(X_x)}{x \in \R^n}
       \end{align*}
       -- is finite. Further, for each given choice of type, the set of fibres giving rise to that type is \defnb.
+      \label{prop:definable-fibre-types}
     \end{proposition}
     Perhaps starting this sentence with `of course' would be unfair, but it shouldn't be hard to see, intuit, or at least \emph{guess} that the set of $x \in \R^n$ giving rise to any \emph{particular} type is usually empty. As before, this proof was left as an exercise to the responsible party, and so please forgive any clear indications of amateurism -- were they absent, there may be something a little suspect going on.
 
     \begin{proof}(Proof of Proposition \ref{prop:definable-fibre-types})
       This we will not belabour even slightly. We have assumed UF and so simply appeal to UF in the case of $M^{n}$, by which we get that each fibre is finite -- and so must have finite types belonging to its elements. In the case of each type, it is given by some point or open interval in a fibre and so is defined by points and open intervals. Supposing there were infinitely-many \emph{different} such types, we would have to be working in a non-finite dimension. Thus, \defnbty falls out, almost as if by accident.
+      \smartqed
     \end{proof}
 
     Now, with these two propositions, we are just about ready to put together our proof of \ref{pf:cd:b}. That is, we now prove $\In[n+1]$.

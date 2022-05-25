@@ -12,9 +12,9 @@
 % to alter or adjust the chapter heading in the running head
 %\chaptermark{Some Introductions}
 
-\abstract*{As so often one finds in mathematics, dimension is one of those ideas that it almost seems each individual mathematician has a notion of how it should be defined -- and more truthfully, it has hugely varying meanings across the vast spectra of mathematical disciplines. And perhaps even more, unfortunately, it so often seems the case that the average mathematician was raised on a dictionary of no more than 30 or so words -- which they go on to use and reuse and smash together into all-new words, for the most part equally inequivalently to how their office-mate might be doing the same thing in their preferred area of abstractness. To say the same in so many fewer words: we often find that the same words mean different things to different mathematicians -- and here, we are going to study two interpretations of one such word -- that being \emph{dimension}. We look at both the algebraist's and logician's definition (at least in the context of \omy) of the dimension of a structure and then happily go on to find out that they actually intersect. This goes on to be fundamental, and this fact is part of what allows us to connect the seemingly non-number-theoretic ideas examined hence, to those that allow us to go on to prove a theorem about points of bounded height on curves; a very number-theoretic idea indeed.}
+\abstract*{As so often one finds in mathematics, dimension is one of those ideas that it almost seems each individual mathematician has a notion of how it should be defined -- and more truthfully, it has hugely varying meanings across the vast spectra of mathematical disciplines. And perhaps even more, unfortunately, it so often seems the case that the average mathematician was raised on a dictionary of no more than 30 or so words -- which they go on to use and reuse and smash together into all-new words, for the most part equally inequivalently to how their office-mate might be doing the same thing in their preferred area of abstractness. To say the same in so many fewer words: we often find that the same words mean different things to different mathematicians -- and here, we are going to study two interpretations of one such word -- that being \emph{dimension}. We look at both the algebraist's and logician's definition (at least in the context of \omy) of the dimension of a structure and then happily go on to find out that they actually intersect. This goes on to be fundamental, and this fact is part of what allows us to connect the seemingly non-number theoretic ideas examined hence, to those that allow us to go on to prove a theorem about points of bounded height on curves; a very number theoretic idea indeed.}
 
-\abstract{As so often one finds in mathematics, dimension is one of those ideas that it almost seems each individual mathematician has a notion of how it should be defined -- and more truthfully, has hugely varying meanings across the vast spectra of mathematical disciplines. And perhaps even more, unfortunately, it so often seems the case that the average mathematician was raised on a dictionary of no more than 30 or so words -- which they go on to use and reuse and smash together into all-new words, for the most part equally inequivalently to how their office-mate might be doing the same thing in their preferred area of abstractness. To say the same in so many fewer words: we often find that the same words mean different things to different mathematicians -- and here, we are going to study two interpretations of one such word -- that being \emph{dimension}. We look at both the algebraist's and logician's definition (at least in the context of \omy) of the dimension of a structure and then happily go on to find out that they actually intersect. This goes on to be fundamental, and this fact is part of what allows us to connect the seemingly non-number-theoretic ideas examined hence, to those that allow us to go on to prove a theorem about points of bounded height on curves; a very number-theoretic idea indeed.}
+\abstract{As so often one finds in mathematics, dimension is one of those ideas that it almost seems each individual mathematician has a notion of how it should be defined -- and more truthfully, has hugely varying meanings across the vast spectra of mathematical disciplines. And perhaps even more, unfortunately, it so often seems the case that the average mathematician was raised on a dictionary of no more than 30 or so words -- which they go on to use and reuse and smash together into all-new words, for the most part equally inequivalently to how their office-mate might be doing the same thing in their preferred area of abstractness. To say the same in so many fewer words: we often find that the same words mean different things to different mathematicians -- and here, we are going to study two interpretations of one such word -- that being \emph{dimension}. We look at both the algebraist's and logician's definition (at least in the context of \omy) of the dimension of a structure and then happily go on to find out that they actually intersect. This goes on to be fundamental, and this fact is part of what allows us to connect the seemingly non-number theoretic ideas examined hence, to those that allow us to go on to prove a theorem about points of bounded height on curves; a very number theoretic idea indeed.}
 
 
 \begin{svgraybox}
@@ -22,7 +22,7 @@
 \end{svgraybox}
 
 
-\section{Dimension: So How Does One Define That?}
+\section{So How Does One Define That?}
 \label{sec:dim-defn}
 
 \noindent Tempting though it is to answer ``depends on who you ask'' and move on with our day, the question does bear significant thought. We start with the following definition.
@@ -30,8 +30,8 @@
 \begin{definition}
   Suppose $\XsubsetMn$ is \defnb and \inhb. Then we set 
   \begin{align*}
-    %\dim{X}  = \max\Set{\sum_{j = \vonethrum{j}{n}} {i_{j}}{X \ \textrm{contains an} \ \incell }} 
-    \dim{X} = \max{ \Set{ \sum_{j = \vonethrum{j}{n}} j }{ X \textrm{ contains a } (j_1, \hdots, j_n)\textrm{-cell} } }
+    %\dim{X} = \max{ \left\{ \sum_{j = \vonevm{j}{n}} j \colon X \textrm{ contains a } \vmcell{j}{n} } \right\}
+    \dim{X} = \max{ \left\{ \sum_{j \in \vonevm{j}{n}} j \colon X \textrm{ contains a } \vmcell{j}{n} \right\} }
   \end{align*}
   to be the dimension of our subset of $M^n$, with the dimension of $\emptyset$ being $- \infty$. Intuitively, this hopefully makes sense -- dimension being given by the largest object (of our current interest) sitting inside our space.
 \end{definition}
@@ -40,16 +40,16 @@ At first blush, this seems to be a reasonable definition of dimension given the 
 
 \begin{lemma}
   \label{lemma:interior-open-cell}
-  If $\XsubsetMn{n}$ has interior, $\inter{X}$ \inhb, then there is is a \defnb \inj map, $\funcdom{f}{X}{M^n}$ with image of $X$ under $f$ containing an open cell.
+  If $\XsubsetMn[n]$ has interior, $\inter{X}$, \inhb, then there is is a \defnb \inj map, $\funcdom{f}{X}{M^n}$ with image of $X$ under $f$ containing an open cell.
 \end{lemma}
 This lemma will go one to be quite useful in a moment when we wish to say some useful things about, for example (and in particular), the \emph{dimension invariant of \defnb \bijtions }.
 
 \begin{proof}[of Lemma \ref{lemma:interior-open-cell}]
   We promise you now, barring life-threatening or otherwise dire circumstances, that this will be the last preface to a proof of this sort -- and trust you, dear reader, to recognize when we are setting up a proof by inductions on $n$. But for now, we proceed by induction on $n$.
   
-  When $n = 1$, then $\XsubseteqMn$ is a \inhb subset of $M$, and so is infinite. Since $f$ is injective, $f(X)$ so too is it infinite (relying as well on \defnb to conclude this), and so $f(X)$ contains an open interval -- which we know to be an open-cell. 
+  When $n = 1$, then $\XsubseteqMn$ is a \inhb subset of $M$, and so is infinite. Since $f$ is injective, $f(X)$ so too is it infinite (relying as well on \defnbty to conclude this), and so $f(X)$ contains an open interval -- which we know to be an open-cell.
   
-  Suppose now that $n > 1$, and our inductive hypothesis holds for all $k$ between $1$ and $n -1$. By CD, we will simply assume by CD that $X$ is itself already an open cell and that $f$ is continuous. So, by CD we can take some \cd $\fancyD$ of $f(X)$. Should one of the $C \in \fancyD$ be open, we are done -- and so we assume none are (to address all possible cases). Then, since $X$ is the union of the preimages of the cells in $\fancyD$, some $f^{-1}(C_j)$ contains an open cell, $C \subseteq M^n$. Say then that $C$ is contained in the preimage of, without loss of generality, $f^{-1}(C_1)$. Then, restricting $f$ to $C$, we have
+  Suppose now that $n > 1$, and our inductive hypothesis holds for all $k$ between $1$ and $n -1$. By CD, we will simply assume that $X$ is itself already an open cell and that $f$ is continuous. So, by CD we can take some \cd $\fancyD$ of $f(X)$. Should one of the $C \in \fancyD$ be open, we are done -- and so we assume none are (to address all possible cases). Then, since $X$ is the union of the preimages of the cells in $\fancyD$, some $f^{-1}(C_j)$ contains an open cell, $C \subseteq M^n$. Say then that $C$ is contained in the preimage of, without loss of generality, $f^{-1}(C_1)$. Then, restricting $f$ to $C$, we have
   \begin{align*}
     \funcrestr{f}{C} \colon C \to C_1
   \end{align*}
@@ -64,8 +64,11 @@ This lemma will go one to be quite useful in a moment when we wish to say some u
     $$
     with, to be clear, $0$ coming from $M^{n - \ell}$ (in case things weren't seeming all above-board here). By our inductive hypothesis, we can finally conclude that the image $h(N^{\ell})$ \emph{has} interior. Letting some $b \in \inter{h(M^{\ell})}$ and $a \in M^{\ell}$ with $h(a) = b$, we can say by continuity of $g$ that for $x \in M^{n - \ell} \setminus \zeroset$ sufficiently small, that $g(x, a)$  will sit in the image of $h$, and so be achievable by some argument to $h$. We will call this $a^{\prime} \in M^n$ satisfying $f(a^{\prime}) = g(x, a) = g(0, a^{\prime})$ -- clearly contradicting \injtvty. 
     
-    As such, we have that $f(X)$ contains an open cell, and we can now pronounce our proposition proved$.$ 
+    As such, we have that $f(X)$ contains an open cell, and we can now pronounce our proposition proved.
+    \smartqed
 \end{proof}
+
+\section{Dimension Under Functions}
 
 Now, we will go on to show something very sensible indeed -- and something that, should it \emph{not} hold, cause great concern. That is, invariance of domain under definable bijection.
 
@@ -88,15 +91,37 @@ Now, we will go on to show something very sensible indeed -- and something that,
 
 Hopefully these statements don't come across too contentious, nor necessarily difficult to prove, but nonetheless, we state our own:
 \begin{proof}
+  \leavevmode
   \begin{enumerate}
+
     \item This is almost as free as it gets; by containment of $X$ in $Y$, we already have that no cell in $X$ can have dimension larger than one in $Y$. Similarly, we have bounding above of the dimension of any cells by the ambient space, which we know to have dimension $n$. That felt like perhaps a lot to say for what is quite clear.
+
     \item Assume we have proven \ref{prop:defbij_3}, which we do first. To be clear, 
       \begin{verbatim}
         GOTO 3
         COMPREHEND_3()
         GOTO 2
       \end{verbatim}
-    And you're back! So now, let's prove \ref{prop:defbij_2}.
+    And you're back! So now, let's prove \ref{prop:defbij_2}. Suppose $d = \dim{X}$ and $e = \dim{Y}$. By symmetry, it clearly suffices to show that $d \leq e$ (or vice versa) as one could then simply switch $X$ for $Y$.
+
+    Since $X$ has dimension $d$, it must contain an $\vmcell{i}{m}$ with indices $\vonevm{i}{m}$ summing to $d$. Let a cell $C \subseteq X$ an $\vmcell{i}{m}$ of the same dimension, $d$. We have that $f$ sends $X$ to $Y$, and so composing with a \defnb \bij $C \to M^d$, we get a \defnb \injtion
+    \begin{align*}
+      g \colon M^d \to Y.
+    \end{align*}
+    Cell decomposing $Y$ into $\vonevm{C}{k}$ (each a cell, together having union $Y$), we have then that
+    \begin{align*}
+      M^d = \inv{g}(C_1) \cup \cdots \cup \inv{g}(C_k).
+    \end{align*}
+    By openness of $M^d$, as before we must have that some $\inv{g}(C_j)$ (without loss of generality, suppose $C_1$) contains some open cell, $D \subseteq M^d$, such that $D \subseteq \inv{g}(C_1)$. Since $C_1$ sits in $Y$, we generically say it is an $\vmcell{j}{n}$. For sake of contradiction, suppose these coordinates have sum less than $d$, and denote this quantity $\pri{e}$. Then, we have
+    \begin{align*}
+      \pri{h} \colon D \xrightarrow{g} C_1 \xrightarrow{\sim} M^{\pri{e}}
+    \end{align*}
+    a \defnb \inj function. We can imagine $M^{\pri{e}}$ as `sitting inside' $D$, since we know by our assumption that its dimension is necessarily lesser. So now, considering $0$ in $M^{d - \pri{e}}$, we have the map
+    \begin{align*}
+      \dpri{h} \colon D \to M^{\pri{e}} \times \left\{ 0 \right\} \subseteq M^d
+    \end{align*}
+    also both \defnb and \inj -- but then since we have an open cell, $D$, we contradict Lemma \ref{lemma:interior-open-cell}. Thus, we have that $d \leq e$, and so must also have $d = e$ by symmetry of the argument, and we are done.
+
     \item Let $d = \dim{X \cup Y}$. and let $C$ a cell in the union that witnesses the dimension, $d$ (which to be clear, and going forward, will refer to a $\vmcell{c}{n}$ with $\sum_{j=1}^{n} c_j$ = d). Now, let $\funcdom{\phi}{C}{M^n}$ a \defnb bijection. Then, we have (from before, and not non-obviously)
         \begin{align*}
           M^d = \phi(C \cap X) \cup \phi(C \cap Y)
@@ -111,4 +136,199 @@ Hopefully these statements don't come across too contentious, nor necessarily di
         \end{align*}
         So, then $\dim{X} \geq d \geq \dim{X}$, and the rest follows.
   \end{enumerate}
+\end{proof}
+
+Now with a bit under our belt about this notion of dimension that we would reasonably expect, we go on to prove a few more interesting facts that will come to use later on. In particular, we first show something about the additivity of the dimension of fibres.
+
+\section{Concerning Fibres}
+
+\begin{proposition}
+  \label{prop:fibre_add}
+  Suppose $X \subseteq \MmMn$ is \defnb, and some positive natural number $d \leq n$. Denote
+  \begin{align*}
+    X(d) = \Set{x \in M^n}{\dim{X_x} = d},
+  \end{align*}
+  recalling, of course, that $X_x$ denotes the fibre of $X$ over $x$ (for any who have forgotten). Then, $X(d)$ is \defnb and
+  \begin{align*}
+    \dim{ \bigcup_{x \in X(d)} \left( \{x\} \times X_x \right) } = \dim{X(d)} + d
+  \end{align*}
+\end{proposition}
+
+\begin{proof}[of Proposition \ref{prop:fibre_add}]
+  Suppose $\fancyD$ is a \cd of of $\MmMn$ \cmptble with $X$. If some $C \in \fancyD$ is an $\vmcell{i}{m+n}$, then its projection onto its first $m$ components, $\pi C$, is an $\vmcell{i}{m}$ and each fibre, $C_x$ is an $\vmncell{i}{m+1}{m+n}$ for $x \in \pi C$. Clearly, we have that
+  \begin{align}
+    \label{align:misc_1}
+    \dim{C} = \dim{\pi C} + \dim{C_x}
+  \end{align}
+  for each $x \in \pi C$.
+
+  Now, setting $\pri{C} \in \pi \fancyD$ (the cells given by this projection on all cells in $\fancyD$) and letting $\vmvnsupbr{C}{1}{k} \subset \fancyD$ the cells contained in $X$ whose projection is $\pri{C}$. Then for $x \in \pri{C}$, the fibre
+  \begin{align*}
+    X_x = \vmvnsupbr[\cup]{C_x}{1}{k}
+  \end{align*}
+  and so
+  \begin{align*}
+    \dim{X_x} &= \max{ \left\{ \ \vmvnsupbr{\dim{C_x}}{1}{k} \ \right\} }.
+  \end{align*}
+  Combining this with \ref{align:misc_1}, we have that
+  \begin{align*}
+    %\dim{X_x} &= \max{ \left\{ \ \dim{C^{(1)}} - \dim{\pri{C}}, \ \hdots, \ \dim{C^{(k)}} - \dim{\pri{C}} \ \right\} },
+    \dim{X_x} &= \max{ \left\{ \ \dim{C^{(1)}}, \ \hdots, \ \dim{C^{(k)}} \ \right\} } - \dim{\pri{C}} ,
+  \end{align*}
+  which is completely independent of $X$ -- that is, \emph{where} we fibre makes no difference in the dimension. Let $d$ be this dimension, given by the maximum. Then $\dim{C_x} = d$ for all $x \in \pri{C}$, so $\pri{C} \subseteq X(d)$, and thus $X(d)$ is a finite union of cells and therefore, as desired, \defnb. So we have the \defnbty part of the proposition -- we now need to prove the given equality.
+
+  We have that our $d$ is defined as above by
+  \begin{align*}
+    d &= \max{ \left\{ \ \dim{C^{(1)}}, \ \hdots, \ \dim{C^{(k)}} \ \right\} }  - \dim{\pri{C}}  \\
+    d &= \dim{ \ \ \bigcup_{i=1}^{k} C^{(i)} \ \ }    - \dim{\pri{C}}  \\
+  \end{align*}
+  Recall, this union is the part of $X$ laying above $\pri{C}$, and so we can further improve to get
+  \begin{align*}
+    d &= \dim{ \ \ \bigcup_{x=\pri{C}} \{x\} \times C_x^{(i)} \ \ }  - \dim{\pri{C}}
+  \end{align*}
+  and so
+  \begin{align*}
+    \dim{ \ \ \bigcup_{x=\pri{C}} \{x\} \times C_x^{(i)} \ \ } = d + \dim{\pri{C}}
+  \end{align*}
+  which, taking the union over all $\pri{C} \in \pi \fancyD$ with $\pri{C} \subseteq X(d)$, gives us the result, knowing that the maximal dimension over all $\pri{C}$ is the dimension of $X(d)$. With that, we have gotten exactly what we want.
+\end{proof}
+
+As a corollary, we get something of a more general form (in several parts) of the previous proposition, which goes as follows:
+\begin{corollary}
+  \label{cor:dim_fibres}
+  \leavevmode
+  \begin{enumerate}
+    \item \label{cor:dim_fibres_1} If $X \in M^{m + n}$ is \defnb, then $X$ has dimension given
+      \begin{align*}
+        \dim{X} &= \max_{0 \leq d \leq n}{ \left\{ \dim{X(d)} + d \right\} } \\
+        &\geq \dim{\pi X}
+      \end{align*}
+      for $\pi$ as in the proposition.
+
+    \item \label{cor:dim_fibres_2} Suppose $X \subseteq M^n$, $\funcdom{f}{X}{M^m}$ \defnb. Denote
+      \begin{align*}
+        X_f(d) = \left\{ \ x \in M^m \colon \dim{\inv{f}(x)} = d \ \right\}.
+      \end{align*}
+      Then $X_f(d)$ is \defnb and further,
+      \begin{align*}
+        \dim{\inv{f}(X_f(d))} = \dim{X_f(d)} + d
+      \end{align*}
+      and $\dim{X} \geq \dim{f(X)}$.
+
+    \item \label{cor:dim_fibres_3} Consider now a special case of taking products, where $\XMn[X]{m}$, $\XMn[Y]{n}$ are \defnb. Then, perhaps predictably,
+      \begin{align*}
+       \dim{X \times Y} = \dim{X} + \dim{Y}.
+      \end{align*}
+    \end{enumerate}
+\end{corollary}
+
+Easy as they are, these proofs were left to the viewer, so please enjoy this unassessed attempt at just that. Note that as we know part \ref{cor:dim_fibres_3} to simply be a special case following from part \ref{cor:dim_fibres_2} we only prove the first two parts of the corollary.
+
+\begin{proof}[of Corollary \ref{cor:dim_fibres}]
+  \leavevmode
+  \begin{enumerate}
+    \item That the dimension of $X$ is not lesser than that of its projection onto a subset of its coordinates is obvious, and really doesn't bear much consideration. Further, immediately applying Proposition \ref{prop:fibre_add}, simply noting that taking the union over fibres of subsets of $X$ of each possible dimension, $0 \leq d \leq n$, gives us this result exactly, we are done.
+
+    \item In essence, here what we are doing is again applying Proposition \ref{prop:fibre_add}, but now to the graph of our $X$, $f(X)$. Again, by a similar argument as in the previous part of this proof, and the direct application of the formula as given in the proposition, the result we desire falls out.
+
+    \item Follows from the previous.
+    \end{enumerate}
+\end{proof}
+
+
+\begin{exercise}
+  \label{exc:dim_exc}
+  \fix{Show that: Supposing $X, Y \subseteq M^{1 + n}$ with $Y$ \inhb, and that for each $x \in M$, either $X_x = \emptyset$ or $\dim{X_x} < \dim{Y_x}$, then $\dim{X} < \dim{Y}$.}
+\end{exercise}
+
+
+We now use this result to show the following, perhaps quite intuitive lemma.
+\begin{lemma}
+  \label{lemma:closures_fibres}
+  Suppose $\XMn{n+1}$ is \defnb. Then
+  \begin{align*}
+    \left\{ x \in M \colon \cl{X_x} \neq \cl{X}_x \right\}
+  \end{align*}
+  is finite. That is, there are only finitely-many points at which the closure of the fibre is \textbf{not} the fibre of the closure.
+\end{lemma}
+
+\begin{proof}[of Lemma \ref{lemma:closures_fibres}]
+  Note that we always have that the closure of the fibre is always contained in the fibre of the closure -- that is, $\cl{X_x} \subseteq \cl{X}_x$. Suppose, for purposes of contradiction, that the set defined above \emph{is} infinite. As such (with \defnbty), it contains an open interval which we shall call $I$. By definition of our set, for each $x \in I$, there is an open box, $\XMn[B]{n}$, witnessing the difference -- that is, that
+    \begin{align*}
+     B \cap X_x = \emptyset
+    \end{align*}
+  \emph{and simultaneously,}
+    \begin{align*}
+      B \cap \cl{X}_x \neq \emptyset
+    \end{align*}
+  We know the family of open boxes in $M^n$ to be \defnb, and so by definable choice (do recall that we said it would become important), we can get each such box as a \emph{\defnb function} (whose notation we overload by referring to it as $B$) of the prescribed $x \in I$. By monotonoicity, we may assume that $B$ is continuous, and so taking
+    \begin{align*}
+      U = \left\{ \ (x, y) \in I \times M^n \colon y \in B(x) \ \right\},
+    \end{align*}
+  we have $U$ open in $I \times M^n$, and $U \cap X = \emptyset$. However, we must \emph{also} have then that $U \cap \cl{X} \neq \emptyset$ -- which is a clear contradiction. Thus, our original assumption of the infinitude of our set was incorrect, and the result is proven.
+\end{proof}
+
+Now, using this lemma and a bit from before, we can prove the following theorem:
+
+\begin{theorem}
+  \label{thm:fr_dim}
+  Suppose $\XMn{n}$ is \inhb, and \defnb. Then, $\dim{\fr{X}} < \dim{X}$.
+\end{theorem}
+
+This one is quite intuitive, and its proof not terribly involved -- but the result itself is quite useful, and sees much use in inductive arguments about these sorts of ideas. We will not be using this result quite often, but later modules in this lecture series will make much more judicious usage.
+
+\begin{proof}[of Theorem \ref{thm:fr_dim}]
+  We start with the base case of $\XMn[X]{1}$. We trust that this follows without comment.
+
+  Now consider $\XMn[X]{n + 1}$, and suppose that the result holds for $M^k$ for any $1 \leq k \leq n$ (in fact we only need weak induction here, but we assume this regardless for reasons of not mattering). For each coordinate, $\vonevm{i}{n+1}$, consider the set
+    \begin{align*}
+      \cl{X}_i = \left\{ \ x \in M^{n + 1} \colon x \in \cl{X \cap \inv{\pi_i}(\pi_i(x)) } \ \right\}
+    \end{align*}
+  for $\pi_i$ predictably the projection map onto the $i$-th coordinate. Note, of course, that $\pi_i(X) \subseteq \pi(X)$.
+
+  Without any loss of generality, we make our arguments with respect to $x_1$ here -- although there is no reason they should not similarly hold for any other coordinate. Suppose we have some $x \in \cl{X} \setminus \cl{X}_1$ (a set defined similarly to the frontier of \emph{all} of $X$). Then we can write this $x$ as $x = (x_1, \pri{x})$ where $\pri{x} \in \cl{X}_{x_1}$ and further $\pri{x} \not\in \cl{X_x}$. By the above lemma (Lemma \ref{lemma:closures_fibres}) there are only finitely-many possible such $x_1$ -- and so the set difference above lies in a finite union of hyperplanes, each of which projecting onto a single point under $\pi_1$. So, there exist points $a_{1,1}, \ \hdots, \ a_{1, k_1} \in M$ such that
+    \begin{align}
+      \cl{X} \setminus \cl{X}_1 \subset \bigcup_{j=1}^{k_1} \inv{\pi_1}(a_{1, j}).
+      \label{align:fr_proj}
+    \end{align}
+  As before, it the choice of coordinate $1$ was arbitrary, and this same argument holds for \emph{all} coordinates. Thus, permuting coordinates, we get that for each remaining coordinate, we get some $\left(  a_{i, 1}, \hdots, a_{i, k_i} \right)$, for $i$ varying over the remaining coordinates, such that \ref{align:fr_proj} holds for the respective $i$. Orthogonality of these planes is clear by the differing $i$'s, and so the closure minus the union of these closures sits within a set that can be characterized as
+    \begin{align*}
+      \cl{X} \setminus \bigcup_{i=1}^{n+1} \cl{X}_i \subseteq \left\{ (a_{1},\ j_{1},\ \hdots,\ a_{n+1},\ j_{n+1}) \ \ \colon \ \ \begin{aligned} & j_1 = 1,\ \hdots,\ k_1, \\ & j_{n+1} = 1,\ \hdots,\ k_{n+1} \end{aligned} \right\}.
+    \end{align*}
+    \emph{The} thing to take notice of here is that this set on the right is \emph{finite}, and so our difference in the closure of $X$ and union of closures of the projections onto each coordinate is contained in a finite set.
+
+    Recalling what we proved about the dimension of the union of a set of sets (Proposition \ref{prop:fibre_add}), we get that
+      \begin{align*}
+        \dim{\fr{X}} &= \dim{\cl{X} \setminus X}\\
+                     &\leq \max{ \left\{ \dim{\cl{X}_i \setminus X}, \ 0 \right\} }.
+      \end{align*}
+      The problem is now reduced to showing simply that $\dim{\cl{X}_i \setminus X}$ has dimension less than $X$ for each $i$. This doesn't turn out to be too difficult, and we jump right in with little fuss.
+
+      Without loss of generality (a phrase we are beginning to believe may have a nice initialism), take $i = 1$, and some point $a \in M$. Then
+        \begin{align*}
+          \dim{ \cl{X \cap \inv{\pi_1}(a)} \setminus \left( X \cap \inv{\pi_1}(a) \right) } < \dim{\inv{\pi_1}(a)}
+        \end{align*}
+      so long as this is \inhb, by the inductive hypothesis. Otherwise, if it \emph{is empty}, then we consider the whole faff above, by which we of course mean
+        \begin{align*}
+          \cl{X \cap \inv{\pi_1}(a)} \setminus \left( X \cap \inv{\pi_1}(a) \right) = \left( \cl{X}_1 \setminus X \right) \cap \inv{\pi_1}(a),
+        \end{align*}
+      and so (and we don't claim obviousness necessarily) for each $a \in M$, with $X \cap \inv{\pi_1}(a) \neq \emptyset$, we have that
+        \begin{align*}
+          \dim{\cl{X}_1 \setminus X} \cap \inv{\pi_1}(a) < \dim{X \cap \inv{\pi_1}}.
+        \end{align*}
+      Notice that the left half of this inequality can be identified by the fibre over $a$, and the right as the fibre over $x$, so that
+        \begin{align*}
+          \dim{\cl{X}_1 \setminus X}_a < \dim{X_a}.
+        \end{align*}
+      So, by Exercise \ref{exc:dim_exc}, we get that
+        \begin{align*}
+          \dim{\cl{X}_1 \setminus X} < \dim{X}.
+        \end{align*}
+      Pulling the usual and, to be honest at this point, tired and tiring rabbit out of our (frankly garish) hat of permuting coordinates, we see (in a twist we are certain no one saw coming) that this argument works for \emph{all} coordinates, not just $i = 1$ -- and so the result holds for $i$ from 2 up to $n + 1$. We now have that one of the following holds:
+        \begin{enumerate}
+         \item $\dim{\cl{X} \setminus X} < \dim{X}$
+         \item $\dim{X} = 0$
+       \end{enumerate}
+      The former is exactly what we wanted, and should the dimension of $X$ be 0, then $X$ is finite, and so closed -- and we are finished.
+      \smartqed
 \end{proof}

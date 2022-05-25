@@ -18,8 +18,18 @@
 %\usepackage{courier}
 
 \usepackage[utf8]{inputenc}
+
 \usepackage{type1cm}  
 \usepackage{mathtools}  
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\usepackage{hyperref}
+\hypersetup{pageanchor=false}
+
+\usepackage{datetime}
+\newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH], \THEYEAR}
 
 \usepackage{makeidx}           % allows index generation
 \usepackage{graphicx}          % standard LaTeX graphics tool
@@ -36,6 +46,7 @@
 \usepackage{enumitem}
 
 \usepackage{amsmath}
+\newcommand\qedhere{\square}
 
 \mathtoolsset{centercolon}
 
@@ -51,23 +62,22 @@
 \newcommand{\gam}{\gamma}
 
 \newcommand{\fix}[1]{\textcolor{red}{#1}\xspace}
-\newcommand{\pw}{Pila-Wilkie\xspace}
-\newcommand{\pwt}{\pw Theorem\xspace}
+
 \newcommand{\nt}{number theory\xspace}
 \newcommand{\Nt}{Number theory\xspace}
 \newcommand{\NT}{Number Theory\xspace}
-\newcommand{\ntc}{number theoric\xspace}
-\newcommand{\Ntc}{Number theoric\xspace}
+\newcommand{\ntc}{number theoretic\xspace}
+\newcommand{\Ntc}{Number theoretic\xspace}
 \newcommand{\om}{o-minimal\xspace}
 \newcommand{\Om}{O-minimal\xspace}
 \newcommand{\omy}{o-minimality\xspace}
 \newcommand{\Omy}{O-minimality\xspace}
 \newcommand{\homeomic}{homeomorphic\xspace}
 \newcommand{\homeom}{homeomorphism\xspace}
-\newcommand{\cd}{cell-decomposition\xspace}
-\newcommand{\cds}{cell-decompositions\xspace}
-\newcommand{\CD}{Cell-Decomposition\xspace}
-\newcommand{\CDs}{Cell-Decompositions\xspace}
+\newcommand{\cd}{cell decomposition\xspace}
+\newcommand{\cds}{cell decompositions\xspace}
+\newcommand{\CD}{Cell Decomposition\xspace}
+\newcommand{\CDs}{Cell Decompositions\xspace}
 \newcommand{\cmptble}{compatible\xspace}
 \newcommand{\cmptblety}{compatibility\xspace}
 \newcommand{\cont}{continuous\xspace}
@@ -77,14 +87,50 @@
 \newcommand{\defnb}{definable\xspace}
 \newcommand{\defnbly}{definably\xspace}
 \newcommand{\defnbty}{definability\xspace}
-\newcommand{\defnblycnctd}{definably-connected\xspace}
-\newcommand{\defnbcnctdns}{definable-connectedness\xspace}
+\newcommand{\defnblycnctd}{definably connected\xspace}
+\newcommand{\defnbcnctdns}{definable connectedness\xspace}
 \newcommand{\Mlt}{(M, <)}
 \newcommand{\Mltp}{(M, <, \hdots)}
 \newcommand{\M}{\mathcal{M}}
 \newcommand{\Lstr}{\mathcal{L}\mathrm{-Structure}\xspace}
 \newcommand{\Lstrs}{\mathcal{L}\mathrm{-Structures}\xspace}
 \newcommand{\inv}[1]{#1^{-1}}
+
+
+
+\newcommand{\pw}{Pila-Wilkie\xspace}
+\newcommand{\pwt}{\pw theorem\xspace}
+\newcommand{\pwT}{\pw Theorem\xspace}
+
+
+
+\newcommand{\mt}{monotonicity theorem\xspace}
+\newcommand{\Mt}{Monotonicity theorem\xspace}
+\newcommand{\MT}{Monotonicity Theorem\xspace}
+
+
+
+\newcommand{\cdt}{\cd theorem\xspace}
+\newcommand{\Cdt}{\Cd theorem\xspace}
+\newcommand{\CDt}{\CD theorem\xspace}
+\newcommand{\CDT}{\CD Theorem\xspace}
+
+
+
+\newcommand{\ft}{finiteness theorem\xspace}
+\newcommand{\Ft}{Finiteness theorem\xspace}
+\newcommand{\FT}{Finiteness Theorem\xspace}
+
+\newcommand{\pft}{planar finiteness theorem\xspace}
+\newcommand{\pFt}{planar Finiteness theorem\xspace}
+\newcommand{\PFt}{Planar Finiteness theorem\xspace}
+\newcommand{\PFT}{Planar Finiteness Theorem\xspace}
+
+\newcommand{\bpft}{(planar) finiteness theorem\xspace}
+\newcommand{\bpFt}{(planar) Finiteness theorem\xspace}
+\newcommand{\bPFt}{(Planar) Finiteness theorem\xspace}
+\newcommand{\bPFT}{(Planar) Finiteness Theorem\xspace}
+
 
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -96,27 +142,40 @@
 \newcommand{\Zleq}[1]{\mathbb{Z}_{\leq #1}}
 \newcommand{\Jp}{J^{\prime}}
 \newcommand{\Xprime}[1][X]{#1^{\prime}}
+\newcommand{\pri}[1]{#1^{\prime}}
+\newcommand{\dpri}[1]{#1^{\prime \prime}}
 
+\newcommand{\Xtr}[1][X]{#1^{\textrm{tr}}}
+\newcommand{\Xalg}[1][X]{#1^{\textrm{alg}}}
 \newcommand{\XQH}[1][H]{X(\Q, \ #1)}
+\newcommand{\XtrQH}[1][H]{\Xtr[X](\Q, \ #1)}
+\newcommand{\XalgQH}[1][H]{\Xalg[X](\Q, \ #1)}
+\newcommand{\MmMn}{M^m \times M^n}
+\newcommand{\XMn}[2][X]{#1 \subseteq M^{#2}}
 
 \newcommand{\In}[1][n]{(I)_{#1}}
 \newcommand{\IIn}[1][n]{(II)_{#1}}
-\newcommand{\vonethrum}[2]{#1_{1}, \hdots, #1_{#2}}
 \newcommand{\Minf}{M \cup \{ \pm \infty \}}
-\newcommand{\ionein}{i_1, \hdots, i_n}
-\newcommand{\aoneak}{a_1, \hdots, a_k}
-\newcommand{\vonevm}[2]{#1_1, \hdots, #1_{#2}}
+\newcommand{\ionein}{i_1, \ \hdots, \ i_n}
+\newcommand{\aoneak}{a_1, \ \hdots, \ a_k}
+\newcommand{\vonevm}[2]{#1_1, \ \hdots, \ #1_{#2}}
+\newcommand{\vmvn}[3]{#1_{#2}, \ \hdots, \ #1_{#3}}
+\newcommand{\vmvnsup}[4][,]{#2^{#3}#1 \ \hdots #1 \ #2^{#4}}
+\newcommand{\vmvnsupbr}[4][,]{\vmvnsup[#1]{#2}{(#3)}{(#4)}}
 \newcommand{\izerocell}{(\ionein, 0)\textrm{-cell}}
 \newcommand{\ionecell}{(\ionein, 1)\textrm{-cell}}
 \newcommand{\incell}{(\ionein)\textrm{-cell}}
 \newcommand{\incells}{(\ionein)\textrm{-cells}}
-\newcommand{\vmcell}[2]{(\vonethrum{#1}{#2})\textrm{-cell}}
+\newcommand{\vmcell}[2]{(\vonevm{#1}{#2})\textrm{-cell}}
+\newcommand{\vmncell}[3]{(\vmvn{#1}{#2}{#3})\textrm{-cell}}
 \newcommand{\XsubseteqMn}[1][n]{X \subseteq M^{#1}}
 \newcommand{\inhb}{non-empty\xspace}
 % \newcommand{\inhb}{inhabited\xspace}
 \newcommand{\inj}{injective\xspace}
+\newcommand{\injtion}{injection\xspace}
 \newcommand{\injtvty}{injectivity\xspace}
 \newcommand{\surj}{surjective\xspace}
+\newcommand{\surjtion}{surjection\xspace}
 \newcommand{\surjtvty}{surjectivity\xspace}
 \newcommand{\bij}{bijective\xspace}
 \newcommand{\bijtion}{bijection\xspace}
@@ -142,7 +201,7 @@
 
 %Sets
 \DeclarePairedDelimiterX{\Set}[2]\{\}{%
-  \, #1 \;\delimsize\vert\; #2 \,
+  \, #1 \;\delimsize\colon\; #2 \,
 }
 
 %cardinality
@@ -180,7 +239,7 @@
 \begin{document}
 
 \author{Notes written by Alun Stokes}
-\title{Course Notes on \Omy and the \pwt}
+\title{Course Notes on \Omy and the \pwT}
 \subtitle{Presented by Gareth Jones as part of the Fields Institute Graduate Course on \Omy and Applications}
 \maketitle
 \frontmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -197,12 +256,11 @@
 
 \mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \include{part_1}
-\include{chapter_10}
-\include{chapter_11}
-\include{chapter_12}
-\include{chapter_13}
-\include{chapter_14}
-\include{chapter_15}
+  \include{chapter_11}
+  \include{chapter_12}
+  \include{chapter_13}
+  \include{chapter_14}
+  \include{chapter_15}
 %\include{appendix}
 
 
