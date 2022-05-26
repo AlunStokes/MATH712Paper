@@ -77,6 +77,8 @@ Let $A \subseteq M$. Then
 
 The third of these properties is referred to as having \emph{finite character}. These each feel reasonably obvious enough that we can go without proof, and the interested reader should have little to no trouble coming up with one themselves. The \emph{non}-trivial property, however, that we \emph{will} be proving is referred to as the \emph{Exchange lemma}, which we will curiously notate as a theorem.
 
+\subsection{A Less Easy Property}
+
 \begin{theorem}[Exchange (Pillay \& Steinhorn \cite{pillay_definable_1986})]
   \label{thm:exchange}
   Suppose $A \subseteq M$, and $a, b \in M$. Then if $b \in \dcl{A \cup \{ a \}}$, but $b \not\in \dcl{A}$, then we may `swap' $a$ and $b$, concluding that $a \in \dcl{A \cup \{ b \}}$.
@@ -128,6 +130,8 @@ Although we have been making reference to some set of parameters, $A$ throughout
 
 Informally, we can envision that for two sufficiently small sets of parameters, $A \subseteq B \subseteq M$, we can clearly see that for \defnb $\XMn{n}$, we get $\dim{X}_B \leq \dim{X}_A$. Supposing the dimension with respect to $A$ to be $k$ with point $a \in X$ witnessing the dimension, without loss of generality we can take the first $(\vonevm{a}{k})$ to be independent over $A$ -- but then by saturation, we can similarly find $k$ independent such $(\vonevm{b}{k})$ over $B$ with type matching that for our $a$. Then, our $(\vonevm{b}{k})$ extends to $b \in X$, and so $\dim{X}_B \geq k$ as well. Thus, the choice of parameters is irrelevant (again, given this caveat).
 
+\section{Reconciling Dimensionality}
+
 Ultimately, our goal here is to show that the dimension we are currently discussing is, in fact, equivalent to that discussed in the previous chapter. To this end, consider the following lemma, which topologically characterizes the independence of points.
 
 \begin{lemma}
@@ -146,9 +150,9 @@ Ultimately, our goal here is to show that the dimension we are currently discuss
 
   Supposing this holds for $M^n$, we take $\aMn[a]{n+1}$ with coordinates $(\vonevm{a}{n+1})$ independent over $A$, and suppose $\XMn[X]{n+1}$ to be $\Adefnb$ and having $a \in X$.
   \begin{svgraybox}
-    It bears mentioning here, as we are about to use this fact but have neither mentioned, proved, nor intend to prove it, but the follow is true: If we have a set of cells decomposed over some set of parameters, $A$, then we can take all the cells to be defined over that same set of parameters.
+    It bears mentioning here, as we are about to use this fact but have neither mentioned, proved, nor intend to prove it, but the following is true: If we have a set of cells decomposed over some set of parameters, $A$, then we can take each of those cells to be defined over that same set of parameters.
   \end{svgraybox}
-  So, by \cd, we not only get to suppose that $X = C$ is a cell defined over $A$. As such, $C$ may either be
+  Recall that by \cd, we get to suppose that $X = C$ is a cell defined over $A$. As such, $C$ may either be
     \begin{itemize}
       \item $C = \graph{f}$ for $\funcdom{f}{\pri{C}}{M}$ $\Adefnb$ -- in which case $a_{n+1} = f(\vonevm{a}{n})$, leading to a contradiction of independence over $A$; \ or
 
@@ -167,7 +171,7 @@ Immediately putting that lemma to work, we can show the following:
 \end{proposition}
 
 \begin{remark}
-  The maximum such possible $k$ is sometimes referred to as the \emph{topological dimension} of the set -- although (and as we have bemoaned before) this terms is also used to refer to distinct ideas.
+  The maximum such possible $k$ is sometimes referred to as the \emph{topological dimension} of the set -- although (and as we have bemoaned before) this term is also used to refer to a variety of inequivalent concepts.
 \end{remark}
 
 \begin{corollary}
@@ -177,6 +181,14 @@ Immediately putting that lemma to work, we can show the following:
 
 We will come back to prove this corollary in a moment, for now turning our attention back to a proof of the neglected proposition.
 \begin{proof}[of Proposition \ref{prop:inhb_coord_proj}]
-  We start with the forward direction. Suppose $\dim{X} \geq k$.
+  We start with the forward direction. Suppose $\dim{X} \geq k$. Then for our $a \in X$ of interest, there is a $k$-tuple that, without loss of generality, can be taken to be $\vonevm{a}{k}$ that are independent over $A$. Then, should we take the projection onto the first $k$ coordinates, we know that $(\vonevm{a}{k})$ lies in that projection, and so by the lemma we just proved, that projection has \inhb interior.
+
+  Now for the other direction, we suppose such a projection, $\funcdom{\pi}{M^n}{M^k}$ exists such that $\pi(X)$ has \inhb interior. Again, we suppose for convenience that this occurs for the first $k$ coordinates. Then, $\pi(X)$ is definitionally $\Adefnb$, and having non-empty interior, must contain an open $\Adefnb$ box, $U = I_1 \times \hdots \times I_k$. Using saturation, we inductively find $(\vonevm{a}{k}) \in U$ independent over $A$. Then, taking $a \in X$ such that $\pi(a) = (\vonevm{a}{k})$, we have that this witnesses the dimension of $X$ is no less than $k$. So, $\dim{X} \geq k$.
 \end{proof}
+
+We now prove the capstone corollary to these last two chapters.
+\begin{proof}[of Corollary \ref{cor:dim_agree}]
+  \fix{Ummmmmmm}
+\end{proof}
+
 
