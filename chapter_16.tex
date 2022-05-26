@@ -7,7 +7,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
 %\motto{Use the template \emph{chapter.tex} to style the various elements of your chapter content.}
 %\chapter{Algebraic Dimensionality: A Second, and  (Perhaps) More Enlightening Approach}
-\chapter{Algebraic Dimension: One More Time Around}
+\chapter{Model-Theoretic Dimension: Once More with Feeling}
 \label{chap:alg_dimensionality} % Always give a unique label
 % use \chaptermark{}
 % to alter or adjust the chapter heading in the running head
@@ -31,15 +31,152 @@ Although at no point will we be diving deeply into the depths of model theory an
 \section{So How Does One Define Dimension?}
 \label{sec:alg_dim}
 
-\noindent Tempting though it is to answer ``depends on who you ask'' and move on with our day, the question does bear significant thought. We start with the following definition (and promise we are not trying to induce amnesia):
+\noindent Tempting though it is to answer ``depends on who you ask'' and move on with our day, the question does bear significant thought. We start with the following definition (and promise we are not trying to induce d\'ej\`a vu):
 
 \begin{definition}[Algebraic Dimension]
   \
-  Unlike in the previous chapter, we will \emph{not} be starting with a definition of algebraic dimension, and working from there -- you simply are not yet prepared, given the content discussed so far. We now back up a little bit, and will return to this topic when more sufficiently prepared.
+  Unlike in the previous chapter, we will \emph{not} be starting with a definition of algebraic dimension, and working from there -- you simply are not yet prepared, given the content discussed so far. We now back up a little bit, and will return to this topic when more sufficiently prepared. Suffice it to say for now that our definition of dimension will be reliant on the idea of \emph{algebraic} (and then, equivalently, \emph{\defnb}) closures (in the model-theoretic sense).
   \label{defn:alg_dim_fake}
 \end{definition}
 
-\section{On Closures of Various Types}
-We hope that the mention of `closure' brings no worry to your mind, as we have for several chapters now been using the \emph{standard} idea of a closure of a set in our definitions, propositions, \lemmas, proofs, and whatever such delineations one may come up with. As we are sure you are aware, however, `closure' is one of those terms that mathematicians have a difficult time letting go of once they've sunk they're teeth in, and it has come to mean different things to several different branches of mathematical discipline. Perhaps the most well-known (to any undergraduate having taken an analysis class) is that of the \emph{metric closure} -- that is, taking a set, and adding all its limit-points with respect to a given metric. Think $\R$ from $\Q$ or local $p$-adic equivalents. Were you to ask a student fresh out of modern algebra, they would likely tell you of \emph{algebraic closure}, wherein one adds all the roots of univariate-polynomials with coefficients in a given field. Think $\overline{\Q}$ from $\Q$ -- notice that this is a \emph{different} closure than one gets from $\Q$ under any $p$-norm.
+\section{Some Recollections or Introductions}
 
-While this is likely all well-known to a reader of your calibre, we believe it bears mentioning before we intoduce the two ideas we are about to be playing about with for the next little bit: those of \emph{definable closure} ($\operatorname{dcl}$) and \emph{algebraic closure} ($\operatorname{acl}$).
+Here we recall for some, and for others introduce for the first time, some of the rudimentary ideas of model theory, and in particular of how one goes about defining a model-theoretic or algebraic closure of a set -- and then go on in a similar way to before to use this to define dimensionality.
+
+\subsection{On Closures of Various Types}
+
+\begin{definition}[Algebraic Closure]
+  We say some $A \subseteq M$, then the \textbf{model-theoretic algebraic closure of $A$}, which we will denote by $\acl{A}$, is the union of all finite $A$-\defnb subsets (in $\M$) of $M$.
+\end{definition}
+
+\begin{definition}[Definable Closure]
+  Again, given $A \subseteq M$, then the \textbf{\defnb closure of $A$}, denoted $\dcl{A}$, is given by the union of all $A$-\defnb singletons.
+\end{definition}
+
+Note perhaps a more careful attention to parameters being paid here than in previous sections -- precision here with respect to the topic is, not to say of greater importance than elsewhere, but can much more easily lead to confusion if not properly, clearly, and rigorously attended to.
+
+
+In our setting, in particular in reference to the order-structure our models possess, these seemingly disparate definitions of closure actually coincide -- that is,
+\begin{align*}
+  \acl{A} = \dcl{A}.
+\end{align*}
+
+For convenience then, we will in general simply work with the definable closure.
+
+\subsection{Some Easy Properties}
+
+\begin{proposition}[Basically Free]
+\leavevmode
+Let $A \subseteq M$. Then
+  \begin{enumerate}
+    \item $A \subseteq \dcl{A}$
+    \item $\dcl{\dcl{A}} = \dcl{A}$
+    \item $\dcl{A} = \bigcup \left\{ \ \dcl{\{a_1, \hdots, a_n\}} \colon n \in \Zgeq{1}, \ a_j \in A \ \right\}$
+  \end{enumerate}
+\end{proposition}
+
+The third of these properties is referred to as having \emph{finite character}. These each feel reasonably obvious enough that we can go without proof, and the interested reader should have little to no trouble coming up with one themselves. The \emph{non}-trivial property, however, that we \emph{will} be proving is referred to as the \emph{Exchange lemma}, which we will curiously notate as a theorem.
+
+\begin{theorem}[Exchange (Pillay \& Steinhorn \cite{pillay_definable_1986})]
+  \label{thm:exchange}
+  Suppose $A \subseteq M$, and $a, b \in M$. Then if $b \in \dcl{A \cup \{ a \}}$, but $b \not\in \dcl{A}$, then we may `swap' $a$ and $b$, concluding that $a \in \dcl{A \cup \{ b \}}$.
+\end{theorem}
+
+Whilst this may seem apropos of nothing and not terribly well-motivated, with a bit of squinting, head-scratching, and perhaps dusting off a copy of \emph{Linear Algebra and Applications 6e} or some other such undergraduate textbook, you may realize that this is in fact a generalization of a fact you know quite well -- the Steinitz Exchange Lemma; that is, that any two bases of isomorphic (finite) vector spaces contain the same number of elements. Much like many model-theoretic results, and as is sort of the point of model theory, we see this sort of thing often -- where something abstract-feeling and seemingly far-removed has immediate consequences should specification to any particular model be made. Now let's prove this, relying heavily on the \Mt to do so.
+
+\begin{proof}[of Exchange (Theorem \ref{thm:exchange})]
+  Adding constants for elements of $A$, we may suppose that $A = \emptyset$. So, then every $b \in \dcl{\{a\}}$ and \emph{not} in $\dcl{\emptyset}$. Since $b \in \dcl{\{a\}}$, then there is an $\esdefnb$ function, $f$, with $a \in \dom{f} \subseteq M$ and such that $f(a) = b$ (by definition).
+
+  Since $\dom{f}$ is $\esdefnb$, it is a finite union of $\esdefnb$ points and $\esdefnb$ intervals. Supposing $a$ was one such point, then $a$ would be $\esdefnb$, and by $b$ in the \defnbcl of $a$, we would also have $b$ $\esdefnb$ -- but we know it not to be by assumption, and so this is a contradiction. Thus, $a$ is \emph{not} a point in $\dom{f}$, and we can thus assume $\dom{f}$ to be an $\esdefnb$ open interval, $I$, with $a \in I$. By \Mt, we can assume that f is strictly monotonic (or constant) on $I$. If constant, then
+    \begin{align*}
+      b = f(a) = f(m)
+    \end{align*}
+  for $m$ the midpoint of $I$ (which must be $\esdefnb$ by I $\esdefnb$), and further by $f \esdefnb$, so too is $b \esdefnb$. Again, this contradiction implies $f$ is non-constant, and so must be strictly monotonic.
+
+  Then, $\inv{f}(b) = a$ is well defined, and so $a$ is \defnb from $b$ -- that is, $a \in \dcl{\{b\}}$ as desired.
+  \smartqed
+\end{proof}
+
+Having those easy properties above (in particular finite character) along with exchange means that the concept of \defnbcl is what is referred to as a \emph{\pregeom}. That is, $\dclop$ is a \pregeom in any model of the theory of $\M$. For those of us who have not previously encountered the idea of \pregeoms, this is significant because a \pregeom comes equipped with a notion of \emph{dimension} -- which is exactly what we're after right now. Even if you are unfamiliar with the term, I can assure you, dear reader, that you are intimately familiar with several examples of these objects. Vector spaces, projective and affine spaces, and algebraically closed fields are all examples of \pregeoms -- although it should be noted that these are of quite different classifications (within the realm of this area of study) from one another \cite{pillay_geometric_1996}.
+
+Suppose $A \subseteq M$, $\aMn[a]{n}$. We define
+  \begin{align*}
+    \dim{\sfrac{a}{A}} = \min{ \left\{ \ \card{\pri{a}} \ \colon \ \pri{a} \textrm{ a subtuple of } a \textrm{ and } a \in \dcl{A \cup \pri{a}}^n \ \right\} }.
+  \end{align*}
+
+An alternative characterization is as follows: we call some $X \subseteq M$ \emph{independent} over $A$ if for every $x \in X$, we have $x \not\in \dcl{A \cup (X \setminus \{ x \})}$. Then, the dimension as first defined is given by the \emph{maximum} cardinality of a subtuple which is independent over $A$. That is,
+  \begin{align*}
+    %\sfrac{a}{A} = \max{ \left\{ \card{X} \ \colon \ X \subseteq M \textrm{ is independent over } A \right\} }
+    \dim{ \sfrac{a}{A} } = \max{ \left\{ \card{X} \ \colon \ \forall x \in X \ . \ x \not\in \dcl{A \cup (X \setminus \{ x \})} \right\} }
+  \end{align*}
+
+We assume that $\M$ is sufficiently saturated and that all parameter sets are small relative to this saturation claim. We will not be discussing at any great length what this means, but we will note that this is actually a stronger condition than we necessarily need to take -- it is just a convenience that will make things a bit easier down the line. Consider now the following definition:
+
+\begin{definition}
+  Suppose $\XMn[X]{n}$ is \defnb over $A$. Then we define the dimension of $X$ to be, predictably,
+    \begin{align*}
+      \dim{X} = \max{ \left\{ \ \dim{\sfrac{a}{A}} \ \colon \ a \in X \ \right\} }.
+    \end{align*}
+    \label{defn:alg_dim}
+\end{definition}
+
+\begin{remark}
+  Without the assurance of sufficient saturation, the points $\left\{ \sfrac{a}{A} \right\}$ may not even exist, and so instead we could quantify over all elementary extensions of our model -- but for our purposes, we acknowledge, and go on to ignore this small potential snag.
+\end{remark}
+
+Although we have been making reference to some set of parameters, $A$ throughout, it turns out that as long as you take a ``small'' set (again, relative to the saturation), then the choice of $A$ does not truly affect the dimension of the definable $X$. To be clear, we will not be clear about quantifying appropriate ``smallness'' relative to the saturation in this course, and simply sweep the issue under the rug for perhaps a secondary, more rigorous course on the topic.
+
+Informally, we can envision that for two sufficiently small sets of parameters, $A \subseteq B \subseteq M$, we can clearly see that for \defnb $\XMn{n}$, we get $\dim{X}_B \leq \dim{X}_A$. Supposing the dimension with respect to $A$ to be $k$ with point $a \in X$ witnessing the dimension, without loss of generality we can take the first $(\vonevm{a}{k})$ to be independent over $A$ -- but then by saturation, we can similarly find $k$ independent such $(\vonevm{b}{k})$ over $B$ with type matching that for our $a$. Then, our $(\vonevm{b}{k})$ extends to $b \in X$, and so $\dim{X}_B \geq k$ as well. Thus, the choice of parameters is irrelevant (again, given this caveat).
+
+Ultimately, our goal here is to show that the dimension we are currently discussing is, in fact, equivalent to that discussed in the previous chapter. To this end, consider the following lemma, which topologically characterizes the independence of points.
+
+\begin{lemma}
+  Suppose that $\aMn[a]{n}$, and $\AM[A]$ (small). Then, the coordinates, $(\vonevm{a}{n})$ of $a$ are independent over $A$ if and only if every $\Adefnb$ set $\XMn[X]{n}$ with $a \in X$ has \inhb interior.
+  \label{lemma:indep_top}
+\end{lemma}
+
+\begin{proof}[of Lemma \ref{lemma:indep_top}]
+  We start with the easy direction, and use a proof by contradiction. Suppose $\vonevm{a}{n}$ are \emph{dependent} over $A$. Without loss of generality, take $a_n \in \dcl{A \cup \{ \vonevm{a}{n-1} \}}$. Then, our language contains some formula, $\phi$, with parameters from $A$, such that $a_n$ is the unique $x$ satisfying $\phi(\vonevm{a}{n-1}, x)$. Now, let
+    \begin{align*}
+      X = \left\{ \ \aMn[x]{n} \ \colon \ \phi(\vonevm{x}{n}) \textrm{ holds and } x_n \textrm{ uniquely satisfies } \phi(\vonevm{x}{n}) \ \right\}.
+    \end{align*}
+  By uniqueness of $x_n$, we must have that $X$ has empty interior and $a \in X$. Now, for the other direction we use \cd by induction on $n$.
+
+  If $n = 1$, and if $a_1$ is independent over $A$, then $a_1$ is not in any finite $\Adefnb$ set. So, if $a_1 \in X$ for $X$ $\Adefnb$, then $X$ is infinite, and so contains an open interval. Thus, it has \inhb interior.
+
+  Supposing this holds for $M^n$, we take $\aMn[a]{n+1}$ with coordinates $(\vonevm{a}{n+1})$ independent over $A$, and suppose $\XMn[X]{n+1}$ to be $\Adefnb$ and having $a \in X$.
+  \begin{svgraybox}
+    It bears mentioning here, as we are about to use this fact but have neither mentioned, proved, nor intend to prove it, but the follow is true: If we have a set of cells decomposed over some set of parameters, $A$, then we can take all the cells to be defined over that same set of parameters.
+  \end{svgraybox}
+  So, by \cd, we not only get to suppose that $X = C$ is a cell defined over $A$. As such, $C$ may either be
+    \begin{itemize}
+      \item $C = \graph{f}$ for $\funcdom{f}{\pri{C}}{M}$ $\Adefnb$ -- in which case $a_{n+1} = f(\vonevm{a}{n})$, leading to a contradiction of independence over $A$; \ or
+
+      \item $C = (f, g)_{\pri{C}}$ for $\funcdom{f,g}{\pri{C}}{M}$ \cont and $\Adefnb$ with $f < g$ (or one of the functions $\pm \infty$). This latter case must be true by exhaustion.
+    \end{itemize}
+  So, we get that $(\vonevm{a}{n}) \in \pri{C}$. We have that $\vonevm{a}{n}$ are independent over $A$ and that $\pri{C}$ is an $\Adefnb$ set containing them -- and so must have interior. By the inductive hypothesis, $\pri{C}$ is an open cell, and then so too must be $C$, meaning $X$ has \inhb interior.
+
+  With both directions proved, we are now finished.
+  \smartqed
+\end{proof}
+
+Immediately putting that lemma to work, we can show the following:
+\begin{proposition}
+  Let $\XMn[X]{n}$ an $\Adefnb$ set, and $k \leq n$ a possible dimension for $A$. Then $\dim{X} \geq k$ if and only if there is a coordinate-projection, $\funcdom{\pi}{M^n}{M^k}$ such that the projection $\pi(X)$ has \inhb interior.
+  \label{prop:inhb_coord_proj}
+\end{proposition}
+
+\begin{remark}
+  The maximum such possible $k$ is sometimes referred to as the \emph{topological dimension} of the set -- although (and as we have bemoaned before) this terms is also used to refer to distinct ideas.
+\end{remark}
+
+\begin{corollary}
+  For $\XMn[X]{n}$ a \defnb set, the notion of $\dim{X}$ as described in this chapter (Definition \ref{defn:alg_dim}) agrees with that of the previous chapter (Definition \ref{defn:defn_dim}).
+  \label{cor:dim_agree}
+\end{corollary}
+
+We will come back to prove this corollary in a moment, for now turning our attention back to a proof of the neglected proposition.
+\begin{proof}[of Proposition \ref{prop:inhb_coord_proj}]
+  We start with the forward direction. Suppose $\dim{X} \geq k$.
+\end{proof}
+

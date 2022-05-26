@@ -23,8 +23,9 @@
 \usepackage{mathtools}  
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{xfrac}
 
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \hypersetup{pageanchor=false}
 
 \usepackage{datetime}
@@ -153,6 +154,9 @@
 \newcommand{\XalgQH}[1][H]{\Xalg[X](\Q, \ #1)}
 \newcommand{\MmMn}{M^m \times M^n}
 \newcommand{\XMn}[2][X]{#1 \subseteq M^{#2}}
+\newcommand{\aMn}[2][a]{#1 \in M^{#2}}
+\newcommand{\AM}[1][A]{#1 \subseteq M}
+
 
 \newcommand{\In}[1][n]{(I)_{#1}}
 \newcommand{\IIn}[1][n]{(II)_{#1}}
@@ -191,7 +195,9 @@
 \newcommand{\inter}[1]{\operatorname{int}\left(#1\right)}
 \newcommand{\cl}[1]{\operatorname{cl}\left(#1\right)}
 \newcommand{\dcl}[1]{\operatorname{dcl}\left(#1\right)}
+\newcommand{\dclop}{\operatorname{dcl}}
 \newcommand{\acl}[1]{\operatorname{acl}\left(#1\right)}
+\newcommand{\aclop}{\operatorname{acl}}
 \renewcommand{\dim}[1]{\operatorname{dim}\left(#1\right)}
 \newcommand{\defnbdim}[1]{\operatorname{dim_{defn}}\left(#1\right)}
 \newcommand{\algdim}[1]{\operatorname{dim_{alg}}\left(#1\right)}
@@ -199,6 +205,14 @@
 \newcommand{\funcdom}[3]{#1 \colon #2 \to #3}
 \newcommand{\funcdef}[3]{#1 \colon #2 \mapsto #3}
 \newcommand{\funcrestr}[2]{#1 \vert_{#2}}
+
+\newcommand{\esdefnb}{\mathrel{\emptyset \textrm{-\defnb}}}
+\newcommand{\Adefnb}[1][A]{#1\textrm{-\defnb}}
+\newcommand{\defnbcl}{\defnb closure\xspace}
+\newcommand{\pregeom}{pregeometry\xspace}
+\newcommand{\pregeoms}{pregeometries\xspace}
+\newcommand{\Pregeom}{Pregeometry\xspace}
+\newcommand{\Pregeoms}{Pregeometries\xspace}
 
 %Sets
 \DeclarePairedDelimiterX{\Set}[2]\{\}{%
