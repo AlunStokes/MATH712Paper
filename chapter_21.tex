@@ -19,7 +19,7 @@
 
 \section{How We're Going to Prove It}
 
-As mentioned before -- but bears repeating -- our approach to proving \pwt (in our special little case) broadly follows that of Bhardwaj and van den Dries \cite{bhardwaj_pilawilkie_2022}; a recent paper that only came out this year (should you be reading this in 2022). Their major contribution includes the use of \sacds to simplify several arguments of the original proof by Pila and Wilkie. They also provide a full treatment of a recent variant \cite{binyamini_yomdingromov_2021} of the (classical) Yomdin-Gromov theorem \cite{gromov_entropy_1987} (again, assuming your readership takes places not too soon after these words reach the page) in 2021, and a result of Bombieri and Pila \cite{bombieri_number_1989}, which is also made use of.
+As mentioned before -- but bears repeating -- our approach to proving \pwt (in our special little case) broadly follows that of Bhardwaj and van den Dries \cite{bhardwaj_pilawilkie_2022}; a recent paper that only came out this year (should you be reading this in 2022). Their major contribution includes the use of \sacds to simplify several arguments of the original proof by Pila and Wilkie. They also provide a full treatment of a recent variant \cite{binyamini_yomdingromov_2021} of the (classical) Yomdin-Gromov theorem \cite{gromov_entropy_1987} (again, assuming your readership takes places not too soon after these words reach the page) in 2021, and a result of Bombieri and Pila \cite{bombieri_number_1989}, which is also made use of. In our case, we are going to be following the (recent) treatment of what we will come to colloquially call \emph{parameterization} by \cite{binyamini_yomdingromov_2021}.
 
 \centerline{\rule{0.6667\linewidth}{.2pt}}
 \bigskip
@@ -100,14 +100,14 @@ In general, a \defnb set may contain a rational line (with interior, that is), i
 
 By our definition a few above, it is clear then that the set of interest to us is $\XtrQH[H]$, where we take all of $X$ and throw away all the `junk' bits we identify with $\Xalg[X]$. Notice that we assume our $X$ to be definable, but these partitions into algebraic and transcendental sets can be \emph{far} from definable, especially $\Xalg[x]$. Indeed, understanding each of these two sets are different problems from one another, requiring different approaches to say meaningful things about. For now, we focus on $\Xtr[X]$.
 
-\section{\pw Proper and the Two Ingredients}
+\section{The \pwt Proper and the Two Ingredients}
 
 We stated it in the Introduction so as to give something to look forward to, but we now do so again -- without further ado, the \pwt:
 
   \begin{theorem}[The \pwT]
     Suppose $\XRn[X]{n}$ is a \defnb set (in our \om structure). Then for all $\eps > 0$, there exists some $c > 0$ such that for all $H \in \Zgeq{1}$,
       \begin{align*}
-        \card{\XtrQH[H]} \leq c \cdot H^{\eps}.
+        \card{\XtrQH[H]} \leq \bound[H].
       \end{align*}
       \label{thm:pwt}
   \end{theorem}
@@ -116,14 +116,45 @@ We stated it in the Introduction so as to give something to look forward to, but
 
   Nice though it would be to just put a quick proof underneath and sate ourselves of this theorem, it does unfortunately require a bit more work than that. We are going to go through in the next few chapters and prove the necessary constituents to a proof of Theorem \ref{thm:pwt}. The two main bits are as follows:
   \begin{enumerate}
-    \item \textbf{The \om bit}: Suppose we have a \defnb set $X \subset (0, 1)^n$ (by normalization) and some $r \in \Zgeq{1}$. Then there exists a set of functions, $\{ \vonevm{\phi}{k} \}$ where $\funcdom{\phi_j}{(0, 1)^{\dim{X}}}{X}$ that are $C^r$ \defnb maps such that all derivatives of each map up to degree $r$ are bounded (in modulus) by $1$ and whose union is $X$.
 
-    \item \textbf{The number theory bit}: Let $k, n \in \Zgeq{1}$, $k < n$. Then for each $d \in \Zgeq{1}$, there exists some $r \in \Zgeq{1}$ and $c, \eps > 0$ with the property that if $\funcdom{phi}{(0, 1)^k}{(0, 1)^n}$ is a $C^r$ map with derivatives bounded by $1$ up to order $r$ (note: not necessarily \defnb), and $X = \image{phi}$, then for $G \in \Zgeq{1}$, the set $\XQH[H]$ is contained in at most $c \cdot H^{\eps}$ algebraic hypersurfaces of degree at most $d$. Further, this $\eps \to 0$ as $d \to \infty$.
+    \item \textbf{The \om bit}: Suppose we have a \defnb set $X \subset (0, 1)^n$ (by normalization) and some $r \in \Zgeq{1}$. Then there exists a set of functions, $\{ \vonevm{\phi}{k} \}$ where $\funcdom{\phi_j}{(0, 1)^{\dim{X}}}{X}$ that are $C^r$ \defnb maps such that all derivatives of each map up to degree $r$ are bounded (in modulus) by $1$ and whose union is $X$.
+    \label{pw_proof:pt1}
+
+    \item \textbf{The number theory bit}: Let $k, n \in \Zgeq{1}$, $k < n$. Then for each $d \in \Zgeq{1}$, there exists some $r \in \Zgeq{1}$ and $c, \eps > 0$ with the property that if $\funcdom{\phi}{(0, 1)^k}{(0, 1)^n}$ is a $C^r$ map with derivatives bounded by $1$ up to order $r$ (note: not necessarily \defnb), and $X = \image{\phi}$, then for $G \in \Zgeq{1}$, the set $\XQH[H]$ is contained in at most $c \cdot H^{\eps}$ algebraic hypersurfaces of degree at most $d$. Further, this $\eps \to 0$ as $d \to \infty$.
+    \label{pw_proof:pt2}
 
   \end{enumerate}
 
-In essence, this first point means that definable sets possess a certain type of parameterization, we will come to know as \emph{cellular $r$-parameterizations}. In reference to the work we follow, the Yomdin-Gromov theorem was mentioned (which was not actually a join work, but work continued by Gromov, inspired by Yomdin), which essentially shows this result over particular special cases. Where \pw improves is by generalizing -- first to more general \om structures, and then to further generalizations we will discuss later on.
+In essence, this first point means that definable sets possess a certain type of parameterization, we will come to know as \emph{cellular $r$-parameterizations}. In reference to the work we follow, the Yomdin-Gromov theorem was mentioned (which was not actually a joint work, but work continued by Gromov, inspired by Yomdin), which essentially shows this result over particular special cases. We use a newer variant as mentioned before, which will allow us to go on to show that \pw generalizes the previously given -- first to more general \om structures, and then to further generalizations we will discuss later on.
 
-Just as a point of note, it is this second point that we have (almost \textit{ad nauseam}) been mentioning that has its roots in work between Bombieri and Pila \cite{bombieri_number_1989}.
+Just as a point of note, it is this second part of the proof that we have (almost \textit{ad nauseam}) been mentioning that has its roots in work between Bombieri and Pila \cite{bombieri_number_1989}.
 
 Unfortunately, unlike we have seen with a couple other multi-part results in the first part, the \pwt does \emph{not} immediately and obviously follow, even once we have these two results -- so that will take a bit of doing in and of itself. So, for the next three odd chapters, we will preoccupy ourselves with proving first the \emph{\om bit}, then the \emph{\nt bit}, and finally, pulling it all together. The third and final part of this set of notes will then discuss, without too much detail, some extensions, generalizations, and applications of the \pwt, and how we have seen it being used since its inception.
+
+\section{Just a Couple of Remarks Before we Begin}
+
+To not faff on too long, here we just enumerate a few remarks on what we've just stated, and a bit of what is to come. These remarks will not be crucial to what follows, but are of significant interest, nonetheless.
+\begin{remark}[A Series of Remarks]
+\begin{enumerate}
+  \item The bound given in the \pwt of $\bound[H]$ is the \emph{best} possible bound. It is already the best in the special case of Pila on curves given above -- and so this implies that $\pw$ cannot be improved over the reals. In general, the proof involves a bit more.
+
+  \item However, we often can do better in `effective' and common examples. The first point merely points out that, in general, we can come up with structures that can do no better than the general case -- but in many particular restrictions, we can do better. A good example is in $\R_{\textrm{exp}}$, where Pila conjectured that we can bound by $c \log{(H)^k}$. As well, Binyamini and Novikov \cite{binyamini_wilkies_2017} prove such a bound for $(\overline{\R}, \ \operatorname{exp}_{[0, 1]}, \ \operatorname{sin}_{[0, 1]})$, the restricted $\operatorname{exp}$ and $\operatorname{sin}$ functions. These sorts of (improved) bounds are known are many classes of sets, though very often they are \emph{not} the \defnb sets of some \om structure, requiring more restriction than we assume here.
+
+  \item The $c$ in the bound $\bound$ is \emph{not} effective -- which is to say, not easily or reasonably describable or calculable. Given that the nature of this work is often \emph{not} computational, this is not necessarily a terrible thing -- although should it be effective, it would be the odd mathematician to be unhappy about it.
+
+  \item There are various stronger results (eg. bounds on number field degrees over $\Q$, rather than rational points), where the height function is no longer rational but algebraic. For example, consider
+      \begin{align*}
+        \card{ \ \Xtr (d, H) \ } &= \card{ \ \alpha \in X \ \colon \ [\Q(\alpha) \colon \Q] \leq d, \ H(\alpha) \leq H \ } \\
+                                 &\leq \bound[H] \textrm{ when } c = c(d).
+      \end{align*}
+    Here what we hope for (in nice structures, not in general), something of the form
+      \begin{align*}
+        c \cdot d^k \cdot \log{(H)}^{\ell}.
+      \end{align*}
+    Such bounds also have applications that generally differ to those of \pw (some of which we will come to see later on).
+
+    \item Finally, there has been a good bit of work put in (and still being put in) to the \emph{parameterization result}. This was the original result by Yomdin that was later worked on by Gromov. As it turned out, of course, Pila and Wilkie were able to use that result (in conjunction with a good bit else) to prove the theorem on which this course is primarily interested. Further improvements to these parameterization results have effective application such as, for example, the \emph{number} of $\vonevm{\phi}{k}$ needed, as a function of $r$, as stated in part (ingredient) \ref{pw_proof:pt1} in our proof of the \pwt. Or, for example, when can we do better than having these function be $C^r$ -- such as being $C^{\infty}$ with some bound (not necessarily 1, as we have) on derivatives of all orders.
+  \end{enumerate}
+\end{remark}
+
+If any of these topics seemed of particular interest to you, then it will be a bit of a disappointment that we do  \emph{not} discuss any of them in great detail here -- and those we do, we do so at more of a surface-level than the other content presented. That said of course, the references provided (and still currently worked on literature in the area) is a great place to look for further information on these topics.

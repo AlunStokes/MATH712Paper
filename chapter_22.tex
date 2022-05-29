@@ -6,14 +6,76 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
 %\motto{Use the template \emph{chapter.tex} to style the various elements of your chapter content.}
-\chapter{The O-Minimality Bit}
-\chaptermark{Familiarities all around (we hope)}
+\chapter{The O-Minimality Bit (Parameterization)}
+\chaptermark{Familiarities abound (hopefully)!}
 \label{chap:om_bit} % Always give a unique label
 % use \chaptermark{}
 % to alter or adjust the chapter heading in the running head
 %\chaptermark{Some Introductions}
 
-\abstract*{The O-Minimality Bit}
+\abstract*{We initially and have for a bit now been calling this section `the \om bit' in order to differentiate it from the number theoretic part that is to come next. However, going forward, and as was alluded to a bit in the last chapter, this `\om bit' is about \param, and we shall generally go on to refer to this section and result as the `\param result', or simply `\param'. \fix{SAY MORE.}}
 
-\abstract{The O-Minimality Bit}
+\abstract{We initially and have for a bit now been calling this section `the \om bit' in order to differentiate it from the number theoretic part that is to come next. However, going forward, and as was alluded to a bit in the last chapter, this `\om bit' is about \param, and we shall generally go on to refer to this section and result as the `\param result', or simply `\param'. \fix{SAY MORE.}}
+
+\bigskip
+
+\section{Setting}
+
+In this section, we actually step back a bit from the specificity of $\R$, and work over a more general \om expansion of an ordered field, $\M = \Mltarithplus$. We let $I = (0, 1)$ the open unit interval, interpreted in our model, $\M$. For the next little while, we have Binyamini and Novikov \cite{binyamini_yomdingromov_2021} to thank for what is to come. We begin with some introduction to the world in which we will find ourselves for the next little bit.
+
+\begin{definition}
+  A \emph{\bc}, $\CIn[C]{n}$ is a set given by a product of copies of $I$ and singletons containing $0$, such that there are in total $n$ factors of this set product. On such a cell, $C$, a \cont map, $\funcdom{\phi}{C}{I^n}$ is called \emph{cellular} if
+    \begin{enumerate}
+      \item For $\phi = (\vonevm{\phi}{n})$ with each $\phi_j$ only dependent on the first $j$ coordinates.
+
+      \item For each $j$, and each $(\vonevm{x}{j - 1})$ in the projection of $C$ onto the the first $j - 1$ coordinates, the function $x_j \mapsto \phi_j(\vonevm{x}{j})$ is strictly increasing.
+    \end{enumerate}
+
+\end{definition}
+
+This next remark is one to remember, as it is a fact that we will be using and making reference to often.
+
+
+
+\begin{remark}
+  Suppose $\funcdom{\phi}{C}{I^n}$, $\funcdom{\psi}{\pri{C}}{C}$ are both cellular. Then so too is their composition, $\funcdom{\phi \circ \psi}{\pri{C}}{I^n}$.
+\end{remark}
+Checking that the two necessary conditions holds is rather trivial here, and so not included. This next bit is mostly just notational.
+
+\begin{definition}[and notation for the norm]
+  Given $\XRn[U]{n}$ and $\funcdom{f}{U}{\R^m}$ a $C^r$ map, we set the $r$-norm of $f$ to be
+    \begin{align*}
+      \rnorm[r]{\ f \ } = \left( \max_{\abs{\alpha} \leq r}{ \sup{ \abs{ \ ( D^{(\alpha)} f_j(x) \ } } } \right) \cdot \cfrac{1}{\alpha !}
+    \end{align*}
+\end{definition}
+
+Note of course that the scaling by factorial $\alpha$ is not strictly relevant, but more of a convenience. Ultimately, just so it is entirely clear what the point of all this is, what we are aiming to find here is parameterizations into the cellular maps on which these norms are bounded. To that end, consider:
+
+\begin{definition}
+  Let $r \in \Zgeq{1}$ and $\CIn[x]{n}$ definable. Then a \emph{\cellrparam} (CRP) is a finite set, $\Phi$, of \defnb $C^r$ \cellr maps such that each
+    \begin{align*}
+      \rnorm[r]{\phi} \leq 1
+    \end{align*}
+  for each $\phi \in \Phi$, and that the union of their images covers $X$ -- that is,
+    \begin{align*}
+      \bigcup_{\phi \in \Phi} \image{\phi} = X.
+    \end{align*}
+\end{definition}
+Suppose now we want a \cellrparam between definable sets -- what does that require?
+\begin{definition}
+  Suppose we have some $\CIn[Y]{m}$, and $\funcdom{f}{X}{Y}$ \defnb. Then. \cellrparam[r] of $f$ is a \cellrparam[r] $\Phi$ of $X$, with the \emph{extra} property that
+    \begin{align*}
+      \rnorm[r]{f \circ \phi} \leq 1
+    \end{align*}
+    for all $\phi$ in $\Phi$.
+\end{definition}
+
+As is often amusing to those outside of mathematics, and even those \emph{in} maths, (at least from the prospective of a graduate student in the area), so often we find ourselves setting up a series of definitions and such defining objects that we wish to study -- with a capstone theorem being that they exist at all. While this may seem the completely backwards way to go about doing things, it is often one that ends up working quite well -- but not always. We're sure, of course, that we don't need to recite the (likely apocryphal) story of the aspiring mathematician who worked for quite a while in this way on H\"older continuous maps with $\alpha < 1$ -- having only before seen the case with alpha exceeding 1. It was only at his defense that he was asked to show an example of an \emph{non-constant} example -- of which none exists. Of course, similar such apocrypha exist about anti-metric spaces, and other such seemingly fun ideas.
+
+All of this is to say, we now go on to state and prove the theorem that the objects we have described above do, in fact, exist, and are non-trivial.
+
+\begin{theorem}[Parameterization (by Binyamini \& Novikov)]
+gbnm,
+  \label{thm:existence}
+\end{theorem}
 

@@ -53,12 +53,16 @@
 \newcommand{\defnbty}{definability\xspace}
 \newcommand{\defnblycnctd}{definably connected\xspace}
 \newcommand{\defnbcnctdns}{definable connectedness\xspace}
-\newcommand{\Mlt}{(M, <)}
-\newcommand{\Mltp}{(M, <, \hdots)}
+\newcommand{\Mlt}{(M, \ <)}
+\newcommand{\Mltp}{(M, \ <, \ \hdots)}
+\newcommand{\Mltarithplus}{(M, \ <, \ +, \ \cdot, \ 0, \ 1, \ \hdots)}
 \newcommand{\M}{\mathcal{M}}
 \newcommand{\Lstr}{\mathcal{L}\mathrm{-Structure}\xspace}
 \newcommand{\Lstrs}{\mathcal{L}\mathrm{-Structures}\xspace}
 \newcommand{\inv}[1]{#1^{-1}}
+
+\newcommand{\bc}{\textrm{basic cell}}
+\newcommand{\Bc}{\textrm{Basic cell}}
 
 \newcommand{\Rtilde}{\tilde{\R}}
 \newcommand{\Rtildefull}{\tilde{\R} = (\overline{\R}, \ \hdots)}
@@ -70,10 +74,10 @@
 \newcommand{\Crcell}[1][r]{C^{#1}\textrm{-cell}}
 \newcommand{\Crcells}[1][r]{C^{#1}\textrm{-cells}}
 
+\newcommand{\bound}[1][H]{c #1^{\eps}}
 
 
-
-\newcommand{\pw}{Pila-Wilkie\xspace}
+\newcommand{\pw}{\textrm{Pila-Wilkie}\xspace}
 \newcommand{\pwt}{\pw theorem\xspace}
 \newcommand{\pwT}{\pw Theorem\xspace}
 
@@ -127,6 +131,7 @@
 \newcommand{\MmMn}{M^m \times M^n}
 \newcommand{\XMn}[2][X]{#1 \subseteq M^{#2}}
 \newcommand{\XRn}[2][X]{#1 \subseteq \R^{#2}}
+\newcommand{\CIn}[2][C]{#1 \subseteq I^{#2}}
 \newcommand{\XRtn}[2][X]{#1 \subseteq \Rtilde^{#2}}
 \newcommand{\aMn}[2][a]{#1 \in M^{#2}}
 \newcommand{\AM}[1][A]{#1 \subseteq M}
@@ -188,6 +193,16 @@
 \newcommand{\Pregeom}{Pregeometry\xspace}
 \newcommand{\Pregeoms}{Pregeometries\xspace}
 
+\newcommand{\param}{\textrm{parameterization}\xspace}
+\newcommand{\Param}{\textrm{parameterization}\xspace}
+
+\newcommand{\cellr}{\textrm{cellular}}
+\newcommand{\Cellr}{\textrm{Cellular}}
+
+\newcommand{\cellrparam}[1][r]{\textrm{cellular } #1 \textrm{-}\param}
+\newcommand{\Cellrparam}[1][r]{\textrm{Cellular } #1 \textrm{-}\param}
+
+
 %Sets
 \DeclarePairedDelimiterX{\Set}[2]\{\}{%
   \, #1 \;\delimsize\colon\; #2 \,
@@ -202,6 +217,8 @@
 %norm
 \DeclarePairedDelimiter\norm{\vert\vert}{\vert\vert}
 
+\newcommand{\rnorm}[2][r]{\norm{#2}_{#1}}
+
 %subproof
 \newenvironment{subproof}[1][\proofname]{%
   \renewcommand{\qedsymbol}{$\blacksquare$}%
@@ -209,3 +226,5 @@
 }{%
   \end{proof}%
 }
+
+
