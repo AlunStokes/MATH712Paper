@@ -75,7 +75,22 @@ As is often amusing to those outside of mathematics, and even those \emph{in} ma
 All of this is to say, we now go on to state and prove the theorem that the objects we have described above do, in fact, exist, and are non-trivial.
 
 \begin{theorem}[Parameterization (by Binyamini \& Novikov)]
-gbnm,
+  Let $n \in \Zgeq{1}$. Just like with the proof of $\CD$, we are going to have two inductive towers that `bounce-back and forth' to prove the theorem for all $n$. These are
+    \begin{enumerate}[label={}]
+    \item[$\In$ ] If $r \in \Zgeq{1}$ and $\CIn[X]{n}$ is \defnb, then $X$ has a \cellrparam.
+    \item[$\IIn$ ] If $r, \ m \in \Zgeq{1}$ and $\CIn[X]{n}$, $\CIn[Y]{m}$, and $\funcdom{f}{X}{Y}$ \defnb, then $f$ has a \cellrparam.
+  \end{enumerate}
+  Of course, it is clear that $\IIn$ is the more difficult of the two to prove, and in fact, $\IIn$ can then be used to prove $\In$ (so we have perhaps presented them in a bit of a disordered way).
   \label{thm:existence}
 \end{theorem}
 
+Before we start of the proof, we give provide a quick remark on these \cellrparams -- and that is that we can \emph{almost} compose these \cellrparams. This is to say essentially the following:
+
+\begin{remark}
+  Suppose $\Phi$ is a \cellrparam of some $\CIn[X]{m}$ and that for each $\phi \in \Phi$, given $\funcdom{\phi}{C}{X}$, we have a \cellrparam $\Psi_{\phi}$ of $C$. What we then would like to do is take all the $\phi$ and compose with all corresponding $\Psi_{\phi}$, and receive cellular maps. We \emph{almost} get this result. For example, taking some $\psi \in \Psi_{\phi}$, We can compute to show
+    \begin{align*}
+      \rnorm[r]{\phi \circ \psi} \leq c_{n, \ r},
+    \end{align*}
+    which, although not necessarily 1, is finite and so bounded. Of course, we can \emph{make} this constant one by doing a bit of extra parameterization. Start by covering $\pri{C}$ of $\domain{\psi]}$ with $(c + 1)^k$ boxes, where $k = \dim{\psi}$
+
+\end{remark}
