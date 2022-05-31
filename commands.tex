@@ -25,7 +25,7 @@
 
 \newcommand{\cd}{cell decomposition\xspace}
 \newcommand{\cds}{cell decompositions\xspace}
-\newcommand{\CD}{Cell Decomposition\xspace}
+\newcommand{\CD}{\textrm{Cell Decomposition}\xspace}
 \newcommand{\CDs}{Cell Decompositions\xspace}
 
 \newcommand{\scd}{smooth cell decomposition\xspace}
@@ -67,48 +67,64 @@
 \newcommand{\Rtilde}{\tilde{\R}}
 \newcommand{\Rtildefull}{\tilde{\R} = (\overline{\R}, \ \hdots)}
 
-\newcommand{\dfblty}{differentiability}
+\newcommand{\dfblty}{\textrm{differentiability}}
 
 \newcommand{\contdfblty}{\cont \dfblty}
 
 \newcommand{\Crcell}[1][r]{C^{#1}\textrm{-cell}}
 \newcommand{\Crcells}[1][r]{C^{#1}\textrm{-cells}}
 
+\newcommand{\pbh}{points of bounded height\xspace}
+\newcommand{\pbd}{points of bounded degree\xspace}
+
 \newcommand{\bound}[1][H]{c #1^{\eps}}
 
+\newcommand{\lvrv}[1]{\left\vert \ #1 \ \right\vert}
 
 \newcommand{\pw}{\textrm{Pila-Wilkie}\xspace}
-\newcommand{\pwt}{\pw theorem\xspace}
-\newcommand{\pwT}{\pw Theorem\xspace}
+\newcommand{\pwt}{\pw\textrm{ theorem}\xspace}
+\newcommand{\pwT}{\pw\textrm{ Theorem}\xspace}
 
 \newcommand{\mt}{monotonicity theorem\xspace}
 \newcommand{\Mt}{Monotonicity theorem\xspace}
 \newcommand{\MT}{Monotonicity Theorem\xspace}
 
-\newcommand{\cdt}{\cd theorem\xspace}
-\newcommand{\Cdt}{\Cd theorem\xspace}
-\newcommand{\CDt}{\CD theorem\xspace}
-\newcommand{\CDT}{\CD Theorem\xspace}
+\newcommand{\sm}{smooth monotonicity\xspace}
+\newcommand{\Sm}{Smooth monotonicity\xspace}
+\newcommand{\SM}{Smooth Monotonicity\xspace}
 
-\newcommand{\ft}{finiteness theorem\xspace}
-\newcommand{\Ft}{Finiteness theorem\xspace}
-\newcommand{\FT}{Finiteness Theorem\xspace}
+\newcommand{\smt}{smooth monotonicity theorem\xspace}
+\newcommand{\SMt}{Smooth Monotonicity theorem\xspace}
+\newcommand{\SMT}{Smooth Monotonicity Theorem\xspace}
 
-\newcommand{\pft}{planar finiteness theorem\xspace}
-\newcommand{\pFt}{planar Finiteness theorem\xspace}
-\newcommand{\PFt}{Planar Finiteness theorem\xspace}
-\newcommand{\PFT}{Planar Finiteness Theorem\xspace}
+\newcommand{\cdt}{\cd\textrm{ theorem}\xspace}
+\newcommand{\Cdt}{\Cd\textrm{ theorem}\xspace}
+\newcommand{\CDt}{\CD\textrm{ theorem}\xspace}
+\newcommand{\CDT}{\CD\textrm{ Theorem}\xspace}
 
-\newcommand{\bpft}{(planar) finiteness theorem\xspace}
-\newcommand{\bpFt}{(planar) Finiteness theorem\xspace}
-\newcommand{\bPFt}{(Planar) Finiteness theorem\xspace}
-\newcommand{\bPFT}{(Planar) Finiteness Theorem\xspace}
+\newcommand{\ft}{\textrm{finiteness theorem}\xspace}
+\newcommand{\Ft}{\textrm{Finiteness theorem}\xspace}
+\newcommand{\FT}{\textrm{Finiteness Theorem}\xspace}
+
+\newcommand{\pft}{\textrm{planar finiteness theorem}\xspace}
+\newcommand{\pFt}{\textrm{planar Finiteness theorem}\xspace}
+\newcommand{\PFt}{\textrm{Planar Finiteness theorem}\xspace}
+\newcommand{\PFT}{\textrm{Planar Finiteness Theorem}\xspace}
+
+\newcommand{\bpft}{\textrm{(planar) finiteness theorem}\xspace}
+\newcommand{\bpFt}{\textrm{(planar) Finiteness theorem}\xspace}
+\newcommand{\bPFt}{\textrm{(Planar) Finiteness theorem}\xspace}
+\newcommand{\bPFT}{\textrm{(Planar) Finiteness Theorem}\xspace}
 
 \newcommand{\eps}{\varepsilon}
 
+\newcommand{\cnr}{c_{n, \ r}}
+\newcommand{\deriv}[2][]{\cfrac{d #1}{d #2} \:}
+\newcommand{\pderiv}[2][]{\cfrac{\partial #1}{\partial #2} \:}
 
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Qbar}{\overline{\Q}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\zeroset}{\{ 0 \}}
@@ -136,8 +152,8 @@
 \newcommand{\aMn}[2][a]{#1 \in M^{#2}}
 \newcommand{\AM}[1][A]{#1 \subseteq M}
 
-\newcommand{\In}[1][n]{(I)_{#1}}
-\newcommand{\IIn}[1][n]{(II)_{#1}}
+\newcommand{\In}[1][n]{(\textrm{I})_{#1}}
+\newcommand{\IIn}[1][n]{(\textrm{II})_{#1}}
 
 \newcommand{\Minf}{M \cup \{ \pm \infty \}}
 \newcommand{\ionein}{i_1, \ \hdots, \ i_n}
@@ -155,15 +171,15 @@
 \newcommand{\XsubseteqMn}[1][n]{X \subseteq M^{#1}}
 \newcommand{\inhb}{non-empty\xspace}
 % \newcommand{\inhb}{inhabited\xspace}
-\newcommand{\inj}{injective\xspace}
-\newcommand{\injtion}{injection\xspace}
-\newcommand{\injtvty}{injectivity\xspace}
-\newcommand{\surj}{surjective\xspace}
-\newcommand{\surjtion}{surjection\xspace}
-\newcommand{\surjtvty}{surjectivity\xspace}
-\newcommand{\bij}{bijective\xspace}
-\newcommand{\bijtion}{bijection\xspace}
-\newcommand{\bijtions}{bijections\xspace}
+\newcommand{\inj}{\textrm{injective}\xspace}
+\newcommand{\injtion}{\textrm{injection}\xspace}
+\newcommand{\injtvty}{\textrm{injectivity}\xspace}
+\newcommand{\surj}{\textrm{surjective}\xspace}
+\newcommand{\surjtion}{\textrm{surjection}\xspace}
+\newcommand{\surjtvty}{\textrm{surjectivity}\xspace}
+\newcommand{\bij}{\textrm{bijective}\xspace}
+\newcommand{\bijtion}{\textrm{bijection}\xspace}
+\newcommand{\bijtions}{\textrm{bijections}\xspace}
 
 \newcommand{\XsubsetMn}[1][n]{X \subset M^{#1}}
 
@@ -188,25 +204,26 @@
 
 \newcommand{\esdefnb}{\mathrel{\emptyset \textrm{-\defnb}}}
 \newcommand{\Adefnb}[1][A]{#1\textrm{-\defnb}}
-\newcommand{\defnbcl}{\defnb closure\xspace}
-\newcommand{\pregeom}{pregeometry\xspace}
-\newcommand{\pregeoms}{pregeometries\xspace}
-\newcommand{\Pregeom}{Pregeometry\xspace}
-\newcommand{\Pregeoms}{Pregeometries\xspace}
+\newcommand{\defnbcl}{\defnb\textrm{ closure}\xspace}
+\newcommand{\pregeom}{\textrm{pregeometry}\xspace}
+\newcommand{\pregeoms}{\textrm{pregeometries}\xspace}
+\newcommand{\Pregeom}{\textrm{Pregeometry}\xspace}
+\newcommand{\Pregeoms}{\textrm{Pregeometries}\xspace}
 
 \newcommand{\param}{\textrm{parameterization}\xspace}
 \newcommand{\params}{\textrm{parameterizations}\xspace}
 \newcommand{\Param}{\textrm{parameterization}\xspace}
 \newcommand{\Params}{\textrm{parameterizations}\xspace}
 
-\newcommand{\cellr}{\textrm{cellular}}
-\newcommand{\Cellr}{\textrm{Cellular}}
+\newcommand{\cellr}{\textrm{cellular}\xspace}
+\newcommand{\Cellr}{\textrm{Cellular}\xspace}
 
-\newcommand{\cellrparam}[1][r]{\textrm{cellular } #1 \textrm{-\param}}
-\newcommand{\cellrparams}[1][r]{\textrm{cellular } #1 \textrm{-\params}}
-\newcommand{\Cellrparam}[1][r]{\textrm{Cellular } #1 \textrm{-\param}}
-\newcommand{\Cellrparams}[1][r]{\textrm{Cellular } #1 \textrm{-\params}}
+\newcommand{\cellrparam}[1][r]{\textrm{cellular } #1\textrm{-\param}\xspace}
+\newcommand{\cellrparams}[1][r]{\textrm{cellular } #1\textrm{-\params}\xspace}
+\newcommand{\Cellrparam}[1][r]{\textrm{Cellular } #1\textrm{-\param}\xspace}
+\newcommand{\Cellrparams}[1][r]{\textrm{Cellular } #1\textrm{-\params}\xspace}
 
+\newcommand{\comp}[2]{#1 \circ #2}
 
 %Sets
 \DeclarePairedDelimiterX{\Set}[2]\{\}{%

@@ -6,14 +6,21 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
 %\motto{Use the template \emph{chapter.tex} to style the various elements of your chapter content.}
-\chapter{The Number Theory Bit}
-\chaptermark{Finally something \emph{for us}}
-\label{chap:mt_bit} % Always give a unique label
+\chapter{The Number Theory Bit (Diophantine Part)}
+\chaptermark{Finally Something For the Cool Kids}
+\label{chap:nt_bit} % Always give a unique label
 % use \chaptermark{}
 % to alter or adjust the chapter heading in the running head
 %\chaptermark{Some Introductions}
 
 \abstract*{The Number Theory Bit}
 
-\abstract{The Number Theory Bit}
+\abstract{As we near the end (though not too closely, mind) of our journey through a proof of \pw, we find ourselves now at the part that the na\"ive amongst us may have expected to come much sooner -- and that's the number theoretic part. As mentioned in just the last chapter, this is also called the \emph{diophantine part}, the treatment of which we will be following from Habegger \cite{habegger_diophantine_2016}. As introduced there (though not the inception of the concept), this didn't investigate the rational points on definable curves as we have been throughout, but rather points that are \emph{very close} to them. \textbf{To be clear, this is not what we are going to be doing} -- but using several of the ideas from the proof in that paper, we get to `skip' our way along in the proof of \pw to looking at points of bounded degree, rather than just rational points.}
 
+\begin{svgraybox}
+  Please again note that `diophantine' is purposefully not capitalized as a stylistic choice to follow the material as presented in the course, and there is nothing more to be read into it than that.
+\end{svgraybox}
+
+We start with a proof sketch, before getting into all the minutiae proper, and broadly describe how we're going to be proceeding throughout this chapter.
+
+Now, as we are investigating \pbh, we naturally need a height function (just as we did for the rationals, as discussed earlier). We define one as follows: Suppose $q \in \Qbar$.

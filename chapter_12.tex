@@ -88,7 +88,7 @@ The following result is a special case in 2 dimensions of what is referred to as
 
 \begin{theorem}[\FT in $M^2$]
 	\label{thm:2finiteness}
-	Suppose $A \subseteq M^2$ and that for each $x \in M$, the fibre $A_x$ above $x$ — that is, the set of $y$ with $(x, y) \in A$ — is finite. Then, there exists some $N \in \Zgeq{1}$ such that $\card{A_x} \leq N$ for all $x \in M$
+	Suppose $A \subseteq M^2$ and that for each $x \in M$, the fibre $A_x$ above $x$ — that is, the set of $y$ with $(x, y) \in A$ — is finite. Then, there exists some $N \in \N$ such that $\card{A_x} \leq N$ for all $x \in M$
 \end{theorem}
 
 \begin{proof}[of Theorem \ref{thm:2finiteness})]
@@ -230,7 +230,7 @@ The importance of this last point will be made clear in the theorem we have buil
 
 \begin{theorem}[\CD]
   \label{thm:cell-decomposition}
-  Take $n \in \Zgeq{1}$.
+  Take $n \in \N$.
   \begin{svgraybox}
     Note the use (about to be made) of subscripts on statements $(I)_n$ and $(II)_n$ to denote the dimension of $M^n$ to which each statement refers. This is going to be notationally useful in the proof, but may seem a bit queer at present, and without introduction.
   \end{svgraybox}
@@ -252,7 +252,7 @@ Uniform finiteness is a generalization of the finiteness theorem we proved earli
 
 \begin{proposition}[Uniform Finiteness (for $\R$)]
   \label{prop:unif-finiteness}
-  Suppose $X \subset \R^{n+1}$ is \defnb with each fibre $X_x$ finite for $x \in \R^n$. Then there is some $N \in \Zgeq{1}$ such that $\card{X_x} \leq N$ for all $x \in \R^n$.
+  Suppose $X \subset \R^{n+1}$ is \defnb with each fibre $X_x$ finite for $x \in \R^n$. Then there is some $N \in \N$ such that $\card{X_x} \leq N$ for all $x \in \R^n$.
 \end{proposition}
 
 
@@ -280,11 +280,11 @@ The following proof is due to van den Dries \cite{dries_remarks_1984} which, for
 
   To get $I_1$, simply consider $f(B) \subseteq \R$ -- meaning
   \begin{align*}
-    f(B) = \bigcup_{p \in \Zgeq{1}} J_p \cup F
+    f(B) = \bigcup_{p \in \N} J_p \cup F
   \end{align*}
   for $F$ a finite set, and $J_p$ a countable set of open intervals of length less than 1. Then, $B$ is given by
   \begin{align*}
-    B = \left( \bigcup_{p \in \Zgeq{1}} f^{-1}(J_p) \cap B \right) \cup \left( \bigcup_{r \in F} f^{-1}(r) \cap B \right).
+    B = \left( \bigcup_{p \in \N} f^{-1}(J_p) \cap B \right) \cup \left( \bigcup_{r \in F} f^{-1}(r) \cap B \right).
   \end{align*}
 
   To each half of the middle cup, we can apply $\In$ to determine the contents of each of the respective \emph{big} cups to be a finite union of cells -- and so $B$ must be an \emph{countable} union of cells, each of which is contained in one of these sets. Perhaps coming a bit out of left field, we apply the Baire Category Theorem to conclude that by the openness of $B$, so too must be one of these cells be open.

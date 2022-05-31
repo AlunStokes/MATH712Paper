@@ -7,7 +7,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
 %\motto{Use the template \emph{chapter.tex} to style the various elements of your chapter content.}
 \chapter{The O-Minimality Bit (Parameterization)}
-\chaptermark{Familiarities abound (hopefully)!}
+%\chaptermark{Basics and Basic Cells}
 \label{chap:om_bit} % Always give a unique label
 % use \chaptermark{}
 % to alter or adjust the chapter heading in the running head
@@ -36,7 +36,6 @@ In this section, we actually step back a bit from the specificity of $\R$, and w
 This next remark is one to remember, as it is a fact that we will be using and making reference too often.
 
 
-
 \begin{remark}
   Suppose $\funcdom{\phi}{C}{I^n}$, $\funcdom{\psi}{\pri{C}}{C}$ are both cellular. Then so too is their composition, $\funcdom{\phi \circ \psi}{\pri{C}}{I^n}$.
 \end{remark}
@@ -52,7 +51,7 @@ Checking that the two necessary conditions holds is rather trivial here, and so 
 Note of course that the scaling by factorial $\alpha$ is not strictly relevant, but more of a convenience. Ultimately, just so it is entirely clear what the point of all this is, what we are aiming to find here is parameterizations into the cellular maps on which these norms are bounded. To that end, consider:
 
 \begin{definition}
-  Let $r \in \Zgeq{1}$ and $\CIn[x]{n}$ definable. Then a \emph{\cellrparam} (CRP) is a finite set, $\Phi$, of \defnb $C^r$ \cellr maps such that each
+  Let $r \in \N$ and $\CIn[x]{n}$ definable. Then a \emph{\cellrparam} (CRP) is a finite set, $\Phi$, of \defnb $C^r$ \cellr maps such that each
     \begin{align*}
       \rnorm[r]{\phi} \leq 1
     \end{align*}
@@ -70,15 +69,18 @@ Suppose now we want a \cellrparam between definable sets -- what does that requi
     for all $\phi$ in $\Phi$.
 \end{definition}
 
-As is often amusing to those outside of mathematics, and even those \emph{in} maths, (at least from the prospective of a graduate student in the area), so often we find ourselves setting up a series of definitions and such defining objects that we wish to study -- with a capstone theorem being that they exist at all. While this may seem the completely backwards way to go about doing things, it is often one that ends up working quite well -- but not always. We're sure, of course, that we don't need to recite the (likely apocryphal) story of the aspiring mathematician who worked for quite a while in this way on H\"older continuous maps with $\alpha < 1$ -- having only before seen the case with alpha exceeding 1. It was only at his defence that he was asked to show an example of an \emph{non-constant} example -- of which none exists. Of course, similar such apocrypha exist about anti-metric spaces, and other such seemingly fun ideas.
+\section{Do These Even Exist?}
 
-All of this is to say, we now go on to state and prove the theorem that the objects we have described above do, in fact, exist, and are non-trivial.
+As is often amusing to those outside of mathematics, and even those \emph{in} maths, (at least from the perspective of a graduate student in the area), so often we find ourselves setting up a series of definitions and such defining objects that we wish to study -- with a capstone theorem being that they exist at all. While this may seem the completely backwards way to go about doing things, it is often one that ends up working quite well -- but not always. We're sure, of course, that we don't need to recite the (likely apocryphal) story of the aspiring mathematician who worked for quite a while in this way on H\"older continuous maps with $\alpha > 1$ -- having only before seen the case with alpha in the unit interval. It was only at his defence that he was asked to show an example of such a \emph{non-constant} map -- which, of course, do not exist. Of course, similar such apocrypha exist about anti-metric spaces, and other such seemingly fun ideas. Luckily, or perhaps even more accurately, \emph{skillfully}, it turns out that our setup \emph{does} end up working out for us as desired. We now go on to state and prove the theorem that these objects we have described above do, in fact, exist, and are non-trivial.
+
+\subsection{Yes -- And Here's a Proof}
 
 \begin{theorem}[Parameterization (by Binyamini \& Novikov)]
-  Let $n \in \Zgeq{1}$. Just like with the proof of $\CD$, we are going to have two inductive towers that `bounce-back and forth' to prove the theorem for all $n$. These are
+  %Let $n \in \N$. Just like with the proof of $\CD$, we are going to have two inductive towers that we wish to prove to get the theorem for all $n$. Unlike \textbf{that} proof, however, we don't employ back-and-forth method we used there, as that will prove unnecessary here. Similarly though, we see that the first statement is one about sets, and the second of functions. The two statements in our theorem are
+  Let $n \in \N$. Just like with the proof of $\CD$, we are going to have two inductive towers, where we again employ the back-and-forth method to prove the theorem for all $n$. Note as another similarity that the first statement is one about sets, and the second of functions. These are given:
     \begin{enumerate}[label={}]
-    \item[$\In$ ] If $r \in \Zgeq{1}$ and $\CIn[X]{n}$ is \defnb, then $X$ has a \cellrparam.
-    \item[$\IIn$ ] If $r, \ m \in \Zgeq{1}$ and $\CIn[X]{n}$, $\CIn[Y]{m}$, and $\funcdom{f}{X}{Y}$ \defnb, then $f$ has a \cellrparam.
+    \item[$\In$ ] If $r \in \N$ and $\CIn[X]{n}$ is \defnb, then $X$ has a \cellrparam.
+    \item[$\IIn$ ] If $r, \ m \in \N$ and $\CIn[X]{n}$, $\CIn[Y]{m}$, and $\funcdom{f}{X}{Y}$ \defnb, then $f$ has a \cellrparam.
   \end{enumerate}
   Of course, it is clear that $\IIn$ is the more difficult of the two to prove, and in fact, $\IIn$ can then be used to prove $\In$ (so we have perhaps presented them in a bit of a disordered way).
   \label{thm:existence}
@@ -89,8 +91,294 @@ Before we start of the proof, we give provide a quick remark on these \cellrpara
 \begin{remark}
   Suppose $\Phi$ is a \cellrparam of some $\CIn[X]{m}$ and that for each $\phi \in \Phi$, given $\funcdom{\phi}{C}{X}$, we have a \cellrparam $\Psi_{\phi}$ of $C$. What we then would like to do is take all the $\phi$ and compose with all corresponding $\Psi_{\phi}$, and receive cellular maps. We \emph{almost} get this result. For example, taking some $\psi \in \Psi_{\phi}$, We can compute to show
     \begin{align*}
-      \rnorm[r]{\phX4i \circ \psi} \leq c_{n, \ r},
+      \rnorm[r]{\phi \circ \psi} \leq c_{n, \ r},
     \end{align*}
-    which, although not necessarily 1, is finite and so bounded. Of course, we can \emph{make} this constant one by doing a bit of extra parameterization. Start by covering $\pri{C} = \dom{\psi}$ with $(c + 1)^k$ boxes, where we take $k = \dim{\psi}$, we let $c = c_{n, \ r}$, and each box is itself a translate of $(0, \sfrac{1}{c})^k$. This is justified due to the fact that on each such but, we have a natural linear map from $(0, 1)^k$ to $(0, \sfrac{1}{c})^k$ -- and in so applying these natural maps, we end up with $c_{n, \ r} = 1$ after the computation.
-
+    which, although not necessarily 1, is finite and so bounded. Of course, we can \emph{make} this constant one by doing a bit of extra parameterization. Start by covering $\pri{C} = \dom{\psi}$ with $(c + 1)^k$ boxes, where we take $k = \dim{\psi}$, we let $c = c_{n, \ r}$, and each box is itself a translate of $(0, \sfrac{1}{c})^k$. This is justified due to the fact that on each such box, we have a natural linear map from $(0, 1)^k$ to $(0, \sfrac{1}{c})^k$ -- and in so applying these natural maps, we end up with $c_{n, \ r} = 1$ after the computation, for each $\phi$ and $\psi$. So now, at the expense of ending up with a whole bunch more maps, we end up with a \cellrparam. What we just described -- the process of going from a constant of $n$ and $r$ to 1 using linear maps will hence be referred to as \textbf{linear substitution}. Going on, and in the next proof, we are going to be justifying parts \emph{by linear substitution} quite a bit, so what may have seemed like a brief detour is actually quite important
 \end{remark}
+
+
+\begin{remark}
+This may seem completely apropos of nothing, but now and going on for the rest of these notes, we assume our model, $\M$, to be $\aleph_0$-saturated. If this idea is familiar to you: great. Otherwise, don't worry too much about it. Essentially this assumption allows that whatever we prove here to hold for models that are less than $\aleph_0$-saturated.
+\end{remark}
+
+Not to keep the eager reader too antsy about getting to the proof of the above theorem, but we are first going to start with a lemma (and then another, which some may even say is starting with two \lemmas) that will make the proof of $\IIn$ \emph{quite} a bit nicer for ourselves.
+
+\subsection{A Few \Lemmas to Get us Going}
+\chaptermark{Some Useful Results}
+
+\begin{lemma}
+  Let $n, r \in \N$, and suppose that every $\funcdom{F}{\pri{X}}{I}$ \defnb on a \defnb $\pri{X}$ of dimension $n$ has a \cellrparam. Then for every definable $\funcdom{G}{X}{I^m}$ with $m \in \N$ and such that $\dim{X} = n$ has a \cellrparam.
+  \label{lem:crp-pt2}
+\end{lemma}
+
+\begin{proof}[of Lemma \ref{lem:crp-pt2}]
+  Fix some $G = (\vonevm{G}{m})$ and let $\Phi_1$ be a \cellrparam of $G_1$ (which we know we can find by assumption). It is then enough to find a \cellrparam of $G \circ \phi$ for $\phi \in \Phi_1$, and then use \emph{linear substitution} as described it before. So, we can suppose $\rnorm{G_1} \leq 1$. Recall of course that by our assumption, $G_1$ depended only on its first indeterminate -- and so we can similarly get a \cellrparam, $\Phi_2$ of $G_2$. Taking some $\phi \in \Phi_2$ then evidently (as before) $G_2 \circ \phi$ is as desired -- but now we need to worry about $G_1 \circ \phi$. Generically, we get that $\rnorm{G_1 \circ \phi} \leq c_{r, \ n}$. We can then keep doing this for all $3 \leq j \leq m$, and then for each have that $\rnorm{G_j} \leq C_{r, \ n}$. At this point, we can do our linear substitutions to get a bound of $1$ for each $j$.
+\end{proof}
+
+\begin{remark}
+  It may not be immediately obvious why the above lemma is useful to us. Principally, its use will be in proving $\IIn$ in the theorem, where it essentially says that we get to treat our $\funcdom{f}{X}{Y}$ for $\CIn[Y]{n}$ as if it were a \emph{function}, $\funcdom{\hat{f}}{X}{\hat{Y}}$ for $\hat{Y} \subseteq I$, rather than a \emph{map} as it is given.
+\end{remark}
+
+\begin{proof}[of Theorem \ref{thm:existence}]
+  It should be clear that we induct on $n$ to prove this. The statement $\In[1]$ is immediately obvious from what we've said earlier, so to finish the base case, we just need to prove $\IIn[1]$. Unfortunately, this is nowhere near as immediate -- so much so that we actually appeal to a lemma.
+
+    \begin{lemma}[Gromov]
+      Suppose $r \geq 2$, $\funcdom{f}{I}{I}$ \defnb and $C^{r-1}$ with $\rnorm[r-1]{f} \leq 1$. Then $f$ has a \cellrparam.
+      \label{lem:gromov_r2}
+    \end{lemma}
+
+    \begin{proof}[of Lemma \ref{lem:gromov_r2}]
+      First, by applying the \SMt, we can break up into intervals on each of which we assume that our $f$ is $r$-times differentiable -- and further that its $r$-th derivative is strictly monotonic (if the derivative is 0, then there's nothing further needed). Without loss of generality, we assume one of these intervals is $I$ itself. We take $f^{(r)}$ strictly decreasing on $I$, and $f^{(r)} > 0$. Then, by applying the mean value theorem (which we took for granted as part of the clarity of implementing calculus-type concepts in our model), for all $x \in I$ there is some $\xi_n \in (0, x)$ such that
+         \begin{align*}
+            \cfrac{c_r}{x} &\geq \cfrac{f^{(r-1)}(x) - f^{(r-1)}(0)}{x} & = f^{(r)}(\xi_n) \\
+            & &\geq f^{(r)}(x)
+          \end{align*}
+        for $c_r$ some constant depending on $r$. Let $\funcdef{g}{x}{f(x^2)}$. Then we already have that $\rnorm[r-1]{g}$ is bounded, and so it suffices to check for $r$. Computing this, we get
+          \begin{align*}
+            g^{(r)}(x) = a + c_r \cdot f^{(r)}(x^2) \cdot x^r,
+          \end{align*}
+        for $a$ simply the sum of some bounded terms (about which needn't worry). But, by the above,
+          \begin{align*}
+            f^{(r)}(x^2) \cdot x^r \leq c_r \cdot x^{r - 2}
+          \end{align*}
+          and since $r$ was presumed to be at least $2$, then this is bounded as desired. So, we get that $\rnorm{g} < c_r$, which we can again make 1 by linear substitution.
+    \end{proof}
+
+    Gromov's lemma gave us the case where $r$ was at least 2, so now we handle the case where $r$ is 1.
+
+    \begin{lemma}
+      Suppose $\funcdom{f}{I}{I}$ is a \defnb function, and $r \in \N$. Then there exist \defnb $C^r$ functions, $\vonevm{\phi}{k}$ with each given $\funcdom{\phi_j}{I}{I^2}$, whose images cover $\graph{f}$ such that that $\rnorm{\phi_j} \leq 1$, and each coordinate of each $\phi_j$ is either constant or strictly monotonic.
+      \label{lem:existence_r1}
+    \end{lemma}
+
+    \begin{proof}[of Lemma \ref{lem:existence_r1}]
+      By \sm, we can assume that $f$ is $C^1$ on $I$ and either constant or strictly monotonic with derivative $\pri{f}$ sitting in one of the following intervals over $I$:
+        \begin{itemize}
+          \item  $(\ - \infty, \ 1 \ )$
+          \item  $[\ -1, \ 0 \ )$
+          \item  $( \ 0, \ 1 \ ]$
+          \item  $( \ 1, \ \infty \ )$.
+        \end{itemize}
+      We can then assume that $0 < \pri{f} \leq 1$ by using $\inv{f}$ in place of $f$ if necessary, or reversing the orientation of $I$ (depending on which of the follow above intervals $\pri{f}$ sits in). Then, we simply apply the previous lemma $r - 1$ times. to get a parameterization, $\Phi$ of $I$ such that $\rnorm{f \circ \phi} \leq 1$, and so we take $\left\{ \ (\phi, \ f \circ \phi) \ \colon \ \phi \in \Phi \ \right\}$ as our parameterization of the graph.
+    \end{proof}
+
+    So, we've now proved (through the previous two \lemmas) the parameterization of the graph of $f$, and what we want to prove now is the existence of a \cellrparam. We are now equipped to do so (recall that we are currently proving $\IIn[1]$). It suffices to do this for a \defnb $\funcdom{f}{I}{I}$. We apply the previous lemma to get a parameterization, $\Phi$ of the graph of $f$. We address each $\phi$ in the parameterization; if $\phi \in \Phi$ has strictly decreasing first coordinate, we compose with $1 - x$ (making it increasing), and otherwise leave it be; so when we take the set
+      \begin{align*}
+        \left\{ \ \phi_1 \ \colon \ \phi = (\phi_1, \ \phi_2) \in \Phi \right\}
+      \end{align*}
+    we are ensured that it is a \cellrparam of $I$. Now all we need to check is composition with $f$ holding as expected. Recall that $\rnorm{f \circ \phi_1} = \rnorm{\phi_2} \leq 1$, and so we do have a \cellrparam of $f$.
+
+    That may have felt like quite a lot, especially for just the base case, and so again I introduce our old friend the horizontal line, in hopes that it brings us respite in what may be an overwhelming time. If not at all distressed, feel free to ignore.
+
+    \centerline{\rule{0.6667\linewidth}{.2pt}}
+    \smallskip
+
+    Now isn't that just \emph{pleasant}. Try not to spend too long, and we will now move on to the inductive stage of this proof.
+
+    We assume that $\In[m]$ and $\IIn[m]$ hold for $m \leq n$. We start by proving the (much) easier of the two parts, $\In[n+1]$. By \cd, we can suppose $\CIn[X]{n+1}$ is a cell, and so either the graph of a function or the space between two function.
+
+    If the former, that is, $X = \graph{f}$ for $\funcdom{f}{\pri{X}}{I}$ a \cont \defnb function on some $\CIn[\pri{X}]{n}$, then applying $\IIn[n]$ to this function, we get a \cellrparam of $f$, $\Phi$ -- and so taking some $\phi \in \Phi$, we have that $\funcdom{\phi}{\pri{C}}{I^n}$ for $\pri{C}$ some basic cell in $I^n$. Simply set $C = \pri{C} \times \{ \ 0 \ \}$ and define
+      \begin{align*}
+        \psi &\colon C \to I^{n + 1} \\
+        \psi &\colon (x, 0) \mapsto (\phi(x), \ f \circ \phi(x)).
+      \end{align*}
+    Since $\rnorm{f \circ \phi} \leq 1$, taking all such $\psi$ gives a \cellrparam of $X$ as desired.
+
+    Supposing now instead that $X = (f, \ g)_{\pri{X}}$ is the space between two graphs, we apply $\IIn[n]$ to the map $(f, \ g)$ (note the perhaps confusing notation; the non-subscripted $(f, g)$ is a \emph{map}, and not the space between graphs) we get a \cellrparam, $\Phi$ of $(f, \ g)$. Again, taking some $\phi \in \Phi$ we have that $\funcdom{\phi}{\pri{C}}{I^n}$ for $\pri{C} \subseteq I^n$ a basic cell. Similarly to the last case, set $C = \pri{C} \times I$ and define
+      \begin{align*}
+        \psi &\colon C \to I^{n + 1} \\
+        \psi &\colon (\pri{x}, x_{n+1}) \mapsto (\phi(\pri{x}), \ g \circ \phi(\pri{x}) \cdot x_{n + 1} + (1 - x_{n+1}) \cdot f \circ \phi(\pri{x}) ).
+      \end{align*}
+    Since we have already that $\rnorm{g \circ \phi} \leq 1$ and $\rnorm{f \circ \phi} \leq 1$, we easily see that $\rnorm{\psi} \leq c$, which can be changed to a bound of 1 by linear substitution. Thus again, we get a \cellrparam of $X$ -- and now with all cases exhausted, we have proven $\In[n+1]$. We hate to remind the reader that this was the easy one, and not just by a little bit. Just because it is this author's contention that we all deserve it, \emph{please} once, and perhaps finally, enjoy the following line.
+
+    \centerline{\rule{0.6667\linewidth}{.2pt}}
+    \smallskip
+
+    We assume $\In[m]$ for $m \leq n$, and $\IIn[m]$ for $m < n$, and show that $\IIn[n]$ holds.
+
+    \subsubsection{A Uniform Version of One of Our Statements}
+    \chaptermark{Doing the Induction}
+
+    \begin{svgraybox}
+      The following was presented as an exercise to the viewer, but we will simply be presenting it as a proposition in these notes, following our own (hopefully correct) proof.
+    \end{svgraybox}
+
+    %As it turns out, it will be necessary (in the way we prove the next bit) to use a \emph{uniform} version of $\IIn[n-1]$, which we will present as a proposition. This is where the importance of our model being $\aleph_0$-saturated comes into play, and one uses this, along with \defnb choice in order to prove that the uniform result follows from the non-uniform. We do not include a terribly detailed proof here, but for details on this, the reader is directed to \cite{bhardwaj_pilawilkie_2022}, where this is addressed in Corollaries 7.1 and 7.2. For particularities the latter portion of Appendix B can be referenced.
+
+    \begin{proposition}[Uniform Version of $(\textrm{II})_{n-1}$]
+      Supposing $\IIn[n-1]$ holds, and that $\funcdom{f}{I \times I^{n - 1}}{I}$ is \defnb, there is a partition, $\vonevm{I}{k}$ of $I$ into \defnb sets such that for each $j = 1, \hdots, k$, there is a uniform parameterization of $f$, ($\Phi_j$ a set of \defnb maps given $\funcdom{\phi}{I_j \times C}{I^{n-1}}$ for $C$ a basic cell in $I^{n - 1}$ depending on $\phi$) such that if $a \in I_j$, then $\Phi_{j, \ a} = \left\{ \ \phi(a, \ \hdots) \ \colon \ \phi \in \Phi_j \ \right\}$ is a \cellrparam of $f(a, \ \hdots)$.
+      \label{prop:uniform_param_exc}
+    \end{proposition}
+
+    \begin{proof}[of Proposition \ref{prop:uniform_param_exc}]
+      \fix{UMMMMMMM}
+
+      \fix{Using $\aleph_0$-saturation and \defnb choice, prove the following. See ON THE PILA-WILKIE THEOREM
+NEER BHARDWAJ AND LOU VAN DEN DRIES}
+    \end{proof}
+
+    \subsection{Finally Inducting}
+
+    With that under our belt, we are now ready to prove $\IIn[n]$. We do this by a series of reductions that will make what is a seemingly more difficult result much more within reach. First, suppose $\funcdom{f}{X}{I}$, with $\CIn[X]{n}$ \defnb. What we want then is a \cellrparam for $f$. By $\In[n]$, we can reparameterize $X$, and work with each chart separately. As such, we can assume that $X$ is a basic cell. If this has any 0 coordinates, we can use $\IIn[m]$ for some $m < n$, and we are done. So, we assume that all coordinates of $X$ are non-zero. This of course then means that, because it is a basic cell, it \emph{must} be $I^n$ itself. So, we are now considering the function $\funcdom{f}{I^n}{I}$. This is our first reduction. Our next reduction is going to be showing that we can assume $f$ to be $C^r$ and for each $a$ in our interval, evaluating with $a$ as our first coordinate gives a map (on $I^{n-1}$) with bounded derivative  (that is, $\rnorm{f(a, \ \hdots)} \leq 1$).
+
+    This is where the \emph{uniform} version of $\IIn[n-1]$ becomes useful. We apply the proposition to $\funcdom{f}{I \times I^{n-1}}{I}$ What the \emph{uniform} version told us was that we get \emph{finitely-many} of these parameterizing families, $\Phi_j$ as above, and a partition $(\vonevm{I}{k})$. Going even one level deeper, for each such $I_j$, we can reparameterize (as we did earlier) to assume that each $I_j$ is just $I$. Thus, partitioning and rescaling, we can take each $I_j = I$ (after which point we now drop the $j$ from the notation). We then fix some $\funcdom{\phi}{I \times C}{I^{n-1}}$ for $C = I^{n - 1}$. Notice we ignore the immediately solvable case (as before) where would could just appeal to one of the assumed statements for $\IIn[m]$, $m < n$ in our strong induction. Setting now
+     \begin{align*}
+       G(\vonevm{x}{n}) = f(x_1, \phi(\vonevm{x}{n}))
+     \end{align*}
+     by the parameterization from (a good bit) earlier, we get that for each $a \in I$, we have that $\rnorm{G(a, \ \hdots)} \leq 1$. By \scd, there is a \defnb $\CIn[Z]{n}$ having dimension less than $n$, and such that the function restriction $G \ \vert_{I^n \setminus Z}$ is $C^r$. Using $\In[m]$ for $m < n$, we find a \cellrparam, $\Phi_Z$ for $Z$ (which we must be able to since $Z$ has dimension less than $n$). Since $\dim{Z} < n$, if $\phi \in \Phi_Z$ has domain $C$ and $C$ has a 0 coordinate, then we can apply $\IIn[n-1]$ to each $G \circ \phi$, for each $\phi$. To summarize, in particular because it is easy to get lost in this, what we have done is reparameterize $f$ on $Z$ -- and now we go on to worry about the complement of $Z$ in $I^n$.
+
+     That is all to say, we are left again with the restricted function $G \ \vert_{I^n \setminus Z}$ -- which the keen amongst you should notice (the restriction of) is a set in $\In[n]$. Even for the less keen, we know from $\In[n]$ that we can parameterize such sets -- and so the end is (perhaps) within sight! Suppose we have a \cellrparam, $\Psi$ of $I^n \setminus Z$. Fixing some $\psi in \Psi$, we can define
+      \begin{align*}
+        t &\colon C \to I^n \setminus Z,
+      \end{align*}
+    and we presume that $C$ is \emph{not} $I^n$ for reasons of non-triviality.
+
+    We know that, by definition, $\psi$ maps into the space where $G$ is $C^r$, and so $\comp{G}{\psi}$ is $C^r$. For $\alpha \in (\N)^{n-1}$ a multi-index, with order $\abs{\alpha} \leq r$, for any $a \in I$, we have to check that, being cellular (and so depending only on the first-coordinate, $a$),
+      \begin{align*}
+        \abs{D^{\alpha} \ (\comp{G}{\psi})(a, \ \hdots)} &= \abs{D^{\alpha} \left( \comp{(G(\psi_1(a), \ \hdots)}{(\vmvn{\psi}{2}{n})} \right)}
+      \end{align*}
+    since $\psi$ is cellular. And so, we can conclude that
+      \begin{align*}
+        \abs{D^{\alpha} \left( \comp{(G(\psi_1(a), \ \hdots)}{(\vmvn{\psi}{2}{n})} \right)} \leq c_{n, \ r}
+      \end{align*}
+    since $\rnorm{G(b, \ \hdots)} \leq 1$ for each $b \in Z$ ( \ in particular where $b = \phi_1(a)$ \ ) and $\rnorm{\psi} \leq 1$ -- and so as ever, by linear substitution, we can make our $c_{n, \ r}$ equal to 1.
+
+    So, we can assume that $\rnorm{\comp{G}{\psi}(a, \ \hdots)} \leq 1$ for each $a \in I$. We are now so close to \emph{almost} done.
+
+    So, should we replace $f$ with $\comp{G}{\psi}$ for $\phi_1$, we may then assume that $\funcdom{f}{I^n}{I}$ is $C^r$, and that for each $a \in I^{n - 1}$, we have $\rnorm{f(a, \ \hdots)} \leq 1$.
+
+    \subsection{A Final Lemma}
+
+    We now need one quick lemma to finish off (though we will not be proving it until a bit later).
+    \begin{lemma}
+      Suppose $\funcdom{f}{I^n}{I}$ is \defnb, and $C^1$, and suppose as well that
+      \begin{align*}
+        \left\vert \ \cfrac{\partial f}{\partial x_j}(x) \ \right\vert \leq 1
+      \end{align*}
+      for each $x \in I^n$, and $j = 2, \ \hdots, n$. Then, the set of $a \in I$ such that $\cfrac{\partial f}{\partial x_1}(a, \ \hdots)$ is unbounded is finite
+
+      \label{lem:fin_a_unbounded}
+    \end{lemma}
+
+    The proof of this lemma is to come later, and for now we will just take this fact for granted.
+    %\begin{proof}[of Lemma \ref{lem:fin_a_unbounded}]
+    %\end{proof}
+
+    Recalling where we were in our proof, we can take $\N^n$ and order it first by degree and then lexicographically. Taking then, $\alpha \in \N^n$ be at least in this ordering such that
+      \begin{align*}
+        \left\vert D^{\alpha}(f) \right\vert > 1
+      \end{align*}
+    -- that is, its derivatives are `big'. If there is no such $\alpha$, then we are finished! Otherwise, we parameterize $f$ to bound \emph{this} derivative and such the resulting (next) function has increased $\alpha$, and continue this inductively. We now show that this is in fact something we \emph{can} do -- that is, ensure that we increase $\alpha$ -- and then finish by induction.
+
+    First note that our multi-index, $\alpha$, living in $\N^n$ must have $\alpha_1 \geq 1$. By the above (unproven) lemma, there are only finitely-many $a \in I$ such that $D^{\alpha} f(a, \ \hdots)$ is unbounded. As such, we can use $\IIn[n-1]$ to handle these cases, and so assume that for each $a \in I$, we do have $D^{\alpha} f(a, \ \hdots)$ bounded.
+
+    Now, we define
+      \begin{align*}
+        S = \left\{ \ x \in \I^n \ \colon \left\vert D^{\alpha} f(x) \right\vert \geq \cfrac{1}{2} \sup_{\pri{x} \in I} \left( D^{\alpha} f(x, \pri{x}) \right) \ \right\}.
+      \end{align*}
+    By our assumption, we know this supremum to be bounded, and so this set is actually definable (not in the \om sense, just in that it makes sense to define). By \defnb (this time in the \om sense) choice, there is a \defnb $\funcdom{\gamma}{I}{S}$ with $\gamma_1(t) = t$ simply the identity. Consider the map
+      \begin{align*}
+        t \mapsto (\gamma(t), D^{\pri{\alpha}}) f (\gamma(t))
+      \end{align*}
+    where $\pri{\alpha} = (\alpha_1 - 1, \alpha_2, \ \hdots, \ \alpha_n)$. By $\IIn[1]$, we get a \cellrparam, $\Phi$, of this map. Take some $\phi \in \Phi$, and consider
+      \begin{align*}
+        G(x_1, \ \hdots, \ x_n) = f(\phi(x_1), \ x_2, \ \hdots, \ x_n ).
+      \end{align*}
+    This of course makes sense because, as part of a \cellrparam of a map on the unit interval, $\phi$ maps into the unit interval itself.
+
+    \begin{svgraybox}
+      A pithy little aside that is just \emph{too} good to not mention here is Dr Jones' comment about how ``one should never differentiate in public'' -- which we find quite amusing.
+    \end{svgraybox}
+
+    Computing for $\beta < \alpha$, we get
+      \begin{align*}
+        \left\vert \ D^{\beta} \ G \ \right\vert < \cnr
+      \end{align*}
+    for $c_{n, \ r}$ a constant depending on $n$ and $r$ as usual -- so this is fine. What we need to worry about is $\alpha$. When we consider $D^{\alpha} \ G$, we are differentiating $f$ to some order \emph{other} than specified by $\alpha$ (but smaller, which is okay), but we may run into problem cases where we take the $\alpha$ derivative of $f$, and then a bunch of $\phi$s come out. So, computing $D^{\alpha} \ G$, we get some number of terms dependent on $n$ and $r$, and bounded by $\cnr$ plus some term
+      \begin{align*}
+        \pri{\phi}(x_1)^{\alpha_1} \ \cdot \ \left( D^{\alpha} f \right) \ (\phi_1(x_1), \ x_2, \ \hdots, \ x_n)
+      \end{align*}
+    with the left-most term coming from taking the derivative of the expression above in $phi$. By our definition of $S$ and $\gamma$, we have that
+      \begin{align*}
+        \left\vert \  \pri{\phi}(x_1)^{\alpha_1} \ \cdot \ (D^{\alpha} f) \ (\phi(x_1), \ x_2, \ \cdots, x_n) \ \right\vert &\leq 2 \cdot \left\vert \ \pri{\phi}(x_1) \ \right\vert^{\alpha_1} \ \cdot \left\vert \ (D^{\alpha} f) \ (\gamma(\phi(x_1))) \ \right\vert \\
+                    &\leq 2 \cdot \left\vert \ \pri{\phi}(x_1) \ \right\vert \ \cdot \left\vert \ (D^{\alpha} f) \ (\gamma(\phi(x_1))) \ \right\vert
+      \end{align*}
+    since $\alpha_1 \geq 1$, and $\card{\pri{\phi}} \leq 1$. Thus, we need to bound this right-hand side of the inequality. To do so, we compute
+      \begin{align}
+        \cfrac{\partial}{\partial x_1} \left( \left( D^{\pri{\alpha}} f \right) \left( \gamma (\phi(x_1)) \right) \right) &= \pri{\phi}(x_1) \cdot \left( D^{\alpha} f \right) \left( \gamma (\phi(x_1)) \right) \label{eqn:param_deriv_1} \\
+        &\quad \quad+ \pri{\phi}(x_1) \cdot \sum_{j=2}^{n} \cfrac{\partial \gamma_j}{\partial t} \ (\phi(x_1)) \ \cdot \ \left( D^{{\alpha}^{(j)}} f \right) \ \left( \gamma(\phi(t)) \right)
+        \label{eqn:param_deriv_2}
+      \end{align}
+    note that we ignore the $\pri{\gamma_1}$ since it is just the identity map. We have that $a^{(j)} = \pri{\alpha} + (0, \ \hdots, \ 0, \ 1, \ 0, \ \hdots, \ 0)$ with $1$ at the $j$-th coordinate. We claim that this is sufficient to control (prove the bound) as claimed.
+
+    Recall that $\Phi$ is a \cellrparam of the map taking $t$ to $(\gamma(t), \ D^{\pri{\alpha}} f(\gamma(t)))$, so substituting in $\phi$s, we get bounded derivatives. That is, the left-hand side of Equation \ref{eqn:param_deriv_1} is bounded by $\Phi$ a \cellrparam of $\left( D^{\pri{\alpha}} f \right)(\gamma(t))$. Similarly, we have that each partial derivative in the sum in Equation \ref{eqn:param_deriv_2} is also bounded, again by $\Phi$ a \cellrparam of $\gamma$ -- and the other incidence of $\pri{\phi}(x_1)$ in Equation \ref{eqn:param_deriv_2} is bounded for the same reason. The final factor in Equation \ref{eqn:param_deriv_2} is finally also bounded because $\alpha^{(j)} < \alpha$, and $\alpha$ was assumed to be minimal such that the derivative exceeded $1$. Hence, putting this all together, we get that the right-hand side of Equation \ref{eqn:param_deriv_1} \emph{must be bounded}; to be clear, that is
+      \begin{align*}
+        \pri{\phi}(x_1) \cdot \left( D^{\alpha} f \right) \left( \gamma (\phi(x_1)) \right)
+      \end{align*}
+    is bounded.
+
+    Now what to do with all this? Well, we have that (skipping right past the linear substitution step), that
+      \begin{align*}
+        \lvrv{ \pri{\phi}(x_1) \cdot \left( D^{\alpha} f \right) \left( \gamma (\phi(x_1)) \right) } \leq 1,
+      \end{align*}
+      and finally we are finished with the proof.
+    \end{proof}
+
+\chaptermark{Nearly There Now}
+
+That is of course just a very funny joke we cruelly taunt the reader with -- as if you'll remember correctly, we never actually went on to prove that last lemma, whose proof we left for some poor sob down the road. It's perhaps just unfortunate then that that poor sob is, in fact, ourselves. Before we prove that lemma directly, however, we first prove another lemma, in what is becoming an increasingly ridiculous chain of \lemmas each feeding into one other, almost and perhaps with no end in sight. But that's mathematics for you.
+
+\begin{lemma}
+  Suppose $\funcdom{f}{M \times I}{I}$ a family of functions mapping from the unit interval into itself a \defnb family of $C^1$ functions. Then, there is a $c > 0$ such that for any $a \in M$, and $B > 0$, the set
+    \begin{align*}
+      T = \left\{ \ t \in I \ \colon \ \lvrv{ \pri{f_a}(t) > B } \ \right\}
+    \end{align*}
+    has $\mu(T) < \cfrac{c}{B} \ $, for $\mu$ the sum of lengths of intervals function.
+    \label{lem:small_lemma_in_support}
+  \end{lemma}
+
+  \begin{proof}[of Lemma \ref{lem:small_lemma_in_support}]
+    Consider the two sets whose union compose that in the original statement,
+      \begin{align*}
+        T_{+} &= \left\{ \ t \in I \ \colon \ \pri{f_a}(t) > B \ \right\} \\
+        T_{-} &= \left\{ \ t \in I \ \colon \ \pri{f_a}(t) < -B \ \right\}.
+      \end{align*}
+    These are both given by finite unions of open intervals, and that number of intervals, by \om, is bounded uniformly in $a$ and $B$. So, each of these intervals has length not exceeding $\frac{1}{B}$ given we have that $\funcdom{f_a}{I}{I}$ (by mean value theorem as before). Of course then, the result almost immediately follows, because we may just take our constant to be the number of intervals in these two sets.
+  \end{proof}
+
+We \emph{now} use this last lemma to prove the lemma we took for granted during the more arduous proof of parameterization. Because it's been a bit, we recall the theorem (mostly in full) before providing a proof.
+
+  \begin{lemma}[Really Lemma \ref{lem:fin_a_unbounded}]
+    Suppose $\funcdom{f}{I^n}{I}$ is \defnb, and $C^1$, and suppose as well that
+    \begin{align*}
+      \lvrv{ \cfrac{\partial f}{\partial x_j}(x) } \leq 1
+    \end{align*}
+    for each $x \in I^n$, and $j = 2, \ \hdots, n$. Then, the set of $a \in I$ such that $\cfrac{\partial f}{\partial x_1}(a, \ \hdots)$ is unbounded is finite
+  \end{lemma}
+
+  \begin{proof}[of Lemma \ref{lem:fin_a_unbounded}]
+    Supposing otherwise, the this set must contain an interval, and we can assume that interval to be $I$ -- that is,
+      \begin{align*}
+        \pderiv[f]{x_1} (a, \ \hdots)
+      \end{align*}
+    is unbounded for all $a \in I$. By choice and \sm, we can assume that we get a $C^1$ $\funcdom{\gamma}{(0, \ \infty) \times I}{I^{n - 1}}$ such that for all $B > 0$ and $t \in I$, we have
+      \begin{align*}
+        \lvrv{ \pderiv[f]{x_j} (t, \gamma_B(t)) } > B,
+      \end{align*}
+    and is \defnb. Applying the previous lemma (Lemma \ref{lem:small_lemma_in_support}) to the coordinates of $\gamma_B$ and to the family $f(t, \ \gamma_B(t))$, there is a constant, $C$, such that outside a set of measure $\leq \frac{C}{B}$, we have
+      \begin{align*}
+        \lvrv{ \deriv{t} f(t, \gamma_{B}(t)) } \leq \cfrac{B}{3}
+      \end{align*}
+    and coordinate maximum,
+      \begin{align*}
+        \max_{j = 1, \ \hdots, \ n-1} { \lvrv{ \pri{\gamma}_{B, \ j} (t) } } \leq \cfrac{B}{3n}.
+      \end{align*}
+
+    Outside of this set (that is, where we have these bounds), we have, by computation, that
+      \begin{align*}
+        \deriv{t} f(t, \gamma_B(t)) = \pderiv[f]{x_1} (t, \gamma_B(t)) + \sum_{j=2}^{n} \pderiv[f]{x_j} (t, \gamma_B(t)) \cdot \pri{\gamma}_{B, \ j-1} (t),
+      \end{align*}
+    which is claimed to be less than $\cfrac{B}{3}$. In the sum, we have that the $\pri{\gamma}_{B, \ j-1}(t)$ are each less than $\cfrac{B}{3n}$, and the derivatives in that same product are each less than $1$ -- making the entire sum at most $\cfrac{B}{3}$ -- but the first summand is greater than $B$ regardless, and so we have a contradiction. That is, as soon as this set of small measure isn't everything, this contradiction occurs. Thus, once $B > C$, we run into trouble.
+  \end{proof}
+
+  Now with that we truly are done (this section)! Depending on your particular interests, this rather technical proof may have seemed either garish or quite snazzy -- but either way, we are now left with a powerful result, and the first of the major two we will be using to prove the \pwt. If this sort of technicality is not exactly your wheelhouse -- well then perhaps this subject area isn't for you in general -- but you might be a bit disappointed to hear that the next section isn't much less so; however, is it quite different, and it would not be inconceivable that those not so fond of this material find themselves quite enjoying what's coming up: the \emph{number theory bit}. \fix{Depending on the sort of number theory you study/have studied, some of how we go about things may strike you as a bit odd approach to number theoretic proofs, but only time will tell.} Much like we went on to refer to the \emph{\om bit} as \textbf{parameterization}, we will  similarly start calling this number theoretic bit the \textbf{diophantine part} -- which we note that we \emph{do not} capitalize simply to follow the convention of the lectures.

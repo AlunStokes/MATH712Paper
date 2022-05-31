@@ -21,7 +21,10 @@
 
 As mentioned before -- but bears repeating -- our approach to proving \pwt (in our special little case) broadly follows that of Bhardwaj and van den Dries \cite{bhardwaj_pilawilkie_2022}; a recent paper that only came out this year (should you be reading this in 2022). Their major contribution includes the use of \sacds to simplify several arguments of the original proof by Pila and Wilkie. They also provide a full treatment of a recent variant \cite{binyamini_yomdingromov_2021} of the (classical) Yomdin-Gromov theorem \cite{gromov_entropy_1987} (again, assuming your readership takes places not too soon after these words reach the page) in 2021, and a result of Bombieri and Pila \cite{bombieri_number_1989}, which is also made use of. In our case, we are going to be following the (recent) treatment of what we will come to colloquially call \emph{parameterization} by \cite{binyamini_yomdingromov_2021}.
 
-\centerline{\rule{0.6667\linewidth}{.2pt}}
+
+\centerline{\rule{0.6665\linewidth}{.2pt}}
+\footnote{Please note that this horizontal line is \emph{not} intended to cause any calming effects, as we have used a \textit{similar} (but distinct) line for previously. Delineation is not only all we intend it be used for, but it is all that the reader is permitted to take from it. Observe with caution and integrity.}
+
 \bigskip
 
 \section{Some Recollections and Definitions}
@@ -54,7 +57,7 @@ Let's begin by again defining the multiplicative height on $\Q$.
 
 As usual, we now address the multidimensional-case
 \begin{definition}[Multiplicative Height on $\Q^n$]
-  Suppose some $q = (\vonevm{q}{n}) \in \Q^n$ for $n \in \Zgeq{1}$, all in lowest terms as before, then we define the height function to be the coordinate-wise maximum:
+  Suppose some $q = (\vonevm{q}{n}) \in \Q^n$ for $n \in \N$, all in lowest terms as before, then we define the height function to be the coordinate-wise maximum:
     \begin{align*}
       H(q) = \max{ \left\{ \ H(q_j) \colon 1 \leq j \leq n \ \right\} }.
     \end{align*}
@@ -63,7 +66,7 @@ As usual, we now address the multidimensional-case
 
 With that in mind, we have the following definition.
 \begin{definition}
-  Let $\XRn[X]{n}$ and $H \in \Zgeq{1}$. Denote the set
+  Let $\XRn[X]{n}$ and $H \in \N$. Denote the set
     \begin{align*}
       \XQH[H] = \left\{ \ q \in X \cap \Q^n \ \colon H(q) \leq H \ \right\}
     \end{align*}
@@ -86,7 +89,7 @@ To rephrase what we said above, the \pwt gives us an upper bound on
 A special case of this coming from Pila (building on an earlier paper he had worked on with Bombieri) is the following:
 
 \begin{theorem}[A Special Case by Pila]
-  Suppose $\funcdom{f}{[0, 1]}{\R}$ is analytic and transcendental, and further that $X = \graph{f}$. Then, for all $\eps > 0$, there exists some $c > 0$ such that for any $H \in \Zgeq{1}$,
+  Suppose $\funcdom{f}{[0, 1]}{\R}$ is analytic and transcendental, and further that $X = \graph{f}$. Then, for all $\eps > 0$, there exists some $c > 0$ such that for any $H \in \N$,
     \begin{align*}
       \card{\XQH[H]} \leq c \cdot H^{\eps}
     \end{align*}
@@ -95,7 +98,7 @@ A special case of this coming from Pila (building on an earlier paper he had wor
 In general, a \defnb set may contain a rational line (with interior, that is), in which case the number of points is enormous. Here is where the idea of algebraic and transcendental parts of $X$, again denoted $\Xalg[x]$ and $\Xtr[X]$. However, we now do you the service of definition, such that anything useful can be done with them.
 
 \begin{definition}[Algebraic Part of $X$]
-  The \emph{algebraic part} of some $XRn[X]{n}$, denoted $\Xalg[x]$, is given by the union of all connected, infinite, $\overline{\R}$-\defnb subsets of $X$. That is, definable in the real field (with parameters).
+  The \emph{algebraic part} of some $\XRn[X]{n}$, denoted $\Xalg[x]$, is given by the union of all connected, infinite, $\overline{\R}$-\defnb subsets of $X$. That is, definable in the real field (with parameters).
 \end{definition}
 
 By our definition a few above, it is clear then that the set of interest to us is $\XtrQH[H]$, where we take all of $X$ and throw away all the `junk' bits we identify with $\Xalg[X]$. Notice that we assume our $X$ to be definable, but these partitions into algebraic and transcendental sets can be \emph{far} from definable, especially $\Xalg[x]$. Indeed, understanding each of these two sets are different problems from one another, requiring different approaches to say meaningful things about. For now, we focus on $\Xtr[X]$.
@@ -105,7 +108,7 @@ By our definition a few above, it is clear then that the set of interest to us i
 We stated it in the Introduction so as to give something to look forward to, but we now do so again -- without further ado, the \pwt:
 
   \begin{theorem}[The \pwT]
-    Suppose $\XRn[X]{n}$ is a \defnb set (in our \om structure). Then for all $\eps > 0$, there exists some $c > 0$ such that for all $H \in \Zgeq{1}$,
+    Suppose $\XRn[X]{n}$ is a \defnb set (in our \om structure). Then for all $\eps > 0$, there exists some $c > 0$ such that for all $H \in \N$,
       \begin{align*}
         \card{\XtrQH[H]} \leq \bound[H].
       \end{align*}
@@ -117,10 +120,10 @@ We stated it in the Introduction so as to give something to look forward to, but
   Nice though it would be to just put a quick proof underneath and sate ourselves of this theorem, it does unfortunately require a bit more work than that. We are going to go through in the next few chapters and prove the necessary constituents to a proof of Theorem \ref{thm:pwt}. The two main bits are as follows:
   \begin{enumerate}
 
-    \item \textbf{The \om bit}: Suppose we have a \defnb set $X \subset (0, 1)^n$ (by normalization) and some $r \in \Zgeq{1}$. Then there exists a set of functions, $\{ \vonevm{\phi}{k} \}$ where $\funcdom{\phi_j}{(0, 1)^{\dim{X}}}{X}$ that are $C^r$ \defnb maps such that all derivatives of each map up to degree $r$ are bounded (in modulus) by $1$ and whose union is $X$.
+    \item \textbf{The \om bit}: Suppose we have a \defnb set $X \subset (0, 1)^n$ (by normalization) and some $r \in \N$. Then there exists a set of functions, $\{ \vonevm{\phi}{k} \}$ where $\funcdom{\phi_j}{(0, 1)^{\dim{X}}}{X}$ that are $C^r$ \defnb maps such that all derivatives of each map up to degree $r$ are bounded (in modulus) by $1$ and whose union is $X$.
     \label{pw_proof:pt1}
 
-    \item \textbf{The number theory bit}: Let $k, n \in \Zgeq{1}$, $k < n$. Then for each $d \in \Zgeq{1}$, there exists some $r \in \Zgeq{1}$ and $c, \eps > 0$ with the property that if $\funcdom{\phi}{(0, 1)^k}{(0, 1)^n}$ is a $C^r$ map with derivatives bounded by $1$ up to order $r$ (note: not necessarily \defnb), and $X = \image{\phi}$, then for $G \in \Zgeq{1}$, the set $\XQH[H]$ is contained in at most $c \cdot H^{\eps}$ algebraic hypersurfaces of degree at most $d$. Further, this $\eps \to 0$ as $d \to \infty$.
+    \item \textbf{The number theory bit}: Let $k, n \in \N$, $k < n$. Then for each $d \in \N$, there exists some $r \in \N$ and $c, \ \eps > 0$ with the property that if $\funcdom{\phi}{(0, 1)^k}{(0, 1)^n}$ is a $C^r$ map with derivatives bounded by $1$ up to order $r$ (note: not necessarily \defnb), and $X = \image{\phi}$, then for $G \in \N$, the set $\XQH[H]$ is contained in at most $c \cdot H^{\eps}$ algebraic hypersurfaces of degree at most $d$. Further, this $\eps \to 0$ as $d \to \infty$.
     \label{pw_proof:pt2}
 
   \end{enumerate}
