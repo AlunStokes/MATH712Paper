@@ -122,10 +122,13 @@
 \newcommand{\deriv}[2][]{\cfrac{d #1}{d #2} \:}
 \newcommand{\pderiv}[2][]{\cfrac{\partial #1}{\partial #2} \:}
 
+\newcommand{\XeH}[2][H]{X(#2, \ #1)}
+
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Qbar}{\overline{\Q}}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\zeroset}{\{ 0 \}}
 \newcommand{\fancyD}{\mathfrak{D}}
@@ -237,7 +240,11 @@
 \DeclarePairedDelimiter\abs{\vert}{\vert}
 
 %norm
-\DeclarePairedDelimiter\norm{\vert\vert}{\vert\vert}
+\DeclarePairedDelimiter\normdouble{\vert\vert}{\vert\vert}
+\DeclarePairedDelimiter\twonormdouble{\vert\vert}{\vert\vert_2}
+
+\DeclarePairedDelimiter\norm{\vert}{\vert}
+\DeclarePairedDelimiter\twonorm{\vert}{\vert_2}
 
 \newcommand{\rnorm}[2][r]{\norm{#2}_{#1}}
 
