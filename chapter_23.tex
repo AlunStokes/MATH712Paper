@@ -15,28 +15,29 @@
 
 \abstract*{The Number Theory Bit}
 
-\abstract{As we near the end (though not too closely, mind) of our journey through a proof of \pw, we find ourselves now at the part that the na\"ive amongst us may have expected to come much sooner -- and that's the number theoretic part. As mentioned in just the last chapter, this is also called the \emph{diophantine part}, the treatment of which we will be following from Habegger \cite{habegger_diophantine_2016}. As introduced there (though not the inception of the concept), this didn't investigate the rational points on definable curves as we have been throughout, but rather points that are \emph{very close} to them. \textbf{To be clear, this is not what we are going to be doing} -- but using several of the ideas from the proof in that paper, we get to `skip' our way along in the proof of \pw to looking at points of bounded degree, rather than just rational points.}
+\abstract{As we near the end (though not too closely, mind) of our journey through a proof of \pw, we find ourselves now at the part that the na\"ive amongst us may have expected to come much sooner -- and that's the number-theoretic part. As mentioned in just the last chapter, this is also called the \emph{diophantine part}, the treatment of which we will be following from Habegger \cite{habegger_diophantine_2016} as introduced there (though not at the inception of the concept), this didn't investigate the rational points on definable curves as we have been throughout, but rather points that are \emph{very close} to them. \textbf{To be clear, this is not what we are going to be doing} -- but using several of the ideas from the proof in that paper, we get to `skip' our way along in the proof of \pw to looking at points of bounded degree, rather than just rational points.}
 
 \begin{svgraybox}
-  Please again note that `diophantine' is purposefully left uncapitalized as a stylistic choice to follow the material as presented in the course, and there is nothing more to be read into it than that.
+  Again, note that `diophantine' is purposefully left uncapitalized as a stylistic choice to follow the material presented in the course. There is nothing more to be read into it than that.
 \end{svgraybox}
 
-We start with a proof sketch, before getting into all the minutiae proper, and broadly describe how we're going to be proceeding throughout this chapter.
+We start with a proof sketch before getting into all the minutiae proper and broadly describe how we will proceed throughout this chapter.
 
-Now, as we are investigating \pbh, we naturally need a height function (just as we did for the rationals, as discussed earlier). We define one as follows: Suppose $q \in \Qbar$, and let $P \in \Z[x]$ the unique irreducible polynomial with $P(q) = 0$ having coprime coefficients and leading coefficient, $a_0 \geq 1$. Then, we define the height function of $q$ as follows:
+\section{On Points of Bounded Height}
+
+As we investigate \pbh, we naturally need a height function (just as we did for the rationals, as discussed earlier). We define one as follows: Suppose $q \in \Qbar$, and let $P \in \Z[x]$ the unique irreducible polynomial with $P(q) = 0$ having coprime coefficients and leading coefficient, $a_0 \geq 1$. Then, we define the height function of $q$ as follows:
 \begin{definition}[Height of Algebraic Points]
   With the defined variables as above, we let
   \begin{align*}
-    \mbox{\Large}
     H(q) = \left( a_0 \cdot \Pi_{z \in \C \colon P(z)=0} \max{ \{ \ 1, \lvrv{z} \ \} } \right)^{\sfrac{1}{\deg{P}}}
   \end{align*}
 \end{definition}
 
 \begin{remark}
-  Note, of course, that should we restrict ourselves to \emph{only} $\Q$ rather than all of $\Qbar$, then this definition lines up with the one we gave earlier about rational points. Further, note that there is also a definition given by embedding $\Q(\alpha)$ in various $p$-adic fields, although we will not be formally addressing that here. We will be using this idea a bit, but not delving into proofs on the matter for reasons of brevity.
+  Note, of course, that should we restrict ourselves to \emph{only} $\Q$ rather than all of $\Qbar$, then this definition lines up with the one we gave earlier about rational points. Further, note that an alternative definition is given by embedding $\Q(\alpha)$ in various $p$-adic fields -- although we will not be formally addressing that here. We will be using this idea a bit but not delving into proofs on the matter for reasons of brevity.
 \end{remark}
 
-We can say, without enough fuss to go about proving any of these things, a couple facts about this height function.
+Without enough fuss to prove any of these things, we can say a couple of facts about this height function.
 
 \begin{proposition}[Some Facts About the Algebraic Height Function]
   Let $q, \pri{q} \in \Qbar$. Then
@@ -48,6 +49,8 @@ We can say, without enough fuss to go about proving any of these things, a coupl
     These should all, even if you don't see a proof immediately, feel intuitive if you have a feeling for how this height function is supposed to work out. In particular, the third is a good example that, if it causes confusion, should lead one to look more into height functions as a concept.
 \end{proposition}
 
+\subsection{A Few More References}
+
 For some further references on this area, see
 \begin{enumerate}
   \item Bombieri-Gabler: `Heights in Diophantine Geometry'
@@ -55,36 +58,40 @@ For some further references on this area, see
 \end{enumerate}
 
 
-Now, suppose we are given some $XRn[X]{n}$. $e \geq 1$, and $n \geq 1$. Then we put
+Now, suppose we are given some $\XRn[X]{n}$, $e \geq 1$, and $n \geq 1$. Then we put
   \begin{align*}
     \XeH{e} = \left\{ q \in X \cap \Qbar \ \colon \ H(q) \leq H, [\Q(q) \ : \ \Q] \leq e \right\}.
   \end{align*}
+
+\section{The Diophantine Proposition Proper}
 
 \begin{proposition}[Diophantine Proposition (Habegger)]
     Suppose $k, n, e \in \N$ with $k < n$, and $d \geq (e + 1) \cdot n$ are unique. Then there exist $c, \ \eps > 0$, $r \in \Z$ with the property that, supposing $\funcdom{\phi}{(0, 1)^k}{(0, 1)^n}$ has $\lvrv{D^{\alpha} \phi } \leq 1$ for all $\alpha \in \N^k$ with $\norm{\alpha} = r$, and $X = \image{\phi}$, then for any $H \geq 1$, the set $\XeH[H]{e}$ is contained in the union of at most $C \cdot H^{\eps}$ hypersurfaces of degree at most $d$. Further, as $\eps \to \infty$, $d \to 0$.
     \label{prop:dioph}
 \end{proposition}
 
-You'll (or rather, you should) recognize this as being a very similar statement to one earlier -- the only difference now being that we are taking algebraic points of bounded height, rather than restricting to rational points. Also note that \emph{this} is that second `ingredient' to which we've been making reference for quite some time now; this is the second part we're going to use to put together the \pwt, and we're going to do so in such a way that we get to skip some of the steps found in the original proof, that necessitated proving the statement first for rational numbers, and then for algebraic numbers. Here, in one fell swoop, we get \emph{all} algebraic numbers, due to advances in the proofs used in the years since Pila and Wilkie's original result.
+You'll (or rather, you should) recognize this as a very similar statement to earlier -- the only difference now is that we are taking algebraic points of bounded height rather than restricting them to rational points. Also, note that \emph{this} is that second `ingredient' to which we've been referring for quite some time now; this is the second part we're going to use to put together the \pwt, and we're going to do so in such a way that we get to skip some of the steps found in the original proof, that necessitated proving the statement first for rational numbers, and then for algebraic numbers. Here, in one fell swoop, we get \emph{all} algebraic numbers due to advances in the proofs used in the years since Pila and Wilkie's original result.
 
-The `proof' here will not be a rigorous as is the previous section (and whether you breathed a sigh of relief there or one of disappointment says quite a lot) and acts more of a sketch of a full proof. That said, it will still be extensive enough to hold out attention for a good long while. In part, the choice to not go through with a full proof is that this part of the proof of \pw is not predicated or reliant on \om -- and so in the scheme of this course, falls on a less important rung of the latter than bother other and later elements.
+The `proof' here will not be as rigorous as in the previous section (and whether you breathed a sigh of relief there or one of disappointment says quite a lot) and acts more like a sketch of a full proof. It will still be extensive enough to hold our attention for a (hopefully good) long while. In part, the choice to not go through with a full proof is that this part of the proof of \pw is not predicated or reliant on \om -- and so, in the scheme of this course, falls on a less important rung of the latter than bother other and later elements.
 
-We start with a spot of notation. For $d \geq 0$, and $n \geq 1$, set $D_n(d) = \binom{n+d}{n}$. In the plethora of ways to interpret this value, we are interested in it for counting the number of monomials in $n$ indeterminates of total degree not exceeding $d$. The following two propositions are stated without proof.
+We start with a spot of notation. For $d \geq 0$, and $n \geq 1$, set $D_n(d) = \binom{n+d}{n}$. In the plethora of ways to interpret this value, we are interested in it to count the number of monomials in $n$ indeterminates of total degree not exceeding $d$. The following two propositions are stated without proof.
 
 \begin{proposition}
   Suppose $q \in \Q$ has $H(q) \leq H$ and $q \neq 0$. Then $\norm{q} \geq \frac{1}{H}$.
 \end{proposition}
 
-We trust you can see why a proof was felt unnecessary here. The following lemma generalizes this idea.
+We trust you can see why a proof felt unnecessary here. The following lemma generalizes this idea.
+
+\subsection{Some Results on Bounds}
 
 \begin{lemma}
-  Suppose $q \in \R^n$ with $[\Q(q) \ : \Q] \leq e$, $H(q) \leq n$, and $f \in \Z[x_1, \ \hdots, \ x_n]$ has degree not exceeding $d$, with $f(q) \neq 0$. Then
+  Suppose $q \in \R^n$ with $[\Q(q) : \Q] \leq e$, $H(q) \leq n$, and $f \in \Z[x_1, \ \hdots, \ x_n]$ has degree not exceeding $d$, with $f(q) \neq 0$. Then
     \begin{align*}
       \lvrv{f(q)} \geq \cfrac{1}{(D_n(d) \cdot \lvrv{f} \cdot H^{\alpha \cdot n})^e}.
     \end{align*}
 \end{lemma}
 
-One would be forgiven for not immediately seeing that this generalizes the previous proposition, or immediately how to go about proving it -- but rest assured, dear reader, that both these facts are true. While we do not provide a proof here, the reader is directed to Habegger \cite{habegger_diophantine_2016} as before. While we may discontinue saying so as we go on, if something is even not fully (or even just not \emph{well}-explained, then Habegger's paper is a wonderful resource on the matter).
+One would be forgiven for not immediately seeing that this generalizes the previous proposition or immediately how to go about proving it -- but rest assured, dear reader, that both these facts are true. While we do not provide a proof here, the reader is directed to Habegger \cite{habegger_diophantine_2016} as before. At the same time, we may discontinue saying so as we go on. If something is even not fully (or even just not \emph{well}-explained, then Habegger's paper is a wonderful resource on the matter).
 
 Ultimately, what we want out of this theorem is polynomials (these hypersurfaces) that gives the points (by vanishing) on exactly $\XeH[H]{e}$ -- the manner of which we do so being by showing that these sets are smaller than
   \begin{align*}
@@ -100,7 +107,7 @@ The second idea that we're going to be using here is the following lemma:
     \end{align*}
 \end{lemma}
 
-Depending on the amount on algebraic and transcendental number theory you've been exposed to, the thought that may immediately jump to mind is that of Minkowski's theorem -- and you be entirely correct to do so. If feeling up to it, give it a go now, and we will later come back and give a proof sketch of this lemma. We now are getting very close to what we actually want.
+Depending on the amount of algebraic and transcendental number theory you've been exposed to, the thought that may immediately jump to mind is that of Minkowski's theorem -- and you be entirely correct to do so. If feeling up to it, give it a go now, and we will later come back and give a proof sketch of this lemma. We now are getting very close to what we actually want.
 
 \chaptermark{Something Similar, Again and Again}
 
@@ -109,8 +116,9 @@ Depending on the amount on algebraic and transcendental number theory you've bee
   \label{prop:pre_dioph}
 \end{proposition}
 
-Notice how close this comes to actually being what we want to prove -- the problem of course being this reliance on $b$ as given. As we said before, we will come back to prove this proposition (sort of) later on, but for now, we are going to go ahead and give a proof of the diophantine proposition from everything we've seen so far (proved or otherwise).
+Notice how close this comes to actually being what we want to prove. As we said before, we will come back to prove this proposition (sort of) later on, but for now, we will go ahead and give a proof of the diophantine proposition from everything we've seen so far (proved or otherwise).
 
+\section{Proving the Diophantine Proposition, Supposing the Hard Part}
 
 \begin{proof}[of Diophantine Proposition (Proposition \ref{prop:dioph})]
   Suppose $k, n, e, $ and $d$ with $k < n$ and $d \geq (e + 1) \cdot n$ are all positive integers. We have $D_k(b)$ strictly increasing in $b$, so then there must be a unique $b$ such that
@@ -128,7 +136,9 @@ Notice how close this comes to actually being what we want to prove -- the probl
   We can then see that as the right-hand side, $\left( \cfrac{(e + 1)(k + 1)}{d + 1} \right)^{\frac{1}{k}} \to \infty$, as $d \to 0$. Then, applying the above proposition with $r = b+1$, $\eps = (k+1) \cdot n \cdot e \cdot \frac{d}{b} \to 0$ as $d \to \infty$.
 \end{proof}
 
-What we did there was then a bit unfair -- take a proposition that was \emph{almost} what we wanted, skipped out on our bill of a proof, and then basically used that to prove our desired theorem. To the end of making things up to the undoubtedly angry waitstaff of Proposition \ref{prop:pre_dioph}, we provide at the very least a reasonable sketch of the proof of the proposition.
+What we did there was then a bit unfair -- take a proposition that was \emph{almost} what we wanted, skipped out on our bill of a proof, and then basically use that to prove our desired theorem. To the end of making things up to the undoubtedly angry waitstaff of Proposition \ref{prop:pre_dioph}, we provide at the very least a reasonable sketch of the proof of the proposition.
+
+\section{Proving the Hard Part}
 
 \begin{proof}[sketch of Proposition \ref{prop:pre_dioph}]
   Suppose $H \geq 1$, $c$, $\pri{c}$, etc. all independent of $H$. Set our $r$ to be given
@@ -142,13 +152,69 @@ What we did there was then a bit unfair -- take a proposition that was \emph{alm
       f(\vonevm{x}{n}) = \sum_{\norm{j} \leq d} f_j \cdot x_1^{j_1} \cdot \ \cdots \ \cdot x_n^{j_n}
     \end{align*}
   for coefficients $f_j \in \Z$ to be determined. Fix a point $a \in V \cap I^k$. Now, for $\alpha \in \N^k$ with $\norm{\alpha} \leq b$, let $A_{\alpha}$ be the vector given by
-    \begin{align*}
+    \begin{align}
       \cfrac{r^{b - \norm{\alpha}}}{\left\vert\left\vert \left( \cfrac{D^{\alpha} \phi^{j} (a)}{\alpha !} \right)_{\norm{j} \leq \alpha} \right\vert\right\vert_{2} } \cdot \cfrac{D^{\alpha} \phi^{j}(a)}{\alpha !}
-    \end{align*}
+      \label{eqn:nasty_1}
+    \end{align}
   where $\phi^{j} = \phi_1^{j_1} \cdot \ \cdots \ \cdot \phi_n^{j_n}$. We get $M = D_k(b)$ rows given by $A_{\alpha}$, $N = D_A(d)$ the columns, we may apply the lemma proved (pretty far) above to this matrix, for which we need to know $\Delta$ and $Q$ -- which a behind-the-scenes calculation shows that we can take to be
     \begin{align*}
-      \Delta &=
+      \Delta &= r^{\frac{-b}{k+1} \cdot D_k(b)}  \\
+      Q &= r^{- \cfrac{b + k + 1}{(e + 1)(k + 1)}}.
     \end{align*}
-
+    We can now verify that $Q \geq 2 \sqrt{N} \Delta^{\frac{1}{N}}$, supposing that th  $\pri{c}$ we started with is sufficiently small. By the lemma, there are $\{f_j\}$ not all zero with $\norm{f} \leq Q$ and 
+      \begin{align*}
+        \norm{A \ f} \leq \cfrac{c \cdot \Delta^{\sfrac{1}{D_K(b)}}}{Q^c}.
+      \end{align*}
+      Recall that $\norm{A \ f}$ was that nasty sum before, expression (\ref{eqn:nasty_1}). What we now wish to do is show that this choice of $f$ \emph{works}. We start by setting
+        \begin{align*}
+          \funcdef{g}{t}{f(\phi_1(z), \ \hdots, \ \phi_n(z))}.
+        \end{align*}
+      The intention now is to show that the modulus of $g$ is small compared to the sort we saw in the Liouville-type lemma earlier, since if $z$ is in a `little' box such that $\phi(z)$ is algebraic of degree at most $e$ and height at most $H$, then we must have $g(z) = 0$. We can start at this by looking at the Taylor expansion of $g$. This gives us
+        \begin{align*}
+          g(t) = &\sum_{\norm{\alpha} \leq b} \left( \sum_{\norm{j} \leq d} \cfrac{f_j \cdot D^{\alpha} \phi^{j}(a)}{\alpha !} \right) (z - a)^{\alpha} \\
+                  &\quad \quad + \sum_{\norm{\alpha} = b+1} \left( \sum_{\norm{j} \leq d} \cfrac{f_j \cdot D^{\alpha} \phi^{j}(\xi_{z}) }{\alpha !} \right) (z - a)^{\alpha}
+        \end{align*}
+      where $\xi_{z}$ is on the line segment connecting $a$ and $z$. We have that
+        \begin{align*}
+          &\lvrv{ \sum_{\norm{\alpha} \leq b} \left( \sum_{\norm{j} \leq d} \cfrac{f_j \cdot D^{\alpha} \phi^{j}(a)}{\alpha !} \right) (z - a)^{\alpha} } \\
+          & \quad \quad \quad \quad \leq c 
+          \cdot \cfrac{\Delta^{\frac{1}{D_k(b)}}}{Q^e} \cdot r^b \cdot \sum_{\norm{\alpha} \leq b} \left( \sum_{\norm{j} \leq d} \cfrac{D^{\alpha} \phi^{j}(a)}{\alpha !} \right)^{\frac{1}{2}}.
+        \end{align*}
+      Due to our bound on derivatives, all our Euclidean terms (the right-most sums) are small, and so we get that the above is less than
+        \begin{align*}
+          c \cdot r^{\sigma}
+        \end{align*}
+      for
+        \begin{align*}
+          \sigma = e \cfrac{b + d + 1}{(e + 1)(k + 1)} + \cfrac{b \cdot k}{k + 1}.
+        \end{align*}
+      For the remainders in the series, we get
+        \begin{align*}
+          \norm{ \ \cdot \ } \leq c \cdot \norm{f}_{\infty} \cdot r^{b + 1}
+        \end{align*}
+      and since each $f$ has norm bounded above by $Q$, we again get the bound
+        \begin{align*}
+          \norm{ \ \cdot \ } \leq c \cdot r^{\sigma}
+        \end{align*}
+      for the remainder in the Taylor series. In whole, this gives us that 
+        \begin{align*}
+          \norm{g(z)} \leq c \cdot r^{\sigma}.
+        \end{align*}
+      
+      Supposing now that $q = \phi(z) \in \XeH[H]{e}$ and $z \in V$. Then, if $f(q) \neq 0$, by the Liouville-type lemma on heights, we have $f$ bounded \emph{below} by something of the form
+        \begin{align*}
+          f(q) \geq \cfrac{1}{\left(D_n(d) \cdot Q \cdot H^{d \cdot n}\right)^e}
+        \end{align*}
+      (by $\norm{f} \leq a$), and so then
+        \begin{align*}
+          c \cdot r^{\sigma} \geq \cfrac{1}{\left(D_n(d) \cdot Q \cdot H^{d \cdot n}\right)^e}
+        \end{align*}
+      then rearranging, 
+        \begin{align*}
+          \cfrac{1}{c D_n(d)} &\leq r^{\sigma} \cdot Q^e \cdot H^{d \cdot n \cdot e} \\
+                              &= {c^{\prime}}^{\frac{b \cdot k}{k + 1}}
+        \end{align*}
+      the equality part of which should be noted being \emph{independent} of $H$. Thus, taking $\pri{c}$ sufficiently small, this inequality cannot hold with necessity -- and so we reach a contradiction. It's been a long ride, so the reader would be forgiven for having forgotten we were even seeking out a contradiction -- but either way, this then implies the theorem by the assumption shown to give rise to contradiction; namely, that $f(q) = 0$, and so we can vary over all the points we need it to, and then we can vary over all the boxes to get each of the $f_j$ in the proposition.
 \end{proof}
 
+That was quite a lot, especially for those uninducted into the hallowed halls of these monstrosities of proofs -- but in fact, the techniques used here, namely to show that some polynomials must vanish at certain points given sufficient smallness, are quite common and would not be a bad tool to add to one's repertoire. And with that, we are now finished with the diophantine part of the proof going into the \pwt! This means we are now ready to face the beast itself in the (near) final part of this lecture series, where we are to prove a \emph{little bit} different version of the \pwt than we have been talking about throughout -- where instead we prove the statement for \emph{families} of \defnb sets, rather than just singular \defnb sets. After that, some talk about applications, further improvements, and active research areas on this and surrounding topics will be discussed, all more relaxed. But for now, let's take out a second, well-deserved pat on the back for getting this close to the finish line.

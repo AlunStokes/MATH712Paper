@@ -12,9 +12,9 @@
 % to alter or adjust the chapter heading in the running head
 %\chaptermark{Some Introductions}
 
-\abstract*{We now begin properly with a from-the-basics definition of the objects at play: field expansions, monotonicity, cells and decompositions into them, semi-algebraicity and similarly fundamental ideas are each defined and contextualized. Note that we will not be discussing topological definitions in general. That is to say, the reader is assumed to be familiar with the basic point-set topology and the ordinary sorts of topologies we see cropping up (e.g. order, product) -- not that topological ideas won't be discussed. As well, basic knowledge of mathematical logic is assumed; first-order languages (FOL), $ \Lstrs$, relations, and satisfiability are all presumed familiarities. With definability now a part of our tool-set, we start by proving a few theorems fundamental to results later in this course.}
+\abstract*{We now begin properly with a from-the-basics definition of the objects at play: field expansions, monotonicity, cells and decompositions into them, and similarly fundamental ideas are each defined and contextualized. Note that we will not be discussing topological definitions in general. That is to say, the reader is assumed to be familiar with the basic point-set topology, and the ordinary sorts of topologies we see cropping up (e.g. order, product) -- not that topological ideas won't be discussed. Basic knowledge of mathematical logic is also assumed; first-order languages (FOL), $ \Lstrs$, relations, and satisfiability are all presumed familiarities. With definability now a part of our tool-set, we start by proving a few theorems fundamental to results later in this course.}
 
-\abstract{We now begin properly with a from-the-basics definition of the objects at play: field expansions, monotonicity, cells and decompositions into them, semi-algebraicity and similarly fundamental ideas are each defined and contextualized. Note that we will not be discussing topological definitions in general. That is to say, the reader is assumed to be familiar with the basic point-set topology and the ordinary sorts of topologies we see cropping up (e.g. order, product) -- not that topological ideas won't be discussed. As well, basic knowledge of mathematical logic is assumed; first-order languages (FOL), $ \Lstrs$, relations, and satisfiability are all presumed familiarities. With definability now a part of our tool-set, we start by proving a few theorems fundamental to results later in this course.}
+\abstract{We now begin properly with a from-the-basics definition of the objects at play: field expansions, monotonicity, cells and decompositions into them, and similarly fundamental ideas are each defined and contextualized. Note that we will not be discussing topological definitions in general. That is to say, the reader is assumed to be familiar with the basic point-set topology, and the ordinary sorts of topologies we see cropping up (e.g. order, product) -- not that topological ideas won't be discussed. Basic knowledge of mathematical logic is also assumed; first-order languages (FOL), $ \Lstrs$, relations, and satisfiability are all presumed familiarities. With definability now a part of our tool-set, we start by proving a few theorems fundamental to results later in this course.}
 
 
 \section{On Monotonicity}
@@ -45,7 +45,7 @@ and finally,
   If $f$ is a strictly monotonic function on $J$, then there exists some open interval $ \Jp \subseteq J$ on which $J$ is continuous.
 \end{lemma}
 
-Taking these \lemmas for granted, it is not terribly difficult to see how the \Mt falls out. The fun then is in proving these three facts — which is nice, as they are not terribly complicated.
+Taking these \lemmas for granted, it is not terribly difficult to see how the \Mt falls out. The fun then is proving these three facts — which is nice, as they are not terribly complicated.
 
 We start where any sensible person would.
 
@@ -58,11 +58,11 @@ We start where any sensible person would.
   we get q injective — and so this is an open interval $ \Jp \subseteq q((a, b))$ on which $f$ is injective.
 \end{proof}
 
-\fix{
+
 \begin{proof}[Lemma \ref{lemma:monotonic-2}]
-  Write me
+  Suppose otherwise. Then, for every open sub-interval, $\pri{J} \subseteq J$, we have $f$ \emph{not} strictly monotonic -- and so on every such interval, there are distinct $a, b \in \pri{J}$ with $f(a) = f(b)$. To remedy this, we shrink the interval to the largest such interval not containing $b$ -- but then since this property holds for $all$ such open intervals, there now exists some $c$ with $f(a) = f(c)$. Continuing on as such, we see the interval must be the singleton set, which is not open, and a contradiction ensues. 
 \end{proof}
-}
+
 
 \begin{proof}[Lemma \ref{lemma:monotonic-3}]
   This we can get quite quickly. Suppose such a strictly monotone function exists on $J$. Clearly, $f$ cannot be constant (else monotonicity would be non-strict), and so by \omy of $f$, we get that the image of $J$ under $f$ contains some open interval, $ \Jp \subseteq \image{f}$, on which we have preimage a sub-interval of $J$. We get monotonicity on this interval by Lemma \ref{lemma:monotonic-1} and non-constancy (and thus monotonicity) of $f$; this must be a bijection (either order-preserving or reversing, but bijective either way), and so we are finished.
@@ -77,9 +77,7 @@ We start where any sensible person would.
 	Take note that the proof provided here is \emph{not} precisely the one that was given in the lecture, but rather a bit more condensed, less roundabout method of achieving the result. The strategy is the same, however, differing only in presentation.
 \end{svgraybox}
 
-\fix{
-Two Exercises Lec1 pg 4
-}
+%\fix{Two Exercises Lec1 pg 4}
 
 The following result is a special case in 2 dimensions of what is referred to as the \emph{\Ft}, abbreviated FT. We first prove this special case and then take a brief detour to talk about cell decompositions before we can address the more general theorem.
 
@@ -201,7 +199,7 @@ In what should hopefully be predictable at this point, we wish now to define wha
   \begin{align*}
     \{(- \infty, a_1), (a_1, a_2), \hdots, (a_k, \infty), \{a_1\}, \{a_2\}, \hdots \{a_k\} \}.
   \end{align*}
-  That is, all the sequential open intervals (including those with infinite endpoints) plus the singleton sets. Just for the sake of belabouring the point, this is a definitionally \emph{definable} set.
+  That is all the sequential open intervals (including those with infinite endpoints) plus the singleton sets. Just for the sake of belabouring the point, this is a definitionally \emph{definable} set.
 \end{definition}
 
 As we have time and time before, we now up the dimension by induction to define general \cds:
@@ -243,7 +241,7 @@ The importance of this last point will be made clear in the theorem we have buil
   Further, and in analogy to the Monotonicity theorem, if our $\vonevm{X}{k}$ or $f$ (depending on case $\In[]$ or $\IIn[]$) are \defnb over $A \subset M$, then we can take the cells in  $\fancyD$ to be similarly \defnb over $A$; that is, with the \emph{same} parameters.
 
   \begin{svgraybox}
-    This last point is perhaps a bit unfair to mention, as we will not be providing a proof for it -- though for the sake of interest, it would feel incomplete to not at least analogize with Theorem \ref{thm:monotonicity}. In truth, what follows is not a full proof of \CD, but a special case where we take $M$ to be $\R$ and use the yet unproven (or even stated) result of \emph{uniform finiteness}. We take this result entirely for granted in the lectures due to the oddity that a complete (unassuming) proof somewhat `bootstraps' uniform finiteness into the induction we do on $\In[j]$ and $\IIn[j]$, proving it as we go along. This is because uniform finiteness is actually itself an immediate consequence of the \CD Theorem (which makes the proof a fun little oddity). For our purposes, we take it as assumedly true -- in part due to the length of this proof even \emph{with} that assumption -- and trust that our dear intelligent reader sees plainly how we could fix this in the absence of the assumption.
+    This last point is perhaps a bit unfair to mention, as we will not be providing proof for it -- though for the sake of interest, it would feel incomplete to not at least analogize with Theorem \ref{thm:monotonicity}. In truth, what follows is not a full proof of \CD, but a special case where we take $M$ to be $\R$ and use the yet unproven (or even stated) result of \emph{uniform finiteness}. We take this result entirely for granted in the lectures due to the oddity that a complete (unassuming) proof somewhat `bootstraps' uniform finiteness into the induction we do on $\In[j]$ and $\IIn[j]$, proving it as we go along. This is because uniform finiteness is itself an immediate consequence of the \CD Theorem (which makes the proof a fun little oddity). For our purposes, we take it as assumedly true -- in part due to the length of this proof even \emph{with} that assumption -- and trust that our dear intelligent reader sees plainly how we could fix this in the absence of the assumption.
   \end{svgraybox}
 
 \end{theorem}
@@ -268,7 +266,7 @@ The following proof is due to van den Dries \cite{dries_remarks_1984} which, for
   Getting there requires a bit more effort, and so we simply begin with \ref{pf:cd:a}.
   Thus we wish to prove $\IIn[n]$: that for a \defnb $\funcdom{f}{X}{M}$, there is a \cd $\fancyD$ of $M^n$ \cmptble with $X$ and having \contty of $\funcrestr{f}{C}$ for each cell, $C \in \fancyD$.
 
-  Suppose $\funcdom{f}{X}{M}$ is such a definable function. We assume (because we already have) $\In[1]$. By this, we may assume $X$ is a cell. If $X$ is not already an open cell, then recall that we can take its image under the canonical projection away from zero coordinates. Since we do not refer here to the dimension of $X$, we assume that it is open or has been made so as described and then use our inductive hypothesis to conclude. So, we suppose $X \in \fancyD$ is an open cell on which $f$ is \cont. Take
+  Suppose $\funcdom{f}{X}{M}$ is such a definable function. We assume (because we already have) $\In[1]$. By this, we may assume $X$ is a cell. If $X$ is not already an open-cell, then recall that we can take its image under the canonical projection away from zero coordinates. Since we do not refer here to the dimension of $X$, we assume that it is open or has been made so as described and then use our inductive hypothesis to conclude. So, we suppose $X \in \fancyD$ is an open cell on which $f$ is \cont. Take
   \begin{align*}
 	\Xprime = \Set{x \in X}{f \ \textrm{is \cont and \defnb at} \ x}.
   \end{align*}
@@ -289,7 +287,7 @@ The following proof is due to van den Dries \cite{dries_remarks_1984} which, for
 
   To each half of the middle cup, we can apply $\In$ to determine the contents of each of the respective \emph{big} cups to be a finite union of cells -- and so $B$ must be an \emph{countable} union of cells, each of which is contained in one of these sets. Perhaps coming a bit out of left field, we apply the Baire Category Theorem to conclude that by the openness of $B$, so too must be one of these cells be open.
   \begin{svgraybox}
-    Notice that this is one reason we restrict ourselves to working over $\R$ -- the Baire Category Theorem simply does not hold in any DLO model. So this argument could not be broadened beyond the reals (or compact spaces) as we are currently undertaking it.
+    Notice that this is one reason we restrict ourselves to working over $\R$ -- the Baire Category Theorem does not hold in any DLO model. So this argument could not be broadened beyond the reals (or compact spaces) as we are currently undertaking it.
   \end{svgraybox}
   This \emph{cannot} be one of $f^{-1}(r) \cap B$, as it would then contain a box on which we took the value of $r$, an so this open cell must be in one of $f^{-1}(J_p) \cap B$ for some $p$. Taking $J_1$ to be that $J_p$, and $B_1$ to be an open box contained in $f^{-1}(J_1) \cap B$, with $\cl{B_1} \subseteq B$. As desired, we then have $f(B_1) \subset I_1$. Clearly the first step in an induction, we then (incompletely) note that, having $\vonevm{I}{n}$, $\vonevm{B}{n}$ constructed, we repeat exactly as above to finish the induction.
 
@@ -314,7 +312,7 @@ The following proof is due to van den Dries \cite{dries_remarks_1984} which, for
 
 
   \begin{subproof}[Cell Refinement (Proposition \ref{prop:cell-refinement})]
-    For the purpose of transparency, we note that this proof was left out of the lecture and as an exercise for the interested (or obligated) viewer. The following takes inspiration from van den Dries \cite{dries_tame_1998}. We note that this could be made a bit cuter if we had the machinery of \emph{dimension} that we will soon define, but in either case, this proof is relatively trivial. We have our $\fancyD_1$ and $\fancyD_2$ two decompositions of the trivially definable subset of, $\R^{n+1}$: $\R^{n+1}$ itself. We can then simply take a decomposition of the ambient space (which here is the \emph{whole} space) containing our definable subset. We have seen previously that we can take this decomposition to partition each cell of $\fancyD_1 \cup \fancyD_2$ -- and the `restriction' of this decomposition to our definable set (again, just to ensure this is sufficiently belaboured, this is not actually a restriction since our definable set is $\R^{n+1}$), we are left with our everywhere (on cells in $\fancyD_1 \cup \fancyD_2$) compatible decomposition.
+    For the purpose of transparency, we note that this proof was left out of the lecture and as an exercise for the interested (or obligated) viewer. The following takes inspiration from van den Dries \cite{dries_tame_1998}. We note that this could be made a bit cuter if we had the machinery of \emph{dimension} that we will soon define, but in either case, this proof is relatively trivial. We have our $\fancyD_1$ and $\fancyD_2$ two decompositions of the trivially definable subset of, $\R^{n+1}$: $\R^{n+1}$ itself. We can then simply take a decomposition of the ambient space (which here is the \emph{whole} space) containing our definable subset. We have seen previously that we can take this decomposition to partition each cell of $\fancyD_1 \cup \fancyD_2$ -- and the `restriction' of this decomposition to our definable set (again, to ensure this is sufficiently belaboured, this is not actually a restriction since our definable set is $\R^{n+1}$), we are left with our everywhere (on cells in $\fancyD_1 \cup \fancyD_2$) compatible decomposition.
     \smartqed
   \end{subproof}
 
@@ -341,7 +339,7 @@ The following proof is due to van den Dries \cite{dries_remarks_1984} which, for
 
     At this point, you may be a bit confused (if the recollection is even still there) as to why we made such a fuss early on about \emph{uniform finiteness} -- when we've yet to see it used. Well, for the anxious amongst you, satisfaction will come soon, as we now make use of that perhaps unjustified assumption.
 
-    %By UF, we get the following (and again, \underline{\textbf{please}} ignore the spurious QED-type symbol that appears at the end on this proposition),
+    %By UF, we get the following (and again, \underline{\textbf{please}} ignore the spurious QED-type symbol that appears at the end of this proposition),
     By UF, we get the following:
     \begin{proposition}
       If we have a \defnb $X \subseteq \R^{n+1}$, then the set of the types of fibres -- that is
@@ -354,7 +352,7 @@ The following proof is due to van den Dries \cite{dries_remarks_1984} which, for
     Perhaps starting this sentence with `of course' would be unfair, but it shouldn't be hard to see, intuit, or at least \emph{guess} that the set of $x \in \R^n$ giving rise to any \emph{particular} type is usually empty. As before, this proof was left as an exercise to the responsible party, and so please forgive any clear indications of amateurism -- were they absent, there may be something a little suspect going on.
 
     \begin{proof}(Proof of Proposition \ref{prop:definable-fibre-types})
-      This we will not belabour even slightly. We have assumed UF and so simply appeal to UF in the case of $M^{n}$, by which we get that each fibre is finite -- and so must have finite types belonging to its elements. In the case of each type, it is given by some point or open interval in a fibre and so is defined by points and open intervals. Supposing there were infinitely-many \emph{different} such types, we would have to be working in a non-finite dimension. Thus, \defnbty falls out, almost as if by accident.
+      This we will not belabour even slightly. We have assumed UF and so simply appeal to UF in the case of $M^{n}$, by which we get that each fibre is finite -- and so must have finite types belonging to its elements. In the case of each type, it is given by some point, or open interval in a fibre and so is defined by points and open intervals. Supposing there were infinitely-many \emph{different} such types, we would have to be working in a non-finite dimension. Thus, \defnbty falls out, almost as if by accident.
       \smartqed
     \end{proof}
 
@@ -374,4 +372,4 @@ The following proof is due to van den Dries \cite{dries_remarks_1984} which, for
 
 \chaptermark{A Post \CD Break}
 
-It is now at \emph{this} point that the reader not only \emph{may} but is encouraged to give themselves their well-deserved, no-bars-held, hearty pat on the back for the fortitude it took to get through that. Perhaps also giving the above a quick re-read wouldn't be such a bad idea, as there are some bits and subtleties that this author needed a few passes to feel entirely comfortable with. For a proof that doesn't make the assumptions we did here, the reader is directed to \cite{knight_definable_1986}, but by no means necessarily encouraged towards it —- just made aware of its existence. With that done, we are through one of the more laborious parts of this first part of the course. For the masochists in the audience, we note that there is more length and labour to come of this variety. Still, for the normal amongst us, it is with a relaxation that we should move on to discuss \emph{\defnbcnctdns}, followed by \emph{dimensionality} -- and the problem that mathematicians have for coming up with distinct words for distinct concepts. But first -- which is a phrase we perhaps begin sentences with all too often -- we have a bit of miscellany to address.
+It is now at \emph{this} point that the reader not only \emph{may} but is encouraged to give themselves their well-deserved, no-bars-held, hearty pat on the back for the fortitude it took to get through that. Perhaps also giving the above a quick re-read wouldn't be such a bad idea, as there are some bits and subtleties that this author needed a few passes to feel entirely comfortable with. For a proof that doesn't make the assumptions we did here, the reader is directed to \cite{knight_definable_1986}, but by no means necessarily encouraged towards it —- just made aware of its existence. We are through one of the more laborious parts of this first part of the course with that done. For the masochists in the audience, we note that there is more length and labour to come of this variety. Still, for the normal amongst us, it is with a relaxation that we should move on to discuss \emph{\defnbcnctdns}, followed by \emph{dimensionality} -- and the problem that mathematicians have for coming up with different words for distinct concepts. But first -- which is a phrase we perhaps begin sentences with all too often -- we have a bit of miscellany to address.

@@ -13,15 +13,15 @@
 % to alter or adjust the chapter heading in the running head
 %\chaptermark{Some Introductions}
 
-\abstract*{We initially and have for a bit now been calling this section `the \om bit' in order to differentiate it from the number theoretic part that is to come next. However, going forward, and as was alluded to a bit in the last chapter, this `\om bit' is about \param, and we shall generally go on to refer to this section and result as the `\param result', or simply `\param'. \fix{SAY MORE.}}
+\abstract*{We initially and have for a bit now been calling this section `the \om bit' to differentiate it from the number-theoretical part that is to come next. However, in the future, and as was alluded to a bit in the last chapter, this `\om bit' is about \param, and we shall generally go on to refer to this section and result as the `\param result,' or simply `\param.'}
 
-\abstract{We initially and have for a bit now been calling this section `the \om bit' in order to differentiate it from the number theoretic part that is to come next. However, going forward, and as was alluded to a bit in the last chapter, this `\om bit' is about \param, and we shall generally go on to refer to this section and result as the `\param result', or simply `\param'. \fix{SAY MORE.}}
+\abstract{We initially and have for a bit now been calling this section `the \om bit' to differentiate it from the number-theoretical part that is to come next. However, in the future, and as was alluded to a bit in the last chapter, this `\om bit' is about \param, and we shall generally go on to refer to this section and result as the `\param result,' or simply `\param.'}
 
 \bigskip
 
 \section{Setting}
 
-In this section, we actually step back a bit from the specificity of $\R$, and work over a more general \om expansion of an ordered field, $\M = \Mltarithplus$. We let $I = (0, 1)$ the open unit interval, interpreted in our model, $\M$. For the next little while, we have Binyamini and Novikov \cite{binyamini_yomdingromov_2021} to thank for what is to come. We begin with some introduction to the world in which we will find ourselves for the next little bit.
+In this section, we step back a bit from the specificity of $\R$ and work over a more general \om expansion of an ordered field, $\M = \Mltarithplus$. We let $I = (0, 1)$ the open unit interval, interpreted in our model, $\M$. For the next little while, we have Binyamini and Novikov \cite{binyamini_yomdingromov_2021} to thank for what is to come. We begin with some introduction to the world where we will find ourselves for the next little bit.
 
 \begin{definition}
   A \emph{\bc}, $\CIn[C]{n}$ is a set given by a product of copies of $I$ and singletons containing $0$, such that there are in total $n$ factors of this set product. On such a cell, $C$, a \cont map, $\funcdom{\phi}{C}{I^n}$ is called \emph{cellular} if
@@ -33,13 +33,13 @@ In this section, we actually step back a bit from the specificity of $\R$, and w
 
 \end{definition}
 
-This next remark is one to remember, as it is a fact that we will be using and making reference too often.
+This next remark is one to remember, as it is a fact that we will be using and making references too often.
 
 
 \begin{remark}
   Suppose $\funcdom{\phi}{C}{I^n}$, $\funcdom{\psi}{\pri{C}}{C}$ are both cellular. Then so too is their composition, $\funcdom{\phi \circ \psi}{\pri{C}}{I^n}$.
 \end{remark}
-Checking that the two necessary conditions holds is rather trivial here, and so not included. This next bit is mostly just notational.
+Checking that the two necessary conditions hold is rather trivial here and not included. This next bit is mostly just notational.
 
 \begin{definition}[and notation for the norm]
   Given $\XRn[U]{n}$ and $\funcdom{f}{U}{\R^m}$ a $C^r$ map, we set the $r$-norm of $f$ to be
@@ -48,7 +48,7 @@ Checking that the two necessary conditions holds is rather trivial here, and so 
     \end{align*}
 \end{definition}
 
-Note of course that the scaling by factorial $\alpha$ is not strictly relevant, but more of a convenience. Ultimately, just so it is entirely clear what the point of all this is, what we are aiming to find here is parameterizations into the cellular maps on which these norms are bounded. To that end, consider:
+Note that the scaling by factorial $\alpha$ is not strictly relevant but more of a convenience. Ultimately, just so it is entirely clear what the point of all this is, what we are aiming to find here is parameterizations into the cellular maps on which these norms are bounded. To that end, consider:
 
 \begin{definition}
   Let $r \in \N$ and $\CIn[x]{n}$ definable. Then a \emph{\cellrparam} (CRP) is a finite set, $\Phi$, of \defnb $C^r$ \cellr maps such that each
@@ -71,12 +71,12 @@ Suppose now we want a \cellrparam between definable sets -- what does that requi
 
 \section{Do These Even Exist?}
 
-As is often amusing to those outside of mathematics, and even those \emph{in} maths, (at least from the perspective of a graduate student in the area), so often we find ourselves setting up a series of definitions and such defining objects that we wish to study -- with a capstone theorem being that they exist at all. While this may seem the completely backwards way to go about doing things, it is often one that ends up working quite well -- but not always. We're sure, of course, that we don't need to recite the (likely apocryphal) story of the aspiring mathematician who worked for quite a while in this way on H\"older continuous maps with $\alpha > 1$ -- having only before seen the case with alpha in the unit interval. It was only at his defence that he was asked to show an example of such a \emph{non-constant} map -- which, of course, do not exist. Of course, similar such apocrypha exist about anti-metric spaces, and other such seemingly fun ideas. Luckily, or perhaps even more accurately, \emph{skillfully}, it turns out that our setup \emph{does} end up working out for us as desired. We now go on to state and prove the theorem that these objects we have described above do, in fact, exist, and are non-trivial.
+As is often amusing to those outside of mathematics, and even those \emph{in} maths (at least from the perspective of a graduate student in the area), so often we find ourselves setting up a series of definitions and such defining objects that we wish to study -- with a capstone theorem being that they exist at all. While this may seem the completely backwards way to go about doing things, it is often one that ends up working quite well -- but not always. We're sure, of course, that we don't need to recite the (likely apocryphal) story of the aspiring mathematician who worked for quite a while in this way on H\"older continuous maps with $\alpha > 1$ -- having only before seen the case with alpha in the unit interval. It was only at his defence that he was asked to show an example of such a \emph{non-constant} map -- which, of course, does not exist. Of course, similar apocrypha exist about anti-metric spaces and other seemingly fun ideas. Luckily, or perhaps even more accurately, \emph{skillfully}, it turns out that our setup \emph{does} end up working out for us as desired. We now go on to state and prove the theorem that these objects we have described above do, in fact, exist and are non-trivial.
 
 \subsection{Yes -- And Here's a Proof}
 
 \begin{theorem}[Parameterization (by Binyamini \& Novikov)]
-  %Let $n \in \N$. Just like with the proof of $\CD$, we are going to have two inductive towers that we wish to prove to get the theorem for all $n$. Unlike \textbf{that} proof, however, we don't employ back-and-forth method we used there, as that will prove unnecessary here. Similarly though, we see that the first statement is one about sets, and the second of functions. The two statements in our theorem are
+  %Let $n \in \N$. Just like with the proof of $\CD$, we are going to have two inductive towers that we wish to prove to get the theorem for all $n$. Unlike \textbf{that} proof, however, we don't employ the back-and-forth method we used there, as that will prove unnecessary here. Similarly, though, we see that the first statement is about sets and the second of functions. The two statements in our theorem are
   Let $n \in \N$. Just like with the proof of $\CD$, we are going to have two inductive towers, where we again employ the back-and-forth method to prove the theorem for all $n$. Note as another similarity that the first statement is one about sets, and the second of functions. These are given:
     \begin{enumerate}[label={}]
     \item[$\In$ ] If $r \in \N$ and $\CIn[X]{n}$ is \defnb, then $X$ has a \cellrparam.
@@ -86,7 +86,7 @@ As is often amusing to those outside of mathematics, and even those \emph{in} ma
   \label{thm:existence}
 \end{theorem}
 
-Before we start of the proof, we give provide a quick remark on these \cellrparams -- and that is that we can \emph{almost} compose these \cellrparams. This is to say essentially the following:
+Before we start the proof, we give provide a quick remark on these \cellrparams -- and that is that we can \emph{almost} compose these \cellrparams. This is to say essentially the following:
 
 \begin{remark}
   Suppose $\Phi$ is a \cellrparam of some $\CIn[X]{m}$ and that for each $\phi \in \Phi$, given $\funcdom{\phi}{C}{X}$, we have a \cellrparam $\Psi_{\phi}$ of $C$. What we then would like to do is take all the $\phi$ and compose with all corresponding $\Psi_{\phi}$, and receive cellular maps. We \emph{almost} get this result. For example, taking some $\psi \in \Psi_{\phi}$, We can compute to show
@@ -98,7 +98,7 @@ Before we start of the proof, we give provide a quick remark on these \cellrpara
 
 
 \begin{remark}
-This may seem completely apropos of nothing, but now and going on for the rest of these notes, we assume our model, $\M$, to be $\aleph_0$-saturated. If this idea is familiar to you: great. Otherwise, don't worry too much about it. Essentially this assumption allows that whatever we prove here to hold for models that are less than $\aleph_0$-saturated.
+This may seem completely apropos of nothing, but now and for the rest of these notes, we assume our model, $\M$, to be $\aleph_0$-saturated. If this idea is familiar to you: great. Otherwise, don't worry too much about it. Essentially this assumption allows whatever we prove here to hold for models that are less than $\aleph_0$-saturated.
 \end{remark}
 
 Not to keep the eager reader too antsy about getting to the proof of the above theorem, but we are first going to start with a lemma (and then another, which some may even say is starting with two \lemmas) that will make the proof of $\IIn$ \emph{quite} a bit nicer for ourselves.
@@ -120,7 +120,7 @@ Not to keep the eager reader too antsy about getting to the proof of the above t
 \end{remark}
 
 \begin{proof}[of Theorem \ref{thm:existence}]
-  It should be clear that we induct on $n$ to prove this. The statement $\In[1]$ is immediately obvious from what we've said earlier, so to finish the base case, we just need to prove $\IIn[1]$. Unfortunately, this is nowhere near as immediate -- so much so that we actually appeal to a lemma.
+  It should be clear that we induct on $n$ to prove this. The statement $\In[1]$ is immediately obvious from what we've said earlier, so we need to prove $\IIn[1]$ to finish the base case. Unfortunately, this is nowhere near as immediate -- so much so that we appeal to a lemma.
 
     \begin{lemma}[Gromov]
       Suppose $r \geq 2$, $\funcdom{f}{I}{I}$ \defnb and $C^{r-1}$ with $\rnorm[r-1]{f} \leq 1$. Then $f$ has a \cellrparam.
@@ -168,14 +168,14 @@ Not to keep the eager reader too antsy about getting to the proof of the above t
       \end{align*}
     we are ensured that it is a \cellrparam of $I$. Now all we need to check is composition with $f$ holding as expected. Recall that $\rnorm{f \circ \phi_1} = \rnorm{\phi_2} \leq 1$, and so we do have a \cellrparam of $f$.
 
-    That may have felt like quite a lot, especially for just the base case, and so again I introduce our old friend the horizontal line, in hopes that it brings us respite in what may be an overwhelming time. If not at all distressed, feel free to ignore.
+    That may have felt like quite a lot, especially for just the base case, and so again, we introduce our old friend, the horizontal line, in hopes that it brings us a respite in what may be an overwhelming time. If not at all distressed, feel free to ignore it entirely.
 
     \centerline{\rule{0.6667\linewidth}{.2pt}}
     \smallskip
 
-    Now isn't that just \emph{pleasant}. Try not to spend too long, and we will now move on to the inductive stage of this proof.
+    Now isn't that \emph{pleasant}? Try not to spend too long, and we will now move on to the inductive stage of this proof.
 
-    We assume that $\In[m]$ and $\IIn[m]$ hold for $m \leq n$. We start by proving the (much) easier of the two parts, $\In[n+1]$. By \cd, we can suppose $\CIn[X]{n+1}$ is a cell, and so either the graph of a function or the space between two function.
+    We assume that $\In[m]$ and $\IIn[m]$ hold for $m \leq n$. We start by proving the (much) easier of the two parts, $\In[n+1]$. By \cd, we can suppose $\CIn[X]{n+1}$ is a cell, and so either the graph of a function or the space between two functions.
 
     If the former, that is, $X = \graph{f}$ for $\funcdom{f}{\pri{X}}{I}$ a \cont \defnb function on some $\CIn[\pri{X}]{n}$, then applying $\IIn[n]$ to this function, we get a \cellrparam of $f$, $\Phi$ -- and so taking some $\phi \in \Phi$, we have that $\funcdom{\phi}{\pri{C}}{I^n}$ for $\pri{C}$ some basic cell in $I^n$. Simply set $C = \pri{C} \times \{ \ 0 \ \}$ and define
       \begin{align*}
@@ -189,7 +189,7 @@ Not to keep the eager reader too antsy about getting to the proof of the above t
         \psi &\colon C \to I^{n + 1} \\
         \psi &\colon (\pri{x}, x_{n+1}) \mapsto (\phi(\pri{x}), \ g \circ \phi(\pri{x}) \cdot x_{n + 1} + (1 - x_{n+1}) \cdot f \circ \phi(\pri{x}) ).
       \end{align*}
-    Since we have already that $\rnorm{g \circ \phi} \leq 1$ and $\rnorm{f \circ \phi} \leq 1$, we easily see that $\rnorm{\psi} \leq c$, which can be changed to a bound of 1 by linear substitution. Thus again, we get a \cellrparam of $X$ -- and now with all cases exhausted, we have proven $\In[n+1]$. We hate to remind the reader that this was the easy one, and not just by a little bit. Just because it is this author's contention that we all deserve it, \emph{please} once, and perhaps finally, enjoy the following line.
+    Since we have already that $\rnorm{g \circ \phi} \leq 1$ and $\rnorm{f \circ \phi} \leq 1$, we easily see that $\rnorm{\psi} \leq c$, which can be changed to a bound of 1 by linear substitution. Thus again, we get a \cellrparam of $X$ -- and now, we have proven $\In[n+1]$ with all cases exhausted. We hate to remind the reader that this was the easy one, and not just by a little bit. Just because this author contends that we all deserve it, \emph{please} once, and perhaps finally, enjoy the following line.
 
     \centerline{\rule{0.6667\linewidth}{.2pt}}
     \smallskip
@@ -199,27 +199,27 @@ Not to keep the eager reader too antsy about getting to the proof of the above t
     \subsubsection{A Uniform Version of One of Our Statements}
     \chaptermark{Doing the Induction}
 
-    \begin{svgraybox}
-      The following was presented as an exercise to the viewer, but we will simply be presenting it as a proposition in these notes, following our own (hopefully correct) proof.
-    \end{svgraybox}
+    %\begin{svgraybox}
+    % The following was presented as an exercise to the viewer, but we will present it as a proposition in these notes, following our own (hopefully correct) proof.
+    %\end{svgraybox}
 
-    %As it turns out, it will be necessary (in the way we prove the next bit) to use a \emph{uniform} version of $\IIn[n-1]$, which we will present as a proposition. This is where the importance of our model being $\aleph_0$-saturated comes into play, and one uses this, along with \defnb choice in order to prove that the uniform result follows from the non-uniform. We do not include a terribly detailed proof here, but for details on this, the reader is directed to \cite{bhardwaj_pilawilkie_2022}, where this is addressed in Corollaries 7.1 and 7.2. For particularities the latter portion of Appendix B can be referenced.
+    As it turns out, it will be necessary (in the way we prove the next bit) to use a \emph{uniform} version of $\IIn[n-1]$, which we will present as a proposition. This is where the importance of our model being $\aleph_0$-saturated comes into play, and one uses this, along with \defnb choice, to prove that the uniform result follows from the non-uniform. We do not include a detailed proof here, but for details on this, the reader is directed to \cite{bhardwaj_pilawilkie_2022}, where this is addressed in Corollaries 7.1 and 7.2. For particularities, the latter portion of Appendix B can be referenced.
 
     \begin{proposition}[Uniform Version of $(\textrm{II})_{n-1}$]
       Supposing $\IIn[n-1]$ holds, and that $\funcdom{f}{I \times I^{n - 1}}{I}$ is \defnb, there is a partition, $\vonevm{I}{k}$ of $I$ into \defnb sets such that for each $j = 1, \hdots, k$, there is a uniform parameterization of $f$, ($\Phi_j$ a set of \defnb maps given $\funcdom{\phi}{I_j \times C}{I^{n-1}}$ for $C$ a basic cell in $I^{n - 1}$ depending on $\phi$) such that if $a \in I_j$, then $\Phi_{j, \ a} = \left\{ \ \phi(a, \ \hdots) \ \colon \ \phi \in \Phi_j \ \right\}$ is a \cellrparam of $f(a, \ \hdots)$.
       \label{prop:uniform_param_exc}
     \end{proposition}
 
-    \begin{proof}[of Proposition \ref{prop:uniform_param_exc}]
-      \fix{UMMMMMMM}
-
-      \fix{Using $\aleph_0$-saturation and \defnb choice, prove the following. See ON THE PILA-WILKIE THEOREM
-NEER BHARDWAJ AND LOU VAN DEN DRIES}
-    \end{proof}
+ %   \begin{proof}[of Proposition \ref{prop:uniform_param_exc}]
+ %     \fix{UMMMMMMM}
+ %
+ %     \fix{Using $\aleph_0$-saturation and \defnb choice, prove the following. See ON THE PILA-WILKIE THEOREM
+ % NEER BHARDWAJ AND LOU VAN DEN DRIES}
+ %   \end{proof}
 
     \subsection{Finally Inducting}
 
-    With that under our belt, we are now ready to prove $\IIn[n]$. We do this by a series of reductions that will make what is a seemingly more difficult result much more within reach. First, suppose $\funcdom{f}{X}{I}$, with $\CIn[X]{n}$ \defnb. What we want then is a \cellrparam for $f$. By $\In[n]$, we can reparameterize $X$, and work with each chart separately. As such, we can assume that $X$ is a basic cell. If this has any 0 coordinates, we can use $\IIn[m]$ for some $m < n$, and we are done. So, we assume that all coordinates of $X$ are non-zero. This of course then means that, because it is a basic cell, it \emph{must} be $I^n$ itself. So, we are now considering the function $\funcdom{f}{I^n}{I}$. This is our first reduction. Our next reduction is going to be showing that we can assume $f$ to be $C^r$ and for each $a$ in our interval, evaluating with $a$ as our first coordinate gives a map (on $I^{n-1}$) with bounded derivative  (that is, $\rnorm{f(a, \ \hdots)} \leq 1$).
+    We are now ready to prove $\IIn[n]$ with that under our belt. We do this by a series of reductions that will make a seemingly more difficult result much more within reach. First, suppose $\funcdom{f}{X}{I}$, with $\CIn[X]{n}$ \defnb. What we want then is a \cellrparam for $f$. By $\In[n]$, we can reparameterize $X$ and work with each chart separately. As such, we can assume that $X$ is a basic cell. If this has any 0 coordinates, we can use $\IIn[m]$ for some $m < n$, and we are done. So, we assume that all coordinates of $X$ are non-zero. This, of course, then means that, because it is a basic cell, it \emph{must} be $I^n$ itself. So, we are now considering the function $\funcdom{f}{I^n}{I}$. This is our first reduction. Our next reduction is going to be showing that we can assume $f$ to be $C^r$ and for each $a$ in our interval, evaluating with $a$ as our first coordinate gives a map (on $I^{n-1}$) with bounded derivative  (that is, $\rnorm{f(a, \ \hdots)} \leq 1$).
 
     This is where the \emph{uniform} version of $\IIn[n-1]$ becomes useful. We apply the proposition to $\funcdom{f}{I \times I^{n-1}}{I}$ What the \emph{uniform} version told us was that we get \emph{finitely-many} of these parameterizing families, $\Phi_j$ as above, and a partition $(\vonevm{I}{k})$. Going even one level deeper, for each such $I_j$, we can reparameterize (as we did earlier) to assume that each $I_j$ is just $I$. Thus, partitioning and rescaling, we can take each $I_j = I$ (after which point we now drop the $j$ from the notation). We then fix some $\funcdom{\phi}{I \times C}{I^{n-1}}$ for $C = I^{n - 1}$. Notice we ignore the immediately solvable case (as before) where would could just appeal to one of the assumed statements for $\IIn[m]$, $m < n$ in our strong induction. Setting now
      \begin{align*}
@@ -260,7 +260,7 @@ NEER BHARDWAJ AND LOU VAN DEN DRIES}
       \label{lem:fin_a_unbounded}
     \end{lemma}
 
-    The proof of this lemma is to come later, and for now we will just take this fact for granted.
+    The proof of this lemma is to come later, and for now, we will take this fact for granted.
     %\begin{proof}[of Lemma \ref{lem:fin_a_unbounded}]
     %\end{proof}
 
@@ -268,7 +268,7 @@ NEER BHARDWAJ AND LOU VAN DEN DRIES}
       \begin{align*}
         \left\vert D^{\alpha}(f) \right\vert > 1
       \end{align*}
-    -- that is, its derivatives are `big'. If there is no such $\alpha$, then we are finished! Otherwise, we parameterize $f$ to bound \emph{this} derivative and such the resulting (next) function has increased $\alpha$, and continue this inductively. We now show that this is in fact something we \emph{can} do -- that is, ensure that we increase $\alpha$ -- and then finish by induction.
+    -- that is, its derivatives are `big.' If there is no such $\alpha$, we are finished! Otherwise, we parameterize $f$ to bound \emph{this} derivative, and such the resulting (next) function has increased $\alpha$, and continue this inductively. We now show that this is, in fact, something we \emph{can} do -- that is, ensure that we increase $\alpha$ -- and then finish by induction.
 
     First note that our multi-index, $\alpha$, living in $\N^n$ must have $\alpha_1 \geq 1$. By the above (unproven) lemma, there are only finitely-many $a \in I$ such that $D^{\alpha} f(a, \ \hdots)$ is unbounded. As such, we can use $\IIn[n-1]$ to handle these cases, and so assume that for each $a \in I$, we do have $D^{\alpha} f(a, \ \hdots)$ bounded.
 
@@ -284,10 +284,11 @@ NEER BHARDWAJ AND LOU VAN DEN DRIES}
       \begin{align*}
         G(x_1, \ \hdots, \ x_n) = f(\phi(x_1), \ x_2, \ \hdots, \ x_n ).
       \end{align*}
-    This of course makes sense because, as part of a \cellrparam of a map on the unit interval, $\phi$ maps into the unit interval itself.
+    This makes sense because, as part of a \cellrparam of a map on the unit interval, $\phi$ maps into the unit interval itself.
 
+    \newpage
     \begin{svgraybox}
-      A pithy little aside that is just \emph{too} good to not mention here is Dr Jones' comment about how ``one should never differentiate in public'' -- which we find quite amusing.
+      A pithy little aside that is just \emph{too} good not to mention here is Dr Jones' comment about how ``one should never differentiate in public'' -- which we find quite amusing.
     \end{svgraybox}
 
     Computing for $\beta < \alpha$, we get
@@ -326,7 +327,7 @@ NEER BHARDWAJ AND LOU VAN DEN DRIES}
 
 \chaptermark{Nearly There Now}
 
-That is of course just a very funny joke we cruelly taunt the reader with -- as if you'll remember correctly, we never actually went on to prove that last lemma, whose proof we left for some poor sob down the road. It's perhaps just unfortunate then that that poor sob is, in fact, ourselves. Before we prove that lemma directly, however, we first prove another lemma, in what is becoming an increasingly ridiculous chain of \lemmas each feeding into one other, almost and perhaps with no end in sight. But that's mathematics for you.
+That is, of course, just a very funny joke we cruelly taunt the reader with -- as if you'll remember correctly, we never actually went on to prove that last lemma, whose proof we left for some poor sob down the road. It's perhaps just unfortunate then that that poor sob is, in fact, ourselves. However, before we prove that lemma directly, we first prove another lemma in what is becoming an increasingly ridiculous chain of \lemmas, each feeding into one other, almost and perhaps with no end in sight. But that's mathematics for you.
 
 \begin{lemma}
   Suppose $\funcdom{f}{M \times I}{I}$ a family of functions mapping from the unit interval into itself a \defnb family of $C^1$ functions. Then, there is a $c > 0$ such that for any $a \in M$, and $B > 0$, the set
@@ -343,7 +344,7 @@ That is of course just a very funny joke we cruelly taunt the reader with -- as 
         T_{+} &= \left\{ \ t \in I \ \colon \ \pri{f_a}(t) > B \ \right\} \\
         T_{-} &= \left\{ \ t \in I \ \colon \ \pri{f_a}(t) < -B \ \right\}.
       \end{align*}
-    These are both given by finite unions of open intervals, and that number of intervals, by \om, is bounded uniformly in $a$ and $B$. So, each of these intervals has length not exceeding $\frac{1}{B}$ given we have that $\funcdom{f_a}{I}{I}$ (by mean value theorem as before). Of course then, the result almost immediately follows, because we may just take our constant to be the number of intervals in these two sets.
+    These are both given by finite unions of open intervals, and that number of intervals, by \om, is bounded uniformly in $a$ and $B$. So, each of these intervals has length not exceeding $\frac{1}{B}$ given we have that $\funcdom{f_a}{I}{I}$ (by mean value theorem as before). Of course, then, the result almost immediately follows because we may take our constant to be the number of intervals in these two sets.
   \end{proof}
 
 We \emph{now} use this last lemma to prove the lemma we took for granted during the more arduous proof of parameterization. Because it's been a bit, we recall the theorem (mostly in full) before providing a proof.
@@ -381,4 +382,4 @@ We \emph{now} use this last lemma to prove the lemma we took for granted during 
     which is claimed to be less than $\cfrac{B}{3}$. In the sum, we have that the $\pri{\gamma}_{B, \ j-1}(t)$ are each less than $\cfrac{B}{3n}$, and the derivatives in that same product are each less than $1$ -- making the entire sum at most $\cfrac{B}{3}$ -- but the first summand is greater than $B$ regardless, and so we have a contradiction. That is, as soon as this set of small measure isn't everything, this contradiction occurs. Thus, once $B > C$, we run into trouble.
   \end{proof}
 
-  Now with that we truly are done (this section)! Depending on your particular interests, this rather technical proof may have seemed either garish or quite snazzy -- but either way, we are now left with a powerful result, and the first of the major two we will be using to prove the \pwt. If this sort of technicality is not exactly your wheelhouse -- well then perhaps this subject area isn't for you in general -- but you might be a bit disappointed to hear that the next section isn't much less so; however, is it quite different, and it would not be inconceivable that those not so fond of this material find themselves quite enjoying what's coming up: the \emph{number theory bit}. \fix{Depending on the sort of number theory you study/have studied, some of how we go about things may strike you as a bit odd approach to number theoretic proofs, but only time will tell.} Much like we went on to refer to the \emph{\om bit} as \textbf{parameterization}, we will  similarly start calling this number theoretic bit the \textbf{diophantine part} -- which we note that we \emph{do not} capitalize simply to follow the convention of the lectures.
+  Now with that, we truly are done (this section)! Depending on your particular interests, this rather technical proof may have seemed either garish or quite snazzy -- but either way, we are now left with a powerful result, and the first of the major two we will be using to prove the \pwt. If this sort of technicality is not exactly your wheelhouse -- well, then perhaps this subject area isn't for you in general -- but you might be a bit disappointed to hear that the next section isn't much less so; however, is it quite different, and it would not be inconceivable that those not so fond of this material find themselves quite enjoying what's coming up: the \emph{number theory bit}. Depending on the sort of number theory you study/have studied, some of how we go about things may strike you as a bit odd approach to number-theoretic proofs, but only time will tell. Much like we went on to refer to the \emph{\om bit} as \textbf{parameterization}, we will similarly start calling this number-theoretic bit the \textbf{diophantine part} -- which we note that we \emph{do not} capitalize, following the convention of the lectures.
