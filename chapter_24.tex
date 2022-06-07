@@ -2,18 +2,102 @@
 %
 % sample chapter
 %
-% Use this file as a template for your own input.
+% Use this file as a template for your input.
 %
 %%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
 %\motto{Use the template \emph{chapter.tex} to style the various elements of your chapter content.}
 \chapter{Sticking it all Together}
-\chaptermark{The end of our journal (at last)}
+\chaptermark{The End of our Journey (at last)}
 \label{chap:chap:all_together} % Always give a unique label
 % use \chaptermark{}
 % to alter or adjust the chapter heading in the running head
 %\chaptermark{Some Introductions}
 
-\abstract*{Sticking it all Together}
+\abstract*{Here, we start by introducing the \pwt for \emph{families} of \defnb sets, which is what we will actually be proving (and, of course, implies the version for a single \defnb set), and then going on to provide a full proof of how the last two chapters' results (the \emph{parameterization} and \emph{diophantine} results) allow us to come to the theorem we've been holding our breath for this whole time. For the strong-lunged amongst us, this will be a nice capstone to everything we've seen so far and should hopefully pull everything together in a manner that is both satisfying and elucidative for all who have made it to this point. }
 
-\abstract{Sticking it all Together}
+\abstract{Here, we start by introducing the \pwt for \emph{families} of \defnb sets, which is what we will actually be proving (and, of course, implies the version for a single \defnb set), and then going on to provide a full proof of how the last two chapters' results (the \emph{parameterization} and \emph{diophantine} results) allow us to come to the theorem we've been holding our breath for this whole time. For the strong-lunged amongst us, this will be a nice capstone to everything we've seen so far and should hopefully pull everything together in a manner that is both satisfying and elucidative for all who have made it to this point.}
 
+\section{The Familial Version of the \pwT}
+  Suppose that we are now working over $\Rtilde = (\overline{\R}, \ <, \ \hdots)$, an \om expansion of the real field.
+  \begin{theorem}[\pw]
+    Suppose $X \subseteq \R^m \times \R^n$ is \defnb, and let $e \geq 1$, $\eps > 0$. Then, there is a $c > 0$ such that for all $a \in \R^m$ and $H \geq 1$,
+      \begin{align*}
+        \card{ \  \XtraeH \ } \ \leq \ c \cdot H^{\eps}.
+      \end{align*}
+\end{theorem}
+
+The proof we give follows Bhardwaj and van den Dries \cite{bhardwaj_pilawilkie_2022}, which has one relatively easy but fundamental lemma.
+
+\section{A Fundamental Lemma}
+
+\begin{lemma}
+  Suppose we have some $S \subseteq \R^n$ is \sa (\defnb in the real field, $\overline{\R}$), and a map, $\funcdom{f}{S}{\R^m}$ which is \sa and \inj. If $X \subseteq S$ such that $\funcrestr{f}{X} \colon X \to Y = f(X)$ is a homeomorphism, then $f(\Xalg[X]) = \Xalg[Y]$ and so $f(\Xtr[X]) = \Xtr[Y]$.
+  \label{lem:pw_key_lemma}
+\end{lemma}
+
+\begin{proof}[of Lemma \ref{lem:pw_key_lemma}]
+  It is clear that when we map $\Xalg[X]$ under $f$ it is contained in $\Xalg[Y]$, so what suffices to be shown is that all of $\Xalg[Y]$ is mapped to by $\Xalg[X]$. We argue this based on the definition of \saty. Suppose we have some $C \subseteq Y$ a connected, infinite, \sa set. Then, as $f$ is invertible on $Y$, we can consider $\inv{f}(C)$, which must be \sa by both $f$ and $C$ \sa. Further, by \injtvty of $f$, we have that $\inv{f}(C)$ is contained in $X$, and also that it is connected by $C$ connected and $f$ continuous and infinite. Thus, it is contained in an algebraic box of $X$, and so $\inv{f}(C) \subseteq \Xalg[X]$. So, $\inv{f}(\Xalg[Y]) \subseteq \Xalg[X]$ and $f(\Xalg[X]) \subseteq \Xalg[Y]$ -- and so clearly they are equal.
+\end{proof}
+
+
+\section{Our Final Proof}
+
+We are now prepared to prove \pw -- something that may feel like it deserves a bit more fanfare than we are giving it presently; however, since our calming horizontal lines are already bravely serving their purpose on the battlefields of the more painful of proofs, we hope the reader can be sufficiently emboldened and inspired by a short vertical line.
+
+\medskip
+\centerline{$\mid$}
+\medskip
+
+Now you don't see one of those every day, do you? With spirits now ablaze, we begin with our final big proof of this set of notes. In truth, this is not so difficult a proof and will more be an exercise on the part of you, our dear reader, in recalling the two ingredients of the last two chapters. You would not be ill-advised to go back and just recall the final result of each (the proofs are not so important) and the uniform version of the result, if appropriate (as is so for parameterization).
+
+\begin{proof}[of the \pwT]
+  We will, of course, (and \emph{all together now},) proceed by induction on $n$, the dimension of the ambient fibre space. As we saw in the number-theoretic proofs, we are going to perform a series of reductions that will make the proof more tractable and reduce it to a case that we can use our known results to conclude. This first reduction will be to show that we can reduce our discussion from subsets of $\R^n$ to subsets of $I^n$, which is quite fine indeed. To do so, we take the map for $x \in \R$ given $x \mapsto \pm x^{\pm 1}$ and take images of sets in $\R^n$ under these maps. Since these preserve being algebraic of degree at most $e$ and with height at most $H$, this is fine to do and keeps us in $[0,  \ 1]^n$ as then, by induction, we can handle the faces of the box, leaving us in $I^n$ as we desired. This, of course, sets us up to use the parameterization result. Note that this means we can also assume the parameter space, $\R^n$ is just $I^n$ (what we said above was just about subsets, but it applies to the whole space), and similarly for $\R^m$. That is, our $X \subseteq I^m \times I^n$; this completes the first reduction.
+  
+  Using the diophantine proposition from the previous chapter (we won't recall it here for the sake of brevity) for each $k < n$, we can take $d$ so large that for whatever $\eps (k, n, d, e)$ (given by the diophantine proposition) is less than $\eps / 2$ (for the $\eps$ given in the setup of \pw). This is a bit confusing, we realize but bear with us. We then take $r, c$ to be the maximum of the resulting $r$ and $c$ given by each application of the diophantine proposition. Then, using that $r$, we apply the parameterization result (the uniform version), and so get some $N$ such that each fibre, $X_a$ for $a \in I^m$, has a \cellrparam consisting of no more than $N$ maps. Note that $N$ depends on $X$, $e$, and $\eps$ (the \pw $\eps$).
+  
+  Consider now just \emph{one} of these maps in some \cellrparam for some $X_a$. The diophantine proposition tells us that in the image, the points of degree at most $e$ and height at most $H$ lay on at most $c \cdot H^{\frac{\eps}{2}}$-algebraic hypersurfaces. Putting this all together, the number of such points for $a \in I^m$ and $H \geq 1$ lay on at most $N \cdot c \cdot H^{\frac{\eps}{2}}$-algebraic hypersurfaces -- or equivalently,
+    \begin{align*}
+      X_a(e, \ H) \subseteq \textrm{union of at most } N \cdot c \cdot H^{\frac{\eps}{2}} \textrm{ hypersurfaces of degree at most } d.
+    \end{align*}
+    So, it suffices to show that there exists some $c$ such that if a polynomial $P \in \R[x_1, \ \hdots, \ x_n] \setminus \zeroset$ has degree $\leq d$, then transcendental part of the zero-locus of $P$ intersected with the fibre has fewer than $c \cdot H^{\frac{\eps}{2}}$ points. That is, 
+    \begin{align*}
+      \card{ \ (X_a \cap \mathbb{V}(P) )^{\textrm{tr}} \ } \ \leq \ c \cdot H^{\frac{\eps}{2}},
+    \end{align*} 
+    as then we have
+    \begin{align*}
+      \card{ \ X_a^{\textrm{tr}} (e, \ H) \ } \ &\leq \ N \cdot c \cdot H^{\frac{\eps}{2}} \ \cdot \ c \cdot H^{\frac{\eps}{2}} \\
+                                                &\leq \ c \cdot H^{\eps}
+    \end{align*}
+    which is our desired result.
+    
+    To prove this sufficiency, we let $F$ be the set of all such non-zero polynomials in $n$ indeterminates of degree at most $d$, viewed as an $\overline{\R}$-\defnb set. Then, take $\varv \subseteq F \times \R^n$ to be the family of all $\overline{\R}$-\defnb hypersurfaces of degree at most $d$ whose fibre over $P$ is just the zero-locus of $P$. That is, $\varv_P = \mathbb{V}(P)$ for each $P \in F$. Now, we may apply \cd in the real field to get \sa sets, $\vmvnsupbr{C}{1}{k} \subseteq F \times \R^n$, such that the union of their fibres over $P$ is $\varv_P$ and for each $j$, there is an $i^{(j)} \in \{0, \ 1\}^n$ not all $1$ (so as not to have interior), such that for each $P \in F$, the fibre $C^{(j)}_P$ is either empty, or an $i^{(j)}$-cell. This idea should be very familiar now, we are just seeing it in a slightly different context than we have previously. 
+    
+    Now, for $j$ and $\isupj$ as above, we define the natural projection,
+    \begin{align*}
+      \pi_{\isupj} \colon \R^n \to \R^{n_j}
+    \end{align*}
+    for $n_j$ the number of non-zero coordinates in $\isupj$. As before, this is just the projection away from the zero-coordinates of the cell (this should again be familiar), which is a homeomorphism onto its image. This, of course, preserves the degree and height of points, so we needn't worry about that. Now, we appeal to that lemma we proved before starting. Let $Y^{(j)} \subseteq I^m \times F \times \R^{n_j}$ be the \defnb family such that for some $(a, P) \in I^m \times F$,
+    \begin{align*}
+      Y^{(j)}_{(a, P)} = \pi_{\isupj} \left( X_a \cap C_{P}^{(j)} \right).
+    \end{align*}
+    By Lemma \ref{lem:pw_key_lemma}, the transcendental part of $Y^{(j)}_{(a, P)}$ is equal to the image under $\pi_{\isupj}$ of the transcendental part of $\left( X_a \cap C_{P}^{(j)} \right)$ -- and since these projections preserve the degree and height of points, this is also true of the unprojected set.
+    
+    We also have that 
+    \begin{align*}
+      (X_a \cap \mathbb{V}(P))^{\textrm{tr}} \ \subseteq \ \bigcup_{j=1}^{k} \ (X_a \cap C_P^{(j)})^{\textrm{tr}}
+    \end{align*}
+    for each $(a, P)$. By the induction hypothesis, we can do our counting by the $(Y_{(a, P)}^{(j)})^{\textrm{tr}}$ -- and by taking the maximum over all $j$, 
+    By the induction hypothesis, there is a $c > 0$ such that for each $j$ and each $(a, P)$, and $H \geq 1$, we have
+    \begin{align*}
+      \left\vert \ \left( Y^{(j)}_{(a, P)} \right)^{\textrm{tr}} (e, \ H) \ \right\vert \ \leq \ c \cdot H^{\frac{\eps}{2}}.
+    \end{align*}
+    Hence, for each $(a, P)$ and $H \geq 1$, we have
+    \begin{align*}
+      \card{ \  (X_a \cap \mathbb{V}(P))^{\textrm{tr}} (e, \ H) \ } \ &\leq \ k \cdot c \cdot H^{\frac{\eps}{2}} \\
+                                                                      &\leq \ c \cdot H^{\frac{\eps}{2}}
+    \end{align*} 
+    by independence of $k$ from $H$. But notice now that this is exactly what we determined to be sufficient, and so our proof is complete!
+    \smartqed
+\end{proof}
+
+As you can see, what really makes this proof \emph{tick} is this method of \sacd, combined with the lemma we proved that allows us to maintain the partition of algebraic from transcendental points, given particular conditions on our function. While it may be a bit disingenuous to call this proof `simple,' it really is a simplification over the original proof given by Pila and Wilkie.
