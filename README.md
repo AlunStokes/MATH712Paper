@@ -2,10 +2,14 @@
 
 O-minimality & the Pila-Wilkie Theorem -- Fields Institute Graduate Courses 2022
 
+## What if I just want the final PDF?
+
+That would be `book.pdf` then.
+
 ## What is this?
 
 A series of notes documenting and augmenting the module on o-minimality and the 
-proof of the Pila-Wilkie Theorem (plus some applications) given by Dr Gareth Jones (University of Manchester) at the Fields Institute between January and February of 2022 as the first in a series of three modules -- which together comprised a graduate course in o-minimality and its various applications I took through McMaster University as an MSc student. Mistakes are almost certainly present, and the document is currently unfinished.
+proof of the Pila-Wilkie Theorem (plus some applications) given by Dr Gareth Jones (University of Manchester) at the Fields Institute between January and February of 2022 as the first in a series of three modules -- which together comprised a graduate course in o-minimality and its various applications I took through McMaster University as an MSc student. Mistakes are almost certainly present, and the document is currently unfinished, not including the last lecture on applications of the Pila-Wilkie theorem.
 
 ## Compiling
 
