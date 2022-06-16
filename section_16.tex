@@ -1,49 +1,46 @@
-%%%%%%%%%%%%%%%%%%%%% chapter.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%% section.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% sample chapter
+% sample section
 %
 % Use this file as a template for your own input.
 %
 %%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
-%\motto{Use the template \emph{chapter.tex} to style the various elements of your chapter content.}
-%\chapter{Algebraic Dimensionality: A Second, and  (Perhaps) More Enlightening Approach}
-\chapter{Model-Theoretic Dimension: Once More with Feeling}
+%\motto{Use the template \emph{section.tex} to style the various elements of your section content.}
+%\section{Algebraic Dimensionality: A Second, and  (Perhaps) More Enlightening Approach}
+\subsection{Model-Theoretic Dimension: Once More with Feeling}
 \label{chap:alg_dimensionality} % Always give a unique label
-% use \chaptermark{}
-% to alter or adjust the chapter heading in the running head
-%\chaptermark{Some Introductions}
+% use \sectionmark{}
+% to alter or adjust the section heading in the running head
+\sectionmark{Some Introductions}
 
-%\abstract*{As so often one finds in mathematics, dimension is one of those ideas that it almost seems each mathematician has a notion of how it should be defined -- and more truthfully, it has hugely varying meanings across the vast spectra of mathematical disciplines. And perhaps even more, unfortunately, it so often seems the case that the average mathematician was raised on a dictionary of no more than 30 or so words -- which they go on to use and reuse and smash together into all-new words, for the most part equally inequivalently to how their office-mate might be doing the same thing in their preferred area of abstractness. To say the same in so many fewer words: we often find that the same words mean different things to different mathematicians -- and here, we are going to study two interpretations of one such word -- that being \emph{dimension}. We look at both the algebraist's and logician's definition (at least in the context of \omy) of the dimension of a structure and then happily find out that they intersect. This goes on to be fundamental, and this fact is part of what allows us to connect the seemingly non-number theoretical ideas examined hence, to those that allow us to go on to prove a theorem about points of bounded height on curves; a very number-theoretic idea indeed.}
+What we just worked through was broadly a very natural extension of the ideas we'd been toying with so far, and the idea of defining dimensionality by cells is a very sensible one indeed. However, the antsy and number theoretically inclined amongst you may be wary of how little of that sort has cropped up so far. Fear not then, our brethren and sistren in the fine and noble study of numbers and the little things they do -- as we now examine the idea of dimensionality from an \emph{algebraic} perspective and begin to work on the ideas that will come to unite the logical world of \omy with that of our own (not to expose our biases too blatantly). We will come to the wonderful conclusion that, in fact, these two notions are one and the same. We can start to drop the veil of pretense we have been vaguely shrouding this whole affair in -- although you would be in the know had you read the introduction in its entirety or even just the Table of Contents. Importantly, this idea will lead us to one of the important tools that allows the \pwt to work at all; that being this connection between algebra, \nt and \omy that together can put together something bigger and more wonderful than each constituent on its own. So, dear reader, please enjoy a rehashing of much of what you saw just a section ago, but now through an entirely different lens -- one that will perhaps expose you to some ideas and inner workings you'd not thought of or seen previously.
 
-\abstract*{What we just worked through was broadly a very natural extension of the ideas we'd been toying with so far, and the idea of defining dimensionality by cells is a very sensible one indeed. However, the antsy and number theoretically inclined amongst you may be wary of how little of that sort has cropped up so far. Fear not then, our brethren and sistren in the fine and noble study of numbers and the little things they do -- as we now examine the idea of dimensionality from an \emph{algebraic} perspective and begin to work on the ideas that will come to unite the logical world of \omy with that of our own (not to expose our biases too blatantly). We will come to the wonderful conclusion that, in fact, these two notions are one and the same. We can start to drop the veil of pretense we have been vaguely shrouding this whole affair in -- although you would be in the know had you read the introduction in its entirety or even just the Table of Contents. Importantly, this idea will lead us to one of the important tools that allows the \pwt to work at all; that being this connection between algebra, \nt and \omy that together can put together something bigger and more wonderful than each constituent on its own. So, dear reader, please enjoy a rehashing of much of what you saw just a chapter ago, but now through an entirely different lens -- one that will perhaps expose you to some ideas and inner workings you'd not thought of or seen previously.}
-
-%\abstract{As so often one finds in mathematics, dimension is one of those ideas that it almost seems each mathematician has a notion of how it should be defined -- and more truthfully, it has hugely varying meanings across the vast spectra of mathematical disciplines. And perhaps even more, unfortunately, it so often seems the case that the average mathematician was raised on a dictionary of no more than 30 or so words -- which they go on to use and reuse and smash together into all-new words, for the most part equally inequivalently to how their office-mate might be doing the same thing in their preferred area of abstractness. To say the same in so many fewer words: we often find that the same words mean different things to different mathematicians -- and here, we are going to study two interpretations of one such word -- that being \emph{dimension}. We look at both the algebraist's and logician's definition (at least in the context of \omy) of the dimension of a structure and then happily find out that they intersect. This goes on to be fundamental, and this fact is part of what allows us to connect the seemingly non-number theoretical ideas examined hence, to those that allow us to go on to prove a theorem about points of bounded height on curves; a very number-theoretic idea indeed.}
-
-\abstract{What we just worked through was broadly a very natural extension of the ideas we'd been toying with so far, and the idea of defining dimensionality by cells is a very sensible one indeed. However, the antsy and number theoretically inclined amongst you may be wary of how little of that sort has cropped up so far. Fear not then, our brethren and sistren in the fine and noble study of numbers and the little things they do -- as we now examine the idea of dimensionality from an \emph{algebraic} perspective and begin to work on the ideas that will come to unite the logical world of \omy with that of our own (not to expose our biases too blatantly). We will come to the wonderful conclusion that, in fact, these two notions are one and the same. We can start to drop the veil of pretense we have been vaguely shrouding this whole affair in -- although you would be in the know had you read the introduction in its entirety or even just the Table of Contents. Importantly, this idea will lead us to one of the important tools that allows the \pwt to work at all; that being this connection between algebra, \nt and \omy that together can put together something bigger and more wonderful than each constituent on its own. So, dear reader, please enjoy a rehashing of much of what you saw just a chapter ago, but now through an entirely different lens -- one that will perhaps expose you to some ideas and inner workings you'd not thought of or seen previously.}
-
+\bigskip
+\centerline{\rule{0.3333\linewidth}{.2pt}}
+\smallskip
 
 \begin{svgraybox}
-  As in Chapters \ref{chap:connectedness} and now \ref{chap:defn_dimensionality}, we will continue in our assumption that we have $\M$ an \om expansion of an \emph{ordered} field, $(M, <, +, \cdot, 0, 1)$, and prove things about this construction in generality.
+  As in Sections \ref{chap:connectedness} and now \ref{chap:defn_dimensionality}, we will continue in our assumption that we have $\M$ an \om expansion of an \emph{ordered} field, $(M, <, +, \cdot, 0, 1)$, and prove things about this construction in generality.
 \end{svgraybox}
 
 Although at no point will we be diving deeply into the depths of model theory and all the fun/horror that this may entail (depending on who you ask), this is going to be the part of the course that relies most heavily on \emph{some} knowledge of model theory. There's little to do to get around that besides having little heuristics in one's head that make things \emph{kind of make sense} enough to not worry about it too much. All this said, the reader who's not even heard the term `model theory' in their life should not be intimidated, as we will be doing our best to hold your hand (or not as you see fit) through the dicier parts of this section, and so much as we hate to keep using this phraseology, belabouring that which may be very obvious to one of a different background. While this may not have been mentioned before, as a series of papers (or more likely document on a computer of some variety), it is easy but vastly rewarding to jump over sections you feel eminently comfortable about with a reckless abandon. This is true for all, but I hope the one professor I hope does get to at least the vast majority of words written here. But for anyone else -- skip judiciously, and skip as if you've much better things to do (which you likely do).
 
-\section{So How Does One Define Dimension?}
+\subsubsection{So How Does One Define Dimension?}
 \label{sec:alg_dim}
 
 \noindent Tempting though it is to answer ``depends on who you ask'' and move on with our day, the question does bear significant thought. We start with the following definition (and promise we are not trying to induce d\'ej\`a Vu):
 
 \begin{definition}[Algebraic Dimension]
   \
-  Unlike in the previous chapter, we will \emph{not} be starting with a definition of the algebraic dimension and working from there -- you simply are not yet prepared, given the content discussed so far. We now back up a little bit and will return to this topic when more sufficiently prepared. Suffice it to say for now that our definition of dimension will be reliant on the idea of \emph{algebraic} (and then, equivalently, \emph{\defnb}) closures (in the model-theoretic sense).
+  Unlike in the previous section, we will \emph{not} be starting with a definition of the algebraic dimension and working from there -- you simply are not yet prepared, given the content discussed so far. We now back up a little bit and will return to this topic when more sufficiently prepared. Suffice it to say for now that our definition of dimension will be reliant on the idea of \emph{algebraic} (and then, equivalently, \emph{\defnb}) closures (in the model-theoretic sense).
   \label{defn:alg_dim_fake}
 \end{definition}
 
-\section{Some Recollections or Introductions}
+\subsubsection{Some Recollections or Introductions}
 
 Here we recall for some, and for others introduce for the first time, some of the rudimentary ideas of model theory, and in particular of how one goes about defining a model-theoretic or algebraic closure of a set -- and then go on similarly to before to use this to define dimensionality.
 
-\subsection{On Closures of Various Types}
+\subsubsection{On Closures of Various Types}
 
 \begin{definition}[Algebraic Closure]
   We say some $A \subseteq M$, then the \textbf{model-theoretic algebraic closure of $A$}, which we will denote by $\acl{A}$, is the union of all finite $A$-\defnb subsets (in $\M$) of $M$.
@@ -63,7 +60,9 @@ In our setting, in particular in reference to the order-structure our models pos
 
 For convenience, we will, in general, simply work with the definable closure.
 
-\subsection{Some Easy Properties}
+\pagebreak
+
+\subsubsection{Some Easy Properties}
 
 \begin{proposition}[Basically Free]
 \leavevmode
@@ -77,7 +76,7 @@ Let $A \subseteq M$. Then
 
 The third of these properties is referred to as having \emph{finite character}. These each feel reasonably obvious enough that we can go without proof, and the interested reader should have little to no trouble coming up with one themselves. The \emph{non}-trivial property, however, that we \emph{will} be proving is referred to as the \emph{Exchange lemma}, which we will curiously notate as a theorem.
 
-\subsection{A Less Easy Property}
+\subsubsection{A Less Easy Property}
 
 \begin{theorem}[Exchange (Pillay \& Steinhorn \cite{pillay_definable_1986})]
   \label{thm:exchange}
@@ -99,7 +98,7 @@ Whilst this may seem apropos of nothing and not terribly well-motivated, with a 
   \smartqed
 \end{proof}
 
-Having those easy properties above (in particular finite character) along with exchange means that the concept of \defnbcl is what is referred to as a \emph{\pregeom}. That is, $\dclop$ is a \pregeom in any model of the theory of $\M$. For those of us who have not previously encountered the idea of \pregeoms, this is significant because a \pregeom comes equipped with a notion of \emph{dimension} -- which is exactly what we're after right now. Even if you are unfamiliar with the term, I can assure you, dear reader, that you are intimately familiar with several examples of these objects. Vector spaces, projective and affine spaces, and algebraically closed fields are all examples of \pregeoms -- although it should be noted that these are of quite different classifications (within the realm of this area of study) from one another \cite{pillay_geometric_1996}.
+Having those easy properties above (in particular finite character and idempotence of $\dclop$) along with exchange means that the concept of \defnbcl is what is referred to as a \emph{\pregeom}. That is, $\dclop$ is a \pregeom in any model of the theory of $\M$. For those of us who have not previously encountered the idea of \pregeoms, this is significant because a \pregeom comes equipped with a notion of \emph{dimension} -- which is exactly what we're after right now. Even if you are unfamiliar with the term, we can assure you, dear reader, with almost complete certainty that you are intimately familiar with several examples of these objects. Vector spaces, projective and affine spaces, and algebraically closed fields are all examples of \pregeoms -- although it should be noted that these are of quite different classifications (within the realm of this area of study) from one another \cite{pillay_geometric_1996}.
 
 Suppose $A \subseteq M$, $\aMn[a]{n}$. We define
   \begin{align*}
@@ -112,7 +111,7 @@ An alternative characterization is as follows: we call some $X \subseteq M$ \emp
     \dim{ \sfrac{a}{A} } = \max{ \left\{ \card{X} \ \colon \ \forall x \in X \ . \ x \not\in \dcl{A \cup (X \setminus \{ x \})} \right\} }
   \end{align*}
 
-We assume that $\M$ is sufficiently saturated and that all parameter sets are small relative to this saturation claim. We will not be discussing at any great length what this means, but we will note that this is actually a stronger condition than we necessarily need to take -- it is just a convenience that will make things a bit easier down the line. Consider now the following definition:
+We assume that $\M$ is sufficiently saturated and that all parameter sets are small relative to this saturation claim. We will not be discussing at any great (or really even short) length what this means, but we will note that this is actually a stronger condition than we necessarily need to take -- it is just a convenience that will make things a bit easier down the line. Consider now the following definition:
 
 \begin{definition}
   Suppose $\XMn[X]{n}$ is \defnb over $A$. Then we define the dimension of $X$ to be, predictably,
@@ -126,13 +125,13 @@ We assume that $\M$ is sufficiently saturated and that all parameter sets are sm
   Without the assurance of sufficient saturation, the points $\left\{ \sfrac{a}{A} \right\}$ may not even exist, and so instead, we could quantify over all elementary extensions of our model -- but for our purposes, we acknowledge and go on to ignore this small potential snag.
 \end{remark}
 
-Although we have been referring to some set of parameters, $A$ throughout, it turns out that as long as you take a ``small'' set (again, relative to the saturation), then the choice of $A$ does not truly affect the dimension of the definable $X$. To be clear, we will not be clear about quantifying appropriate ``smallness'' relative to the saturation in this course and simply sweep the issue under the rug for perhaps a secondary, more rigorous course on the topic.
+Although we have been referring to some set of parameters, $A$, throughout, it turns out that as long as you take a ``small'' set (again, relative to the saturation), then the choice of $A$ does not truly affect the dimension of the definable $X$. To be clear, we will not be clear about quantifying appropriate ``smallness'' relative to the saturation in this course and simply sweep the issue under the rug for perhaps a secondary, more rigorous course on the topic.
 
 Informally, we can envision that for two sufficiently small sets of parameters, $A \subseteq B \subseteq M$, we can clearly see that for \defnb $\XMn{n}$, we get $\dim{X}_B \leq \dim{X}_A$. Supposing the dimension with respect to $A$ to be $k$ with point $a \in X$ witnessing the dimension, without loss of generality we can take the first $(\vonevm{a}{k})$ to be independent over $A$ -- but then by saturation, we can similarly find $k$ independent such $(\vonevm{b}{k})$ over $B$ with type matching that for our $a$. Then, our $(\vonevm{b}{k})$ extends to $b \in X$, and so $\dim{X}_B \geq k$ as well. Thus, the choice of parameters is irrelevant (again, given this caveat).
 
-\section{Reconciling Dimensionality}
+\subsection{Reconciling Dimensionality}
 
-Ultimately, our goal here is to show that the dimension we are currently discussing is, in fact, equivalent to that discussed in the previous chapter. To this end, consider the following lemma, which topologically characterizes the independence of points.
+Ultimately, our goal here is to show that the dimension we are currently discussing is, in fact, equivalent to that discussed in the previous (previous) section. To this end, consider the following lemma, which topologically characterizes the independence of points.
 
 \begin{lemma}
   Suppose that $\aMn[a]{n}$, and $\AM[A]$ (small). Then, the coordinates, $(\vonevm{a}{n})$ of $a$ are independent over $A$ if and only if every $\Adefnb$ set $\XMn[X]{n}$ with $a \in X$ has \inhb interior.
@@ -140,13 +139,15 @@ Ultimately, our goal here is to show that the dimension we are currently discuss
 \end{lemma}
 
 \begin{proof}[of Lemma \ref{lemma:indep_top}]
-  We start with the easy direction, and use a proof by contradiction. Suppose $\vonevm{a}{n}$ are \emph{dependent} over $A$. Without loss of generality, take $a_n \in \dcl{A \cup \{ \vonevm{a}{n-1} \}}$. Then, our language contains some formula, $\phi$, with parameters from $A$, such that $a_n$ is the unique $x$ satisfying $\phi(\vonevm{a}{n-1}, x)$. Now, let
+  We start with the easy direction, and use a proof by contradiction. Suppose $\vonevm{a}{n}$ are \emph{dependent} over $A$. Without loss of generality, take $a_n \in \dcl{A \cup \{ \vonevm{a}{n-1} \}}$. Then, our language contains some formula, $\phi$, with parameters from $A$, such that $a_n$ is the unique $x$ satisfying $\phi(\vonevm{a}{n-1}, x)$ in $\M$. Now, let
     \begin{align*}
       X = \left\{ \ \aMn[x]{n} \ \colon \ \phi(\vonevm{x}{n}) \textrm{ holds and } x_n \textrm{ uniquely satisfies } \phi(\vonevm{x}{n}) \ \right\}.
     \end{align*}
   By uniqueness of $x_n$, we must have that $X$ has an empty interior and $a \in X$. Now, for the other direction, we use \cd by induction on $n$.
 
   If $n = 1$, and if $a_1$ is independent over $A$, then $a_1$ is not in any finite $\Adefnb$ set. So, if $a_1 \in X$ for $X$ $\Adefnb$, then $X$ is infinite, and so contains an open interval. Thus, it has \inhb interior.
+
+\pagebreak 
 
   Supposing this holds for $M^n$, we take $\aMn[a]{n+1}$ with coordinates $(\vonevm{a}{n+1})$ independent over $A$, and suppose $\XMn[X]{n+1}$ to be $\Adefnb$ and having $a \in X$.
   \begin{svgraybox}
@@ -175,21 +176,16 @@ Immediately putting that lemma to work, we can show the following:
 \end{remark}
 
 \begin{corollary}[Agreement of Dimension Definitions]
-  For $\XMn[X]{n}$ a \defnb set, the notion of $\dim{X}$ as described in this chapter (Definition \ref{defn:alg_dim}) agrees with that of the previous chapter (Definition \ref{defn:defn_dim}).
+  For $\XMn[X]{n}$ a \defnb set, the notion of $\dim{X}$ as described in this section (Definition \ref{defn:alg_dim}) agrees with that of the previous section (Definition \ref{defn:defn_dim}).
   \label{cor:dim_agree}
 \end{corollary}
 This is stated without proof, which shouldn't be even near out of the reach of the reader who has been feeling confident with the content thus far. It would not be unwise to take a go at it as a test of one's familiarity and skill with the ideas and the sorts of proofs we have seen thus far.
 
 Now, we turn our attention back to proving the previously neglected proposition.
 \begin{proof}[of Proposition \ref{prop:inhb_coord_proj}]
-  We start with the forward direction. Suppose $\dim{X} \geq k$. Then for our $a \in X$ of interest, there is a $k$-tuple that, without loss of generality, can be taken to be $\vonevm{a}{k}$ that are independent over $A$. Then, should we take the projection onto the first $k$ coordinates, we know that $(\vonevm{a}{k})$ lies in that projection, and so by the lemma we just proved, that projection has \inhb interior.
+  We start with the forward direction. Suppose $\dim{X} \geq k$. Then for our $a \in X$ of interest, there is an $n$-tuple that, without loss of generality, can be taken to be $(\vonevm{a}{n})$ with first $k$ coordinates non-trivial -- ie. that has coordinates independent over $A$. Then, should we take the projection onto the first $k$ coordinates, we know that $(\vonevm{a}{k})$ lies in that projection, and so by the lemma we just proved, that projection has \inhb interior.
 
   Now for the other direction, we suppose such a projection, $\funcdom{\pi}{M^n}{M^k}$ exists such that $\pi(X)$ has \inhb interior. Again, we suppose for convenience that this occurs for the first $k$ coordinates. Then, $\pi(X)$ is definitionally $\Adefnb$, and having non-empty interior, must contain an open $\Adefnb$ box, $U = I_1 \times \hdots \times I_k$. Using saturation, we inductively find $(\vonevm{a}{k}) \in U$ independent over $A$. Then, taking $a \in X$ such that $\pi(a) = (\vonevm{a}{k})$, we have that this witnesses the dimension of $X$ is no less than $k$. So, $\dim{X} \geq k$.
 \end{proof}
-
-%We now prove the capstone corollary to these last two chapters.
-%\begin{proof}[of Corollary \ref{cor:dim_agree}]
-%  \fix{Suppose otherwise; that is, there is some definable set $\XMn[X]{n}$ with geometric dimension, say, $a$, and algebraic dimension $b$ for $a \neq b$. This means that $X$ contains at least one cell of dimension $a$, for $a$ the number of non-zero coordinates in the cell. By the definition of algebraic dimension, we have that the maximum dimension of $\sfrac{c}{A}$ for $c \in X$ is $b$. Since we have shown that the $A$ taken is (roughly) irrelevant, we ca n consider it to be a singleton set. Then, we have that $\dim{\sfrac{c}{A}}$ is just the size of the minimum subtuple of $c$ where $c \in \dcl{A \cup \tilde{c}})^n$. The $\dclop$ of the union is given by their maximum, which }
-%\end{proof}
 
 

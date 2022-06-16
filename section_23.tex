@@ -6,24 +6,26 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
 %\motto{Use the template \emph{chapter.tex} to style the various elements of your chapter content.}
-\chapter{The Number Theory Bit (Diophantine Part)}
-\chaptermark{Finally Something For the Cool Kids}
+\subsection{The Number Theory Bit (Diophantine Part)}
 \label{chap:nt_bit} % Always give a unique label
-% use \chaptermark{}
+\sectionmark{Finally Something For the Cool Kids}
+% use \sectionmark{}
 % to alter or adjust the chapter heading in the running head
-%\chaptermark{Some Introductions}
+%\sectionmark{Some Introductions}
 
-\abstract*{The Number Theory Bit}
+As we near the end (though not too closely, mind) of our journey through a proof of \pw, we find ourselves now at the part that the na\"ive amongst us may have expected to come much sooner -- and that's the number-theoretic part. As mentioned in just the last section, this is also called the \emph{diophantine part}, the treatment of which we will be following from Habegger \cite{habegger_diophantine_2016} as introduced there (though not at the inception of the concept), this didn't investigate the rational points on definable curves as we have been throughout, but rather points that are \emph{very close} to them. \textbf{To be clear, this is not what we are going to be doing} -- but using several of the ideas from the proof in that paper, we get to `skip' our way along in the proof of \pw to looking at points of bounded degree, rather than just rational points.
 
-\abstract{As we near the end (though not too closely, mind) of our journey through a proof of \pw, we find ourselves now at the part that the na\"ive amongst us may have expected to come much sooner -- and that's the number-theoretic part. As mentioned in just the last chapter, this is also called the \emph{diophantine part}, the treatment of which we will be following from Habegger \cite{habegger_diophantine_2016} as introduced there (though not at the inception of the concept), this didn't investigate the rational points on definable curves as we have been throughout, but rather points that are \emph{very close} to them. \textbf{To be clear, this is not what we are going to be doing} -- but using several of the ideas from the proof in that paper, we get to `skip' our way along in the proof of \pw to looking at points of bounded degree, rather than just rational points.}
+\bigskip
+\centerline{\rule{0.3333\linewidth}{.2pt}}
+\smallskip
 
 \begin{svgraybox}
   Again, note that `diophantine' is purposefully left uncapitalized as a stylistic choice to follow the material presented in the course. There is nothing more to be read into it than that.
 \end{svgraybox}
 
-We start with a proof sketch before getting into all the minutiae proper and broadly describe how we will proceed throughout this chapter.
+We start with a proof sketch before getting into all the minutiae proper and broadly describe how we will proceed throughout this section.
 
-\section{On Points of Bounded Height}
+\subsubsection{On Points of Bounded Height}
 
 As we investigate \pbh, we naturally need a height function (just as we did for the rationals, as discussed earlier). We define one as follows: Suppose $q \in \Qbar$, and let $P \in \Z[x]$ the unique irreducible polynomial with $P(q) = 0$ having coprime coefficients and leading coefficient, $a_0 \geq 1$. Then, we define the height function of $q$ as follows:
 \begin{definition}[Height of Algebraic Points]
@@ -49,7 +51,7 @@ Without enough fuss to prove any of these things, we can say a couple of facts a
     These should all, even if you don't see a proof immediately, feel intuitive if you have a feeling for how this height function is supposed to work out. In particular, the third is a good example that, if it causes confusion, should lead one to look more into height functions as a concept.
 \end{proposition}
 
-\subsection{A Few More References}
+\subsubsection{A Few More References}
 
 For some further references on this area, see
 \begin{enumerate}
@@ -57,13 +59,12 @@ For some further references on this area, see
   \item Masser: `Auxiliary Polynomials in Number Theory'
 \end{enumerate}
 
+\subsubsection{The Diophantine Proposition Proper}
 
 Now, suppose we are given some $\XRn[X]{n}$, $e \geq 1$, and $n \geq 1$. Then we put
   \begin{align*}
     \XeH{e} = \left\{ q \in X \cap \Qbar \ \colon \ H(q) \leq H, [\Q(q) \ : \ \Q] \leq e \right\}.
   \end{align*}
-
-\section{The Diophantine Proposition Proper}
 
 \begin{proposition}[Diophantine Proposition (Habegger)]
     Suppose $k, n, e \in \N$ with $k < n$, and $d \geq (e + 1) \cdot n$ are unique. Then there exist $c, \ \eps > 0$, $r \in \Z$ with the property that, supposing $\funcdom{\phi}{(0, 1)^k}{(0, 1)^n}$ has $\lvrv{D^{\alpha} \phi } \leq 1$ for all $\alpha \in \N^k$ with $\norm{\alpha} = r$, and $X = \image{\phi}$, then for any $H \geq 1$, the set $\XeH[H]{e}$ is contained in the union of at most $C \cdot H^{\eps}$ hypersurfaces of degree at most $d$. Further, as $\eps \to \infty$, $d \to 0$.
@@ -82,7 +83,7 @@ We start with a spot of notation. For $d \geq 0$, and $n \geq 1$, set $D_n(d) = 
 
 We trust you can see why a proof felt unnecessary here. The following lemma generalizes this idea.
 
-\subsection{Some Results on Bounds}
+\subsubsection{Some Results on Bounds}
 
 \begin{lemma}
   Suppose $q \in \R^n$ with $[\Q(q) : \Q] \leq e$, $H(q) \leq n$, and $f \in \Z[x_1, \ \hdots, \ x_n]$ has degree not exceeding $d$, with $f(q) \neq 0$. Then
@@ -109,7 +110,7 @@ The second idea that we're going to be using here is the following lemma:
 
 Depending on the amount of algebraic and transcendental number theory you've been exposed to, the thought that may immediately jump to mind is that of Minkowski's theorem -- and you be entirely correct to do so. If feeling up to it, give it a go now, and we will later come back and give a proof sketch of this lemma. We now are getting very close to what we actually want.
 
-\chaptermark{Something Similar, Again and Again}
+\sectionmark{Something Similar, Again and Again}
 
 \begin{proposition}
   Suppose $k, d, e, n, b$ are positive integers with $k < n$, $D_n(d) \geq (e + 1) D_k(b)$. Then there is some $c > 0$ with the following property: Let $\funcdom{\phi}{I^k}{I^n}$ a $C^{b + 1}$ function with $\norm{\phi^{(\alpha)}(x)} \leq 1$ for all $\norm{\alpha} \leq b + 1$ and $x \in I^{k}$ with $X = \image{\phi}$. Then, we have that for any $H \geq 1$, there is some $N \leq c \cdot H^{(k+1) \cdot n \cdot e \cdot \frac{d}{b}}$ and polynomials $\vonevm{f}{N} \in \Z[\vonevm{x}{n}] \setminus \zeroset$ of degree $\leq d$ such that if $q \in \XeH{e}$, then $f_j(q) = 0$ for some $j$.
@@ -118,7 +119,7 @@ Depending on the amount of algebraic and transcendental number theory you've bee
 
 Notice how close this comes to actually being what we want to prove. As we said before, we will come back to prove this proposition (sort of) later on, but for now, we will go ahead and give a proof of the diophantine proposition from everything we've seen so far (proved or otherwise).
 
-\section{Proving the Diophantine Proposition, Supposing the Hard Part}
+\subsubsection{Proving the Diophantine Proposition, Supposing the Hard Part}
 
 \begin{proof}[of Diophantine Proposition (Proposition \ref{prop:dioph})]
   Suppose $k, n, e, $ and $d$ with $k < n$ and $d \geq (e + 1) \cdot n$ are all positive integers. We have $D_k(b)$ strictly increasing in $b$, so then there must be a unique $b$ such that
@@ -138,7 +139,7 @@ Notice how close this comes to actually being what we want to prove. As we said 
 
 What we did there was then a bit unfair -- take a proposition that was \emph{almost} what we wanted, skipped out on our bill of a proof, and then basically use that to prove our desired theorem. To the end of making things up to the undoubtedly angry waitstaff of Proposition \ref{prop:pre_dioph}, we provide at the very least a reasonable sketch of the proof of the proposition.
 
-\section{Proving the Hard Part}
+\subsubsection{Proving the Hard Part}
 
 \begin{proof}[sketch of Proposition \ref{prop:pre_dioph}]
   Suppose $H \geq 1$, $c$, $\pri{c}$, etc. all independent of $H$. Set our $r$ to be given

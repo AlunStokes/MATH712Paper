@@ -1,25 +1,25 @@
-%%%%%%%%%%%%%%%%%%%%% chapter.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%% section.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% sample chapter
+% sample section
 %
 % Use this file as a template for your own input.
 %
 %%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
-%\motto{Use the template \emph{chapter.tex} to style the various elements of your chapter content.}
-%\chapter{Algebraic Dimensionality: A Second, and  (Perhaps) More Enlightening Approach}
-\chapter{A Slew of Results on \SCDs}
+%\motto{Use the template \emph{section.tex} to style the various elements of your section content.}
+%\section{Algebraic Dimensionality: A Second, and  (Perhaps) More Enlightening Approach}
+\subsection{A Slew of Results on \SCDs}
 \label{chap:smooth_cell} % Always give a unique label
-%\chaptermark{Some Introductions}
+\sectionmark{Some Introductions}
 
-\abstract*{To wrap up now what may have felt like a very long first section, we state several results on \emph{\scds} -- in particular, starting with a definition of what makes a \cd smooth in any case. For the beleaguered reader, just champing at the bit for discussion of \pw to start properly: we promise, this is the last bit between you and that carrot that's been dangling in front of you for that past while. For the reader, however, feeling that more detail should be wrung out before moving on, it is with great disappointment that we inform you that you have chosen the wrong text to follow and that it took this many chapters for you to come to that conclusion. Either way, make room somewhere in your mind for a few more definitions, \lemmas, propositions, and theorems, and we will quickly be on our way to a not \emph{too} involved proof of the theorem it feels we set out to prove so long ago.}
+To wrap up now what may have felt like a very long first section, we state several results on \emph{\scds} -- in particular starting with a definition of what makes a \cd smooth in any case. For the beleaguered reader, just champing at the bit for discussion of \pw to start properly: we promise, this is the last bit between you and that carrot that's been dangling in front of you for that past while. For the reader, however, feeling that more detail should be wrung out before moving on, it is with great disappointment that we inform you that you have chosen the wrong text to follow and that it took this many sections for you to come to that conclusion. Either way, make room somewhere in your mind for a few more definitions, \lemmas, propositions, and theorems, and we will quickly be on our way to a not \emph{too} involved proof of the theorem it feels we set out to prove so long ago.
 
-\abstract{To wrap up now what may have felt like a very long first section, we state several results on \emph{\scds} -- in particular starting with a definition of what makes a \cd smooth in any case. For the beleaguered reader, just champing at the bit for discussion of \pw to start properly: we promise, this is the last bit between you and that carrot that's been dangling in front of you for that past while. For the reader, however, feeling that more detail should be wrung out before moving on, it is with great disappointment that we inform you that pyou have chosen the wrong text to follow and that it took this many chapters for you to come to that conclusion. Either way, make room somewhere in your mind for a few more definitions, \lemmas, propositions, and theorems, and we will quickly be on our way to a not \emph{too} involved proof of the theorem it feels we set out to prove so long ago.}
+\bigskip
+\centerline{\rule{0.3333\linewidth}{.2pt}}
+\smallskip
 
-\medskip
+This section, in particular, is more of a survey of useful results and ideas than the preceding sections, with much less attention paid to proving the claimed statements either at all or with much degree of rigour. For those interested in such detail, they are encouraged to reference (as one can for most that we have done and will do here) \emph{Tame topology and \Om structures} \cite{dries_tame_1998}.
 
-This chapter, in particular, is more of a survey of useful results and ideas than the preceding chapters, with much less attention paid to proving the claimed statements either at all or with much degree of rigour. For those interested in such detail, they are encouraged to reference (as one can for most that we have done and will do here) \emph{Tame topology and \Om structures} \cite{dries_tame_1998}.
-
-\section{Smoothness}
+\subsubsection{Smoothness}
 Recall our setting; we are in an \om expansion of an ordered field, $\M = (M, <, +, \cdot, 0, 1, \hdots)$, and so much of what you'll recall from your classes in calculus and analysis apply -- for example, the notion of differentiability of a univariate function on a point in the interior of its domain can be well-defined. As a result, we use this ordered-field structure to define continuous differentiability in almost exactly this way.
 
 \newpage
@@ -38,14 +38,16 @@ Recall our setting; we are in an \om expansion of an ordered field, $\M = (M, <,
 Much like in the calculus one should find themselves familiar with, we can define $C^r$ broadly as usual, and we will heuristic our way through how one does this when $r=1$. We have the limit definition of the derivative of $f$ and view the limit at each point from below and above due to the ordering of our field. We should note, of course, that this holds necessarily only on some subset of the domain rather than its entirety by necessity. By \Mt, we can assume continuity of $f$, and then if we can show the limit from above exists and is positive on some interval, then $f$ is strictly increasing (vice versa for decreasing). Then, after a slight bit of hand-waving, if we can show the two functions (limits from above and below) are $M$-valued (non $\pm \infty$), then $f$ is actually differentiable and can only be $\pm \infty$ at finitely-many points. Again, this is not claimed to be rigorous by any means.
 \end{proof}
 
+This is apropos of something to come, rather than something to worry about much now, but still bears mentioning, especially in the \textit{calculus-y} bit of the note. In the same way that we apply may the ``regular'' calculus constructions in our model, the same sorts of theorems follow in that model. In particular, note that the Mean Value theorem holds. This is mentioned as we will be using it without proof, just a bit later on.
+
 %Equivalently, we can say that on some $\XMn[A]{n}$ \defnb, a \defnb map, $\funcdom{f}{A}{M^m}$, is $C^r$ on $A$ if there is some open $U \subseteq M^n$ and \defnb
 
-\section{Smooth Cells and Decompositions}
+\subsubsection{Smooth Cells and Decompositions}
 
-Of course, to get to our usual definition (or rather, its analogue), we could follow all the standard methods (mostly) one sees in their first calculus course, but for our purposes, we move right along to talking about \emph{cells} again.
+Of course, to get to our usual definition (or rather, its analogue), we could follow all the standard methods (mostly) one sees in their first calculus course, but for our purposes, we move right along to talking about \emph{cells} again. 
 
 \begin{definition}[$C^r$-cells]
-A $\Crcell[r]$ is defined almost precisely the same way we did a cell originally, save for the requirement that all functions involved (as in, as part of definitions and proceeding results) be $C^r$ themselves. For brevity, we will not re-enumerate the definition here.
+A $\Crcell[r]$ is defined almost precisely the same way we did a cell originally, but now with the requirement that all functions involved (as in, as part of definitions and proceeding results) be $C^r$ themselves. For brevity, we will not re-enumerate the definition here.
 \end{definition}
 
 Very quickly then, we move on to \emph{smooth} \cd but won't prove it -- again in our excitement and closeness of what is to come.
@@ -65,16 +67,19 @@ Very quickly then, we move on to \emph{smooth} \cd but won't prove it -- again i
   No proof is provided, although it doesn't vary too much from that of the proof of \CD \emph{without} smoothness. As before, one proceeds by induction on $n$ (we know, small promise broken), although now, similarly to how in the proof of the \CD theorem we proved two inductive statements back and forth, here we do a similar thing where we prove that, for the given function in \ref {item:smooth_cell_1}, we prove the set of points at which that function is \cont must be dense in $X$. Again, we proved something very similar before -- just now, this proves the existence of derivatives of certain type. In actuality, we get to use the \CD theorem proper to make things easier on ourselves, making this proof (arguably) a bit less difficult.
 \end{proof}
 
-And now, finally (which must feel shockingly early given the length of this chapter), we will finish off with a statement that we will come to use but do nothing here to prove or really discuss at much length.
+And now, finally (which must feel shockingly early given the length of this section), we will finish off with a statement that we will come to use but do nothing here to prove or really discuss at much length.
 
 Recalling that our expansion is over an ordered real field, we have been given quite a bit of specificity already -- so we may ask ourselves whether we can improve upon the $r$ in our $C^r$ specification (as in, taking it to be $\infty$ rather than just finite), or even better, just analytic. We may have set up the question a bit too cheerfully there then because the answer is \textbf{no}, we may not. While the original result is attributable to Pila and Wilkie, the results we present here are of Le Gal, and Rolin \cite{gal_o-minimal_2009}
 
 \begin{proposition}[Le Gal et Rolin \cite{gal_o-minimal_2009}]
-  Given an \om structure $\tilde{\R} = (\overline{\R}, \ \hdots)$ which \emph{does not} have $C^{\infty}$ \cd \textbf{as defined in the usual way}, then the structure does not have it for any consistent definition of the concept.
+  Given an \om structure $\tilde{\R} = (\overline{\R}, \ \hdots)$ which \textbf{does not} have $C^{\infty}$ \cd \textbf{as defined in the usual way}, then the structure does not have it for any consistent definition of the concept.
 \end{proposition}
 
 We bold that second part of the (very informally given) statement, in particular, to emphasize that there is an \emph{normal} way of doing things, as inspired by the calculus we know on the reals. It is to that \textbf{usual way} that is being referred.
 
-Funnily enough, however, one bumps into and finds themselves interested in structures that \emph{do} have $C^{\infty}$ \cd quite often, which is quite a nice thing indeed. And it is with this we come to what may seem an abrupt conclusion (of Part 1).
+Funnily enough, however, one bumps into and finds themselves interested in structures that \emph{do} have $C^{\infty}$ \cd quite often, which is quite a nice thing indeed. And it is with this we come to what may seem an abrupt conclusion (of Part I).
 
-We covered a lot here, much of each piece building on the last -- so one would be forgiven (praised even) for giving the several previous chapters a quick once, twice, or thrice-over just to make sure everything is solidly in place in their mind map. In the next section, we start on the \pwt proper and the two broad constituents that make it up -- each of them a piece of meaningful machinery in its own right. This first section should have been a (hopefully) reasonably good primer on what one needs to know about \om, \cds, \scds, and dimensionality to fully understand the results we are about to come upon and the proofs we use to ensure their correctness.
+
+\subsubsection{Saying Goodbye to the Easy Bit}
+
+We covered a lot here, much of each piece building on the last -- so one would be forgiven (praised even) for giving the several previous sections a quick once, twice, or thrice-over just to make sure everything is solidly in place in their mind map. In the next section, we start on the \pwt proper and the two broad constituents that make it up -- each of them a piece of meaningful machinery in its own right. This first section should have been a (hopefully) reasonably good primer on what one needs to know about \omy, \cds, \scds, and dimensionality to fully understand the results we are about to come upon and the proofs we use to ensure their correctness.

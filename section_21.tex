@@ -1,35 +1,37 @@
-%%%%%%%%%%%%%%%%%%%%% chapter.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%% section.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% sample chapter
+% sample section
 %
 % Use this file as a template for your own input.
 %
 %%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
-%\motto{Use the template \emph{chapter.tex} to style the various elements of your chapter content.}
-\chapter{Finally: A New Beginning}
-\chaptermark{Starting Again}
+%\motto{Use the template \emph{section.tex} to style the various elements of your section content.}
+\subsection{Finally: A New Beginning}
+%\sectionmark{Starting Again}
 \label{starting_pw} % Always give a unique label
-% use \chaptermark{}
-% to alter or adjust the chapter heading in the running head
-%\chaptermark{Some Introductions}
+% use \sectionmark{}
+% to alter or adjust the section heading in the running head
+%\sectionmark{Some Introductions}
 
-\abstract*{One can imagine the collective sighs of all that read through the previous section to get to this, the \emph{exciting} part of the module, almost deafening. Here we will first start our proper discussion of the \pwt, along with some bits and bobs as to how we will prove it, followed by some previews of what it entails. There are two broad \emph{bits} to the proof we will discuss -- although each is deserving of a chapter (or perhaps even more) on its own, and so their proofs are outsourced to later to come parts. For now, we start by dipping our toes into what we've been building to through the last entire first part.}
+One can imagine the collective sighs of all those read through the previous section to get to this, the \emph{exciting} part of the module, almost deafening. Here we will first start our proper discussion of the \pwt (and how we told a \emph{bit} of a fib earlier about the specific formulation we prove), along with some bits and bobs as to how we will prove it, and some previews of what it entails. There are two broad parts to the proof we will discuss -- although each is deserving of a chapter (or perhaps even more) on its own, and so their perhaps a bit more rushed than deserved proofs are outsourced to a section of their own each. For now, we start by dipping our toes into what we've been building to throughout the last entire first part.
 
-\abstract{One can imagine the collective sighs of all that read through the previous section to get to this, the \emph{exciting} part of the module, almost deafening. Here we will first start our proper discussion of the \pwt, along with some bits and bobs as to how we will prove it, followed by some previews of what i t entails. There are two broad \emph{bits} to the proof we will discuss -- although each is deserving of a chapter (or perhaps even more) on its own, and so their proofs are outsourced to later to come parts. For now, we start by dipping our toes into what we've been building to throughout the last entire first part.}
+\bigskip
+\centerline{\rule{0.3333\linewidth}{.2pt}}
+\smallskip
 
-\section{How We're Going to Prove It}
+\subsection{How We're Going to Prove It}
 
 As mentioned before -- but bears repeating -- our approach to proving \pwt (in our special little case) broadly follows that of Bhardwaj, and van den Dries \cite{bhardwaj_pilawilkie_2022}; a recent paper that only came out this year (should you be reading this in 2022). Their major contribution includes using \sacds to simplify several arguments of the original proof by Pila and Wilkie. They also provide a full treatment of a recent variant \cite{binyamini_yomdingromov_2021} of the (classical) Yomdin-Gromov theorem \cite{gromov_entropy_1987} (again, assuming your readership takes places not too soon after these words reach the page) in 2021, as well as a result of Bombieri and Pila \cite{bombieri_number_1989}, which is also made use of. In our case, we are going to be following the (recent) treatment of what we will come to colloquially call \emph{parameterization} by \cite{binyamini_yomdingromov_2021}.
 
 
-\centerline{\rule{0.6665\linewidth}{.2pt}}
-\footnote{Please note that this horizontal line is \emph{not} intended to cause any calming effects, as we have used a \textit{similar} (but distinct) line for previously. Delineation is all we intend this to be used for, and it is all that the reader is permitted to take from it. Observe with caution and most importantly, integrity.}
+%\centerline{\rule{0.6665\linewidth}{.2pt}}
+%\footnote{Please note that this horizontal line is \emph{not} intended to cause any calming effects, as we have used a \textit{similar} (but distinct) line for previously. Delineation is all we intend this to be used for, and it is all that the reader is permitted to take from it. Observe with caution and most importantly, integrity.}
 
-\bigskip
+%\bigskip
 
-\section{Some Recollections and Definitions}
+\subsubsection{Some Recollections and Definitions}
 
-Let us now begin with a recollection of our setting. We are no longer going to speak to the generality of any ordered group, and instead, an \om expansion $\Rtildefull$ of the ordered field of $\R$. Ultimately, the \pwt is about rational points on definable sets -- so taking definable sets over this expansion (supposing points have $n$ dimensions) and intersecting with $\Q^n$, then \pw tells us something about the number of such points we can expect; in short, how \emph{few} of them we should expect up to a certain \emph{height}. This concept was briefly touched upon early in the first part. Still, to recap, we can define certain functions that characterize the height of a number (\`a la multiplicative height for rationals) and then bound the size of this set from above as a function of that height parameter. Without the use of a height, there could, of course, be infinitely-many points, so this concept is crucial (and broadly the \emph{point} of the theorem).
+Let us now begin with a recollection of our setting. We are no longer going to speak to the generality of any ordered field, and instead, an \om expansion $\Rtildefull$ of the ordered field of $\overline{\R}$. Ultimately, the \pwt is about rational points on definable sets -- so taking definable sets over this expansion (supposing points have $n$ dimensions) and intersecting with $\Q^n$, then \pw tells us something about the number of such points we can expect; in short, how \emph{few} of them we should expect up to a certain \emph{height}. This concept was briefly touched upon early in the first part. Still, to recap, we can define certain functions that characterize the height of a number (\`a la multiplicative height for rationals) and then bound the size of this set from above as a function of that height parameter. Without the use of a height, there could, of course, be infinitely-many points, so this concept is crucial (and broadly the \emph{point} of the theorem).
 
 Let's begin by again defining the multiplicative height on $\Q$.
 \begin{definition}[Multiplicative Height on $\Q$]
@@ -41,10 +43,10 @@ Let's begin by again defining the multiplicative height on $\Q$.
   \label{defn:Q_height}
 \end{definition}
 
-\subsection{A Little Idiosyncrasy}
+\subsubsection{A Little Idiosyncrasy}
 
 \begin{svgraybox}
-  For reasons of preserving syntax used consistently (rather than some off-handed syntax we have been replacing) throughout this part of the course, we overload the use of $H$ as both a function on the ration numbers that maps some $q \in \Q^n$ to its height, \emph{as well as} the integral height itself. You will often find sentences of the form `fixing some $H \geq 1$, we take $X(S, H)$ to be the set $\{ s \in S \ \colon \ H(s) \leq H \}$'. While a bit confusing, especially at first blush, this choice for syntactic overloading was made due to its persistence throughout Dr. Jones' lectures.
+  For reasons of preserving syntax used consistently (rather than some off-handed syntax we have been replacing) throughout this part of the course, we overload the use of $H$ as both a function on the rational numbers (and later just any height function) that maps some $q \in \Q^n$ to its height, \emph{as well as} the integral height bound or value itself. You will often find sentences of the form `fixing some $H \geq 1$, we take $X(S, H)$ to be the set $\{ s \in S \ \colon \ H(s) \leq H \}$'. While a bit confusing, especially at first blush, this choice for syntactic overloading was made due to its persistence throughout Dr. Jones' lectures.
 \end{svgraybox}
 
 
@@ -80,11 +82,11 @@ With that in mind, we have the following definition.
 
 To rephrase what we said above, the \pwt gives us an upper bound on
   \begin{align*}
-    \card{\XtrQH[X]},
+    \card{\XtrQH[H]},
   \end{align*}
   with $H$ as a parameter controlling the cardinality of this set. Ideally, we want good bounds on this, especially as $H \to \infty$ -- which quite nicely, \pw gives us.
 
-\section{Building to \pw}
+\subsubsection{Building to \pw}
 
 A special case of this coming from Pila (building on an earlier paper he had worked on with Bombieri) is the following:
 
@@ -95,15 +97,15 @@ A special case of this coming from Pila (building on an earlier paper he had wor
     \end{align*}
 \end{theorem}
 
-In general, a \defnb set may contain a rational line (with interior, that is), in which case the number of points is enormous. Here is where the idea of algebraic and transcendental parts of $X$, again denoted $\Xalg[x]$ and $\Xtr[X]$. However, we now do you the service of definition, such that anything useful can be done with them.
+In general, a \defnb set may contain a rational line (with interior, that is), in which case the number of points is enormous. Here is where the idea of algebraic and transcendental parts of $X$, again denoted $\Xalg[x]$ and $\Xtr[X]$, becomes vital. However, we now do you the service of definition, such that anything useful can be done with them.
 
 \begin{definition}[Algebraic Part of $X$]
   The \emph{algebraic part} of some $\XRn[X]{n}$, denoted $\Xalg[x]$, is given by the union of all connected, infinite, $\overline{\R}$-\defnb subsets of $X$. That is, definable in the real field (with parameters).
 \end{definition}
 
-By our definition a few above, it is clear then that the set of interest to us is $\XtrQH[H]$, where we take all of $X$ and throw away all the `junk' bits we identify with $\Xalg[X]$. Notice that we assume our $X$ to be definable, but these partitions into algebraic and transcendental sets can be \emph{far} from definable, especially $\Xalg[x]$. Indeed, understanding each of these two sets are different problems from one another, requiring different approaches to say meaningful things. For now, we focus on $\Xtr[X]$.
+By our definition a few above, it is clear then that the set of interest to us is $\XtrQH[H]$, where we take all of $X$ and throw away all the `junk' bits we identify with $\Xalg[X]$. Notice that we assume our $X$ to be definable, but these partitions into algebraic and transcendental sets can be \emph{far} from definable, especially $\Xalg[x]$. Indeed, understanding each of these two sets are different problems from one another, requiring different approaches to say meaningful things. Here, we focus on $\Xtr[X]$.
 
-\section{The Two Ingredients in Proving the \pwT Proper}
+\subsubsection{The Two Ingredients in Proving the \pwT Proper}
 
 We stated it in the Introduction so as to give something to look forward to, but we now do so again -- without further ado, the \pwt:
 
@@ -117,7 +119,7 @@ We stated it in the Introduction so as to give something to look forward to, but
 
   Now, this right-hand side might be (should be) looking very familiar from just a moment ago -- but recall that that was for an example on \emph{all} points in the set and a special case. Here, their result is much more general and only pays attention to the transcendental parts of $X$.
 
-  Nice though it would be just to put a quick proof underneath and sate ourselves of this theorem, it does, unfortunately, require a bit more work than that. We are going to go through in the next few chapters and prove the necessary constituents to a proof of Theorem \ref{thm:pwt}. The two main bits are as follows:
+  Nice though it would be just to put a quick proof underneath and sate ourselves of this theorem, it does, unfortunately, require a bit more work than that. We are going to go through in the next few sections and prove the necessary constituents to our proof of \pw. The two main bits are as follows:
   \begin{enumerate}
 
     \item \textbf{The \om bit}: Suppose we have a \defnb set $X \subset (0, 1)^n$ (by normalization) and some $r \in \N$. Then there exists a set of functions, $\{ \vonevm{\phi}{k} \}$ where $\funcdom{\phi_j}{(0, 1)^{\dim{X}}}{X}$ that are $C^r$ \defnb maps such that all derivatives of each map up to degree $r$ are bounded (in modulus) by $1$ and whose union is $X$.
@@ -128,13 +130,15 @@ We stated it in the Introduction so as to give something to look forward to, but
 
   \end{enumerate}
 
-In essence, this first point means that definable sets possess a certain type of parameterization, which we will come to know as \emph{cellular $r$-parameterizations}. In reference to the work we follow, the Yomdin-Gromov theorem was mentioned (which was not actually a joint work, but work continued by Gromov, inspired by Yomdin), which essentially shows this result over particular special cases. We use a newer variant, as mentioned before, which will allow us to go on to show that \pw generalizes the previously given -- first to more general \om structures, and then to further generalizations we will discuss later on.
+In essence, this first point means that definable sets possess a certain type of parameterization, which we will come to know as \emph{cellular $r$-parameterizations}. In reference to the work we follow, the Yomdin-Gromov theorem was mentioned (which was not actually a joint work, but work continued by Gromov, inspired by Yomdin), which essentially shows this result over particular special cases. We use a newer variant, as mentioned before, which will allow us to go on to show that \pw generalizes the previously given -- first to more general \om structures, and then to further generalizations we will note (but not discuss) later on.
 
-Just as a point of note, it is this second part of the proof that we have (almost \textit{ad nauseam}) been mentioning that has its roots in work between Bombieri and Pila \cite{bombieri_number_1989}.
+\begin{svgraybox}
+  Just as a point of note for the reader who may not have caught on, it is this second part of the proof that we have (almost \textit{ad nauseam}) been mentioning having its roots in the work between Bombieri and Pila \cite{bombieri_number_1989}.
+\end{svgraybox}
 
-Unfortunately, unlike we have seen with a couple of other multi-part results in the first part, the \pwt does \emph{not} immediately and obviously follow, even once we have these two results -- so that will take a bit of doing in and of itself. So, for the next three odd chapters, we will preoccupy ourselves with proving first the \emph{\om bit}, then the \emph{\nt bit}, and finally, pulling it all together. The third and final part of this set of notes will then discuss, without too much detail, some extensions, generalizations, and applications of the \pwt and how we have seen it being used since its inception.
+Unfortunately, unlike we have seen with a couple of other multi-part results in Part I, the \pwt does \emph{not} immediately and obviously follow, even once we have these two results -- so that will take a bit of doing in and of itself. So, for the next three odd sections, we will preoccupy ourselves with proving first the \emph{\om bit}, then the \emph{\nt bit}, and finally, pulling it all together. The third and final part of this set of notes will then mention, at a very high level and without much detail, some extensions, generalizations, and applications of the \pwt and how we have seen it being used since its inception.
 
-\section{Just a Couple of Remarks Before we Begin}
+\subsubsection{Just a Couple of Remarks Before we Begin}
 
 To not faff on too long, we enumerate a few remarks on what we've just started and a bit of what is to come. These remarks will not be crucial to what follows but are nonetheless of significant interest.
 \begin{remark}[A Series of Remarks]
@@ -150,13 +154,13 @@ To not faff on too long, we enumerate a few remarks on what we've just started a
         \card{ \ \Xtr (d, H) \ } &= \card{ \ \alpha \in X \ \colon \ [\Q(\alpha) \colon \Q] \leq d, \ H(\alpha) \leq H \ } \\
                                  &\leq \bound[H] \textrm{ when } c = c(d).
       \end{align*}
-    Here what we hope for (in nice structures, not in general), something of the form
+    Here what we hope for (in nice structures, not in general), is something of the form
       \begin{align*}
         c \cdot d^k \cdot \log{(H)}^{\ell}.
       \end{align*}
-    Such bounds also have applications that generally differ from \pw (some of which we will come to see later on).
+    Such bounds also have applications that generally differ from \pw (some of which we will mention later on) To spoil that just a tinge, there is a great deal we can say about elliptic curves (and other algebraic curves, of course) in light of the \pwt.
 
-    \item Finally, there has been a good bit of work put in (and still being put in) to the \emph{parameterization result}. This was the actual result by Yomdin that Gromov later worked on. As it turned out, of course, Pila and Wilkie could use that result (in conjunction with a good bit else) to prove the theorem this course is primarily interested in. Further improvements to these parameterization results have effective application such as, for example, the \emph{number} of $\vonevm{\phi}{k}$ needed, as a function of $r$, as stated in part (ingredient) \ref{pw_proof:pt1} in our proof of the \pwt. Or, for example, when can we do better than having these functions be $C^r$ -- such as being $C^{\infty}$ with some bound (not necessarily 1, as we have) on derivatives of all orders.
+    \item Finally, there has been a good bit of work put in (and is still being put in) to the \emph{parameterization result}. This was the actual result by Yomdin that Gromov later worked on. As it turned out, of course, Pila and Wilkie could use that result (in conjunction with a good bit else) to prove the theorem this course is primarily interested in. Further improvements to these parameterization results have effective application such as, for example, the \emph{number} of $\vonevm{\phi}{k}$ needed, as a function of $r$, as stated in part (ingredient) \ref{pw_proof:pt1} in our proof of the \pwt. Or, for example, when can we do better than having these functions be $C^r$ -- such as being $C^{\infty}$ with some bound (not necessarily 1, as we have) on derivatives of all orders.
   \end{enumerate}
 \end{remark}
 

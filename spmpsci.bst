@@ -147,7 +147,7 @@ FUNCTION {add.colon}
   if$
 }
 
-FUNCTION {date.block}
+FUNCTION {\sectionmark.block}
 {
   new.block
 }
@@ -600,7 +600,7 @@ FUNCTION {word.in}
   ":" *
   " " * }
 
-FUNCTION {format.date}
+FUNCTION {format.\sectionmark}
 {
   ""
   duplicate$ empty$
@@ -979,7 +979,7 @@ FUNCTION {article}
       "journal" output.check
       add.blank
       format.vol.num.pages output
-      format.date "year" output.check
+      format.\sectionmark "year" output.check
     }
     { format.article.crossref output.nonnull
       format.pages output
@@ -1021,7 +1021,7 @@ FUNCTION {book}
       format.book.crossref output.nonnull
     }
   if$
-  format.date "year" output.check
+  format.\sectionmark "year" output.check
   format.doi output
   new.block
   format.url output
@@ -1038,7 +1038,7 @@ FUNCTION {booklet}
   new.block
   howpublished "howpublished" bibinfo.check output
   address "address" bibinfo.check output
-  format.date output
+  format.\sectionmark output
   format.doi output
   new.block
   format.url output
@@ -1079,7 +1079,7 @@ FUNCTION {inbook}
       format.book.crossref output.nonnull
     }
   if$
-  format.date "year" output.check
+  format.\sectionmark "year" output.check
   format.doi output
   new.block
   format.url output
@@ -1102,7 +1102,7 @@ FUNCTION {incollection}
       format.chapter.pages output
       new.sentence
       format.publisher.address output
-      format.date "year" output.check
+      format.\sectionmark "year" output.check
     }
     { format.incoll.inproc.crossref output.nonnull
       format.chapter.pages output
@@ -1133,7 +1133,7 @@ FUNCTION {inproceedings}
           format.publisher.address output
         }
       if$
-      format.date "year" output.check
+      format.\sectionmark "year" output.check
     }
     { format.incoll.inproc.crossref output.nonnull
       format.pages output
@@ -1178,7 +1178,7 @@ FUNCTION {manual}
     }
   if$
   format.edition output
-  format.date output
+  format.\sectionmark output
   format.doi output
   new.block
   format.url output
@@ -1198,7 +1198,7 @@ FUNCTION {mastersthesis}
   bbl.mthesis format.thesis.type output.nonnull
   school "school" bibinfo.warn output
   address "address" bibinfo.check output
-  format.date "year" output.check
+  format.\sectionmark "year" output.check
   format.doi output
   new.block
   format.url output
@@ -1215,7 +1215,7 @@ FUNCTION {misc}
   format.title output
   howpublished new.block.checka
   howpublished "howpublished" bibinfo.check output
-  format.date output
+  format.\sectionmark output
   format.doi output
   new.block
   format.url output
@@ -1235,7 +1235,7 @@ FUNCTION {phdthesis}
   bbl.phdthesis format.thesis.type output.nonnull
   school "school" bibinfo.warn output
   address "address" bibinfo.check output
-  format.date "year" output.check
+  format.\sectionmark "year" output.check
   format.doi output
   new.block
   format.url output
@@ -1277,7 +1277,7 @@ FUNCTION {proceedings}
       if$
      }
   if$
-      format.date "year" output.check
+      format.\sectionmark "year" output.check
   format.doi output
   new.block
   format.url output
@@ -1297,7 +1297,7 @@ FUNCTION {techreport}
   format.tr.number output.nonnull
   institution "institution" bibinfo.warn output
   address "address" bibinfo.check output
-  format.date "year" output.check
+  format.\sectionmark "year" output.check
   format.doi output
   new.block
   format.url output
@@ -1312,7 +1312,7 @@ FUNCTION {unpublished}
   add.colon
   new.block
   format.title "title" output.check
-  format.date output
+  format.\sectionmark output
   format.doi output
   new.block
   format.url output
